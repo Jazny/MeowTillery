@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pink_025.png-1c985fc713edde94005a97bc030d4848.stex"
+path="res://.import/pink_025.png-2031f183c6a60b2b334a59744a27a06b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cat sprites/pink_025.png"
-dest_files=[ "res://.import/pink_025.png-1c985fc713edde94005a97bc030d4848.stex" ]
+source_file="res://assets/character sprites/cat sprites/pink_025.png"
+dest_files=[ "res://.import/pink_025.png-2031f183c6a60b2b334a59744a27a06b.stex" ]
 
 [params]
 

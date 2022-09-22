@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/clown_000.png-90f215b4917b6414413e17275794ccbd.stex"
+path="res://.import/clown_000.png-805c0f4dae4c66b9be3450cab94d7c7e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cat sprites/clown_000.png"
-dest_files=[ "res://.import/clown_000.png-90f215b4917b6414413e17275794ccbd.stex" ]
+source_file="res://assets/character sprites/cat sprites/clown_000.png"
+dest_files=[ "res://.import/clown_000.png-805c0f4dae4c66b9be3450cab94d7c7e.stex" ]
 
 [params]
 

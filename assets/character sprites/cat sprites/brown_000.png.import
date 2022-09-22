@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/brown_000.png-89e14316d07931f90d7ad8c1480caf41.stex"
+path="res://.import/brown_000.png-554931fe79971750cf8973a751b62caf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cat sprites/brown_000.png"
-dest_files=[ "res://.import/brown_000.png-89e14316d07931f90d7ad8c1480caf41.stex" ]
+source_file="res://assets/character sprites/cat sprites/brown_000.png"
+dest_files=[ "res://.import/brown_000.png-554931fe79971750cf8973a751b62caf.stex" ]
 
 [params]
 

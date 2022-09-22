@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/IdleAnimation1.png-55ffceebe1e84164bb7f09a6b2778a89.stex"
+path="res://.import/IdleAnimation1.png-4f09982e339dd66e65bde771c1a6fa77.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Idle Animation/IdleAnimation1.png"
-dest_files=[ "res://.import/IdleAnimation1.png-55ffceebe1e84164bb7f09a6b2778a89.stex" ]
+source_file="res://assets/character sprites/Witch Idle Animation/IdleAnimation1.png"
+dest_files=[ "res://.import/IdleAnimation1.png-4f09982e339dd66e65bde771c1a6fa77.stex" ]
 
 [params]
 

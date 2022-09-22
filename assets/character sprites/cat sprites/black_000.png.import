@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/black_000.png-a6f20463e143bdf9f539d3880dd8d82f.stex"
+path="res://.import/black_000.png-9b61393ec7e50b8124a496d453cedfe8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cat sprites/black_000.png"
-dest_files=[ "res://.import/black_000.png-a6f20463e143bdf9f539d3880dd8d82f.stex" ]
+source_file="res://assets/character sprites/cat sprites/black_000.png"
+dest_files=[ "res://.import/black_000.png-9b61393ec7e50b8124a496d453cedfe8.stex" ]
 
 [params]
 
