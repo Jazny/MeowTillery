@@ -283,7 +283,8 @@ points = PoolVector2Array( 0, 0, 320, 0, 320, 64, 0, 64 )
 17/z_index = 0
 
 [node name="Node2D" type="Node2D"]
-position = Vector2( 264, 472 )
+position = Vector2( -48, 352 )
+scale = Vector2( 2.82205, 2.13035 )
 
 [node name="background_tilemap" type="TileMap" parent="."]
 process_priority = -4
@@ -292,7 +293,7 @@ scale = Vector2( 1.3057, 1.08973 )
 tile_set = SubResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( -1703934, 17, 0 )
+tile_data = PoolIntArray( -1703934, 17, 0, -1703918, 17, 0 )
 __meta__ = {
 "_editor_description_": ""
 }
