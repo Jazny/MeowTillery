@@ -14,7 +14,10 @@ func _jump():
 	velocity.y = -450
 	$jumpSFX.play(.5)
 	
-
+func _die():
+	$deathSFX.play(.1)
+	$Sprite.play("Death")
+	
 func _physics_process(delta): 
 		
 	velocity.y += GRAVITY
@@ -38,7 +41,7 @@ func _physics_process(delta):
 		_attack()
 		
 	elif(Input.is_action_pressed("mv_death")):
-		$Sprite.play("Death")
+		_die()
 		
 	else: 
 		$Sprite.play("Idle")
