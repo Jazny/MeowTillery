@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Rock1.png-6a28d0b6418979f9fa0e75275067b792.stex"
+path="res://.import/Rock1.png-73945b48d92f11b9758694c35f0b9cfb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://2 Owlet_Monster/Rock1.png"
-dest_files=[ "res://.import/Rock1.png-6a28d0b6418979f9fa0e75275067b792.stex" ]
+source_file="res://Squango/2 Owlet_Monster/Rock1.png"
+dest_files=[ "res://.import/Rock1.png-73945b48d92f11b9758694c35f0b9cfb.stex" ]
 
 [params]
 

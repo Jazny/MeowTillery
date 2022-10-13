@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Owlet_Monster_Idle_4.png-a88ea9968844eba45e609c91e5754164.stex"
+path="res://.import/Owlet_Monster_Idle_4.png-1e110c87e24b737c7b98880573344ebe.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://2 Owlet_Monster/Owlet_Monster_Idle_4.png"
-dest_files=[ "res://.import/Owlet_Monster_Idle_4.png-a88ea9968844eba45e609c91e5754164.stex" ]
+source_file="res://Squango/2 Owlet_Monster/Owlet_Monster_Idle_4.png"
+dest_files=[ "res://.import/Owlet_Monster_Idle_4.png-1e110c87e24b737c7b98880573344ebe.stex" ]
 
 [params]
 

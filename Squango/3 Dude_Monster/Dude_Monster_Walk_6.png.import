@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Dude_Monster_Walk_6.png-09515c3f064e8d14bacf92862be1a6c2.stex"
+path="res://.import/Dude_Monster_Walk_6.png-8dd682e498d381106f2d617676e75fa1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://3 Dude_Monster/Dude_Monster_Walk_6.png"
-dest_files=[ "res://.import/Dude_Monster_Walk_6.png-09515c3f064e8d14bacf92862be1a6c2.stex" ]
+source_file="res://Squango/3 Dude_Monster/Dude_Monster_Walk_6.png"
+dest_files=[ "res://.import/Dude_Monster_Walk_6.png-8dd682e498d381106f2d617676e75fa1.stex" ]
 
 [params]
 

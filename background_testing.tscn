@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/city_stuff/cyberpunk-street-files/PNG/cyberpunk-street.png" type="Texture" id=1]
 [ext_resource path="res://assets/city_stuff/cyberpunk-street-files/PNG/layers/far-buildings.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://assets/city_stuff/warped city files/ENVIRONMENT/background/buildings-bg.png" type="Texture" id=7]
 [ext_resource path="res://assets/city_stuff/warped city files/ENVIRONMENT/background/near-buildings-bg.png" type="Texture" id=8]
 [ext_resource path="res://Squango.tscn" type="PackedScene" id=9]
+[ext_resource path="res://[YT2mp3.info] - Super Mario Bros. Theme Song (320kbps).mp3" type="AudioStream" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 0, 0, 320, 0, 320, 64, 0, 64 )
@@ -331,6 +332,8 @@ __meta__ = {
 
 [node name="Squango" parent="." instance=ExtResource( 9 )]
 position = Vector2( 180.72, -118.29 )
-__meta__ = {
-"_edit_group_": true
-}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+volume_db = -16.605
+autoplay = true
