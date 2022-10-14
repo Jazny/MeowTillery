@@ -1,0 +1,57 @@
+77f1ab5c (Conor O'Malley 2022-10-06 15:35:24 -0400  1) extends Control
+77f1ab5c (Conor O'Malley 2022-10-06 15:35:24 -0400  2) 
+77f1ab5c (Conor O'Malley 2022-10-06 15:35:24 -0400  3) var dialog = [
+77f1ab5c (Conor O'Malley 2022-10-06 15:35:24 -0400  4) 	'Hello there, this is the test dialogue.',
+77f1ab5c (Conor O'Malley 2022-10-06 15:35:24 -0400  5) 	'If this is an alright implementation, then that would be great.',
+77f1ab5c (Conor O'Malley 2022-10-06 15:35:24 -0400  6) 	'I hope, PETA and the Ayatollah Cathmeini do not see this.',
+77f1ab5c (Conor O'Malley 2022-10-06 15:35:24 -0400  7) 	'The Fitness Gram Pacer Test is a multi-stage aerobic capacity test',
+77f1ab5c (Conor O'Malley 2022-10-06 15:35:24 -0400  8) 	'that progressively gets more difficult as it continues.'
+77f1ab5c (Conor O'Malley 2022-10-06 15:35:24 -0400  9) ]
+77f1ab5c (Conor O'Malley 2022-10-06 15:35:24 -0400 10) 
+77f1ab5c (Conor O'Malley 2022-10-06 15:35:24 -0400 11) var dialog_index = 0
+77f1ab5c (Conor O'Malley 2022-10-06 15:35:24 -0400 12) var finished = false
+77f1ab5c (Conor O'Malley 2022-10-06 15:35:24 -0400 13) 
+77f1ab5c (Conor O'Malley 2022-10-06 15:35:24 -0400 14) func _ready(): 
+77f1ab5c (Conor O'Malley 2022-10-06 15:35:24 -0400 15) 	load_dialog()
+77f1ab5c (Conor O'Malley 2022-10-06 15:35:24 -0400 16) 
+77f1ab5c (Conor O'Malley 2022-10-06 15:35:24 -0400 17) func _process(delta):
+77f1ab5c (Conor O'Malley 2022-10-06 15:35:24 -0400 18) 	$"Next-indicator".visible = finished
+77f1ab5c (Conor O'Malley 2022-10-06 15:35:24 -0400 19) 	if(Input.is_action_just_pressed("ui_accept")):
+77f1ab5c (Conor O'Malley 2022-10-06 15:35:24 -0400 20) 		load_dialog()
+77f1ab5c (Conor O'Malley 2022-10-06 15:35:24 -0400 21) 
+77f1ab5c (Conor O'Malley 2022-10-06 15:35:24 -0400 22) func load_dialog():
+77f1ab5c (Conor O'Malley 2022-10-06 15:35:24 -0400 23) 	if(dialog_index < dialog.size()):
+77f1ab5c (Conor O'Malley 2022-10-06 15:35:24 -0400 24) 		finished = false
+77f1ab5c (Conor O'Malley 2022-10-06 15:35:24 -0400 25) 		$RichTextLabel.bbcode_text = dialog[dialog_index]
+77f1ab5c (Conor O'Malley 2022-10-06 15:35:24 -0400 26) 		$RichTextLabel.percent_visible = 0
+77f1ab5c (Conor O'Malley 2022-10-06 15:35:24 -0400 27) 		$Tween.interpolate_property(
+77f1ab5c (Conor O'Malley 2022-10-06 15:35:24 -0400 28) 			$RichTextLabel, "percent_visible", 0, 1, 1, 
+77f1ab5c (Conor O'Malley 2022-10-06 15:35:24 -0400 29) 			Tween.TRANS_LINEAR, Tween.EASE_IN_OUT
+77f1ab5c (Conor O'Malley 2022-10-06 15:35:24 -0400 30) 		)
+77f1ab5c (Conor O'Malley 2022-10-06 15:35:24 -0400 31) 		$Tween.start()
+77f1ab5c (Conor O'Malley 2022-10-06 15:35:24 -0400 32) 	else:
+77f1ab5c (Conor O'Malley 2022-10-06 15:35:24 -0400 33) 		queue_free()
+77f1ab5c (Conor O'Malley 2022-10-06 15:35:24 -0400 34) 	dialog_index += 1
+77f1ab5c (Conor O'Malley 2022-10-06 15:35:24 -0400 35) 	
+77f1ab5c (Conor O'Malley 2022-10-06 15:35:24 -0400 36) func _on_Tween_tween_completed(object, key):
+77f1ab5c (Conor O'Malley 2022-10-06 15:35:24 -0400 37) 	finished = true
+76f5033c (Conor O'Malley 2022-10-12 10:46:15 -0400  1) extends Area2D
+76f5033c (Conor O'Malley 2022-10-12 10:46:15 -0400  2) 
+76f5033c (Conor O'Malley 2022-10-12 10:46:15 -0400  3) var active = false
+76f5033c (Conor O'Malley 2022-10-12 10:46:15 -0400  4) 
+76f5033c (Conor O'Malley 2022-10-12 10:46:15 -0400  5) func _ready():
+76f5033c (Conor O'Malley 2022-10-12 10:46:15 -0400  6) 	connect("body_entered", self, "_on_NPC_body_entered")
+76f5033c (Conor O'Malley 2022-10-12 10:46:15 -0400  7) 	connect("body_exited", self, "_on_NPC_body_exited")
+76f5033c (Conor O'Malley 2022-10-12 10:46:15 -0400  8) 
+76f5033c (Conor O'Malley 2022-10-12 10:46:15 -0400  9) func _process(delta):
+76f5033c (Conor O'Malley 2022-10-12 10:46:15 -0400 10) 	$"ExclamationMark".visible = active
+76f5033c (Conor O'Malley 2022-10-12 10:46:15 -0400 11) 
+76f5033c (Conor O'Malley 2022-10-12 10:46:15 -0400 12) func _on_NPC_body_entered(body):
+76f5033c (Conor O'Malley 2022-10-12 10:46:15 -0400 13) 	if body.name == "Squango":
+76f5033c (Conor O'Malley 2022-10-12 10:46:15 -0400 14) 		active = true
+76f5033c (Conor O'Malley 2022-10-12 10:46:15 -0400 15) 
+76f5033c (Conor O'Malley 2022-10-12 10:46:15 -0400 16) func _on_NPC_body_exited(body):
+76f5033c (Conor O'Malley 2022-10-12 10:46:15 -0400 17) 	if body.name == "Squango":
+76f5033c (Conor O'Malley 2022-10-12 10:46:15 -0400 18) 		active = false
+76f5033c (Conor O'Malley 2022-10-12 10:46:15 -0400 19) 
+76f5033c (Conor O'Malley 2022-10-12 10:46:15 -0400 20) 
