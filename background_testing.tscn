@@ -13,8 +13,8 @@
 [ext_resource path="res://Audio/[YT2mp3.info] - Mario Jump - Gaming Sound Effect (HD) (320kbps).mp3" type="AudioStream" id=11]
 [ext_resource path="res://Audio/[YT2mp3.info] - Punch Sound Effect - Gaming SFX (320kbps).mp3" type="AudioStream" id=12]
 [ext_resource path="res://Audio/[YT2mp3.info] - Fortnite Death - Sound Effect (HD) (320kbps).mp3" type="AudioStream" id=13]
-[ext_resource path="res://Dan/Dan.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Mr Godot.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Entrance.tscn" type="PackedScene" id=16]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 0, 0, 320, 0, 320, 64, 0, 64 )
@@ -337,11 +337,17 @@ __meta__ = {
 "_editor_description_": ""
 }
 
+[node name="Entrance" parent="." instance=ExtResource( 16 )]
+position = Vector2( 355.415, 37.0831 )
+scale = Vector2( 0.484684, 0.627367 )
+__meta__ = {
+"_edit_group_": true
+}
+
 [node name="Mr Godot" parent="." instance=ExtResource( 15 )]
 position = Vector2( 296.239, 30.9808 )
 
 [node name="Squango" parent="." instance=ExtResource( 9 )]
-visible = false
 position = Vector2( 180.72, -118.29 )
 
 [node name="punchSFX" type="AudioStreamPlayer" parent="Squango"]
@@ -360,7 +366,3 @@ volume_db = -7.866
 stream = ExtResource( 10 )
 volume_db = -16.605
 autoplay = true
-
-[node name="Dan" parent="." instance=ExtResource( 14 )]
-position = Vector2( 143.158, -43.1854 )
-scale = Vector2( 0.136732, 0.20287 )
