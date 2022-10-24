@@ -3,19 +3,21 @@ extends Control
 var dialog = [
 	'Hello there, this is the test dialogue.',
 	'If this is an alright implementation, then that would be great.',
-	'I hope, PETA and the Ayatollah Cathmeini do not see this.',
-	'The Fitness Gram Pacer Test is a multi-stage aerobic capacity test',
-	'that progressively gets more difficult as it continues.'
+	'Run a cat cafe, bombard PITA with cat themed artillery.',
+	'Such as Cat-apults, Meowchine Guns, and even Ballsitic Meowsiles!',
+	'Even get up close and personal with a Catana!'
 ]
 
-var dialog_index = 0
+var dialog_index = -1
 var finished = false
 
 func _ready(): 
 	load_dialog()
 
 func _process(delta):
-	$"Next-indicator".visible = finished
+	if ($"RichTextLabel".visible == true):
+		$"Next-indicator".visible = finished
+	
 	if(Input.is_action_just_pressed("ui_accept")):
 		load_dialog()
 
@@ -30,7 +32,7 @@ func load_dialog():
 		)
 		$Tween.start()
 	else:
-		queue_free()
+		dialog_index = -1
 	dialog_index += 1
 	
 func _on_Tween_tween_completed(object, key):

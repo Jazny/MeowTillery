@@ -66,13 +66,14 @@ scale = Vector2( 0.470624, 0.528082 )
 texture = ExtResource( 2 )
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 3.05176e-05, 7.62939e-06 )
 script = ExtResource( 4 )
 
 [node name="Control" type="Control" parent="Area2D"]
 margin_left = -307.128
 margin_top = -45.1242
 margin_right = -243.128
-margin_bottom = -4.12422
+margin_bottom = -4.12423
 __meta__ = {
 "_edit_use_anchors_": true
 }
