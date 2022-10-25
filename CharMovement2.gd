@@ -52,8 +52,6 @@ func flip():
 	sprite.flip_h = !sprite.flip_h
 	
 func animate():
-	if(sprite.get_animation() == "Jump"):
-		return
 	if(Input.is_action_pressed("mv_right") or Input.is_action_pressed("mv_left")):
 		sprite.play("Run")
 	elif(Input.is_action_just_pressed("mv_jump")):
