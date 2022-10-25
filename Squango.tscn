@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=2]
+[gd_scene load_steps=62 format=2]
 
 [ext_resource path="res://1 Pink_Monster/Pink_Monster_Idle_4.png" type="Texture" id=1]
 [ext_resource path="res://1 Pink_Monster/Walk_Run_Push_Dust_6.png" type="Texture" id=2]
@@ -9,6 +9,9 @@
 [ext_resource path="res://1 Pink_Monster/Pink_Monster_Run_6.png" type="Texture" id=7]
 [ext_resource path="res://1 Pink_Monster/Pink_Monster_Death_8.png" type="Texture" id=8]
 [ext_resource path="res://1 Pink_Monster/Pink_Monster_Attack2_6.png" type="Texture" id=9]
+[ext_resource path="res://Audio/[YT2mp3.info] - Mario Jump - Gaming Sound Effect (HD) (320kbps).mp3" type="AudioStream" id=10]
+[ext_resource path="res://Audio/[YT2mp3.info] - Punch Sound Effect - Gaming SFX (320kbps).mp3" type="AudioStream" id=11]
+[ext_resource path="res://Audio/[YT2mp3.info] - Fortnite Death - Sound Effect (HD) (320kbps).mp3" type="AudioStream" id=12]
 
 [sub_resource type="AtlasTexture" id=24]
 flags = 4
@@ -313,3 +316,15 @@ playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 3 )
+
+[node name="punchSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+volume_db = -13.867
+
+[node name="jumpSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+volume_db = -17.333
+
+[node name="deathSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+volume_db = -7.8
