@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://assets/city_stuff/cyberpunk-street-files/PNG/cyberpunk-street.png" type="Texture" id=1]
 [ext_resource path="res://assets/city_stuff/cyberpunk-street-files/PNG/layers/far-buildings.png" type="Texture" id=2]
@@ -13,8 +13,13 @@
 [ext_resource path="res://Audio/[YT2mp3.info] - Mario Jump - Gaming Sound Effect (HD) (320kbps).mp3" type="AudioStream" id=11]
 [ext_resource path="res://Audio/[YT2mp3.info] - Punch Sound Effect - Gaming SFX (320kbps).mp3" type="AudioStream" id=12]
 [ext_resource path="res://Audio/[YT2mp3.info] - Fortnite Death - Sound Effect (HD) (320kbps).mp3" type="AudioStream" id=13]
+[ext_resource path="res://SanityBar.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Mr Godot.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Entrance.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Sanitybarprogress.png" type="Texture" id=17]
+[ext_resource path="res://Sanitybarback.png" type="Texture" id=18]
+[ext_resource path="res://Sanitybarover.png" type="Texture" id=19]
+[ext_resource path="res://HealthBar.gd" type="Script" id=20]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 0, 0, 320, 0, 320, 64, 0, 64 )
@@ -317,8 +322,8 @@ __meta__ = {
 }
 
 [node name="near_buildings_and_ground" type="TileMap" parent="."]
-position = Vector2( -16, 47 )
-scale = Vector2( -26.8269, -26.8269 )
+position = Vector2( -17.0089, 51.6347 )
+scale = Vector2( 0.995624, 0.90599 )
 tile_set = SubResource( 1 )
 cell_size = Vector2( 16, 16 )
 show_collision = true
@@ -366,3 +371,54 @@ volume_db = -7.866
 stream = ExtResource( 10 )
 volume_db = -16.605
 autoplay = true
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Interface" type="Control" parent="HUD"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="SanityBar" parent="HUD/Interface" instance=ExtResource( 14 )]
+margin_left = 697.0
+margin_top = 79.0
+margin_right = 697.0
+margin_bottom = 79.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Sanity2" type="TextureProgress" parent="HUD/Interface/SanityBar"]
+margin_left = 46.0
+margin_top = -18.0
+margin_right = 756.0
+margin_bottom = 272.0
+value = 100.0
+texture_under = ExtResource( 18 )
+texture_over = ExtResource( 19 )
+texture_progress = ExtResource( 17 )
+tint_progress = Color( 0.380392, 0.486275, 0.584314, 1 )
+
+[node name="Timer" type="Timer" parent="HUD/Interface/SanityBar"]
+autostart = true
+
+[node name="HealthBar" type="Control" parent="HUD/Interface"]
+margin_left = 697.0
+margin_top = 20.0
+margin_right = 737.0
+margin_bottom = 60.0
+rect_scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 20 )
+
+[node name="Health" type="TextureProgress" parent="HUD/Interface/HealthBar"]
+margin_left = 46.0
+margin_top = -18.0
+margin_right = 756.0
+margin_bottom = 272.0
+value = 100.0
+texture_under = ExtResource( 18 )
+texture_over = ExtResource( 19 )
+texture_progress = ExtResource( 17 )
+tint_progress = Color( 0.886275, 0.0784314, 0.0784314, 1 )
+
+[node name="Timer" type="Timer" parent="HUD/Interface/HealthBar"]
+autostart = true
+
+[connection signal="timeout" from="HUD/Interface/HealthBar/Timer" to="HUD/Interface/HealthBar" method="_on_Timer_timeout"]
