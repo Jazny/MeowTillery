@@ -1,3 +1,152 @@
-[gd_scene format=2]
+[gd_scene load_steps=24 format=2]
 
-[node name="KinematicBody2D" type="KinematicBody2D"]
+[ext_resource path="res://Robert_Scrum.gd" type="Script" id=1]
+[ext_resource path="res://Robert_Scrum/Robert_Scrum_Swing.png" type="Texture" id=2]
+[ext_resource path="res://Robert_Scrum/Robert_Scrum_Shoot.png" type="Texture" id=3]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 600, 600 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 600, 600, 600 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 1200, 600, 600 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 1800, 600, 600 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 2400, 600, 600 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 600, 600 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 600, 600, 600 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 1200, 600, 600 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 1800, 600, 600 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 2400, 600, 600 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 3000, 600, 600 )
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 3600, 600, 600 )
+
+[sub_resource type="AtlasTexture" id=13]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 4200, 600, 600 )
+
+[sub_resource type="AtlasTexture" id=14]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 4800, 600, 600 )
+
+[sub_resource type="AtlasTexture" id=15]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 5400, 600, 600 )
+
+[sub_resource type="SpriteFrames" id=16]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 8.0
+}, {
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
+"loop": true,
+"name": "shooting",
+"speed": 9.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 41.2292, 98.2885 )
+
+[sub_resource type="RectangleShape2D" id=18]
+extents = Vector2( 14, 33.6842 )
+
+[sub_resource type="RectangleShape2D" id=19]
+extents = Vector2( 27, 10 )
+
+[sub_resource type="CircleShape2D" id=20]
+
+[node name="Robert_Scrum" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.162386, 0.162386 )
+frames = SubResource( 16 )
+animation = "shooting"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 2, 0.999997 )
+rotation = -3.14159
+scale = Vector2( 0.751895, 0.447662 )
+shape = SubResource( 17 )
+
+[node name="PlayerDetector" type="Area2D" parent="."]
+position = Vector2( 68, 2 )
+scale = Vector2( 2.22652, 1.03734 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
+position = Vector2( -58, -2 )
+scale = Vector2( 1, 1.1875 )
+shape = SubResource( 18 )
+
+[node name="AttackDetector" type="Area2D" parent="."]
+position = Vector2( 1, 0 )
+scale = Vector2( 1.15115, 0.855166 )
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackDetector"]
+modulate = Color( 0.0705882, 0.0431373, 0.968627, 1 )
+position = Vector2( -56, -1 )
+scale = Vector2( 1.0028, 1 )
+shape = SubResource( 19 )
+
+[node name="SquangoSeeker" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SquangoSeeker"]
+scale = Vector2( 95.9318, 44.5493 )
+shape = SubResource( 20 )
+
+[connection signal="body_entered" from="PlayerDetector" to="." method="_on_PlayerDetector_body_entered"]
+[connection signal="body_exited" from="PlayerDetector" to="." method="_on_PlayerDetector_body_exited"]
+[connection signal="body_entered" from="AttackDetector" to="." method="_on_AttackDetector_body_entered"]
+[connection signal="body_exited" from="AttackDetector" to="." method="_on_AttackDetector_body_exited"]
+[connection signal="body_entered" from="SquangoSeeker" to="." method="_on_SquangoSeeker_body_entered"]
