@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Dialogue/dialog-background.png" type="Texture" id=1]
 [ext_resource path="res://Dialogue/IdleAnimation2.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Dialogue/next-indicator.png" type="Texture" id=6]
 [ext_resource path="res://Fonts/GaramondPremrPro-Smbd.otf" type="DynamicFontData" id=7]
 [ext_resource path="res://Dialogue/IdleAnimation1.png" type="Texture" id=8]
+[ext_resource path="res://Dialogue/Mr Godot.gd" type="Script" id=9]
 
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 13, 19.0621 )
@@ -61,6 +62,7 @@ radius = 39.538
 
 [node name="Mr Godot" type="RigidBody2D"]
 position = Vector2( 291, 42 )
+script = ExtResource( 9 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -71,7 +73,6 @@ shape = SubResource( 7 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 9 )
-frame = 1
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]

@@ -14,8 +14,16 @@ var yVelocity = 0
 var xVelocity = 0
 var lookingRight = true
 
+const invincibility_duration = 1.5
+onready var hurtbox = $Hurtbox
+onready var blinker = $Blinker
+var stats = PlayerStat
+
 var stateJ = "idle"
 var stateR = "idle"
+
+func _ready():
+	stats.connect("killed", self, "_die")
 
 func _physics_process(delta):
 	
@@ -94,7 +102,22 @@ func wallJump():
 		xVelocity = WALL_JUMP_FORCE
 		stateJ = "jump2"
 		
-func die():
+func _die():
 	stateJ = "dead"
 	stateR = "dead"
 	$Particles2D.emitting = true 
+	$deathSFX.play(.1)
+	$Sprite.play("Death")
+	yield(get_tree().create_timer(2), "timeout")
+	get_tree().change_scene("res://Main_Menu.tscn")
+	
+func _on_Hurtbox_area_entered(area):
+	if area.damage != 0:
+		if !hurtbox.is_invincible:
+			blinker.start_blinking(self, invincibility_duration)
+			hurtbox.start_invincibility(invincibility_duration)
+			stats.health-=area.damage
+
+
+func _on_SanityBar_killed():
+	_die()

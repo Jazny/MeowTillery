@@ -63,10 +63,11 @@ func _physics_process(delta):
 
 
 func _on_Hurtbox_area_entered(area):
-	if !hurtbox.is_invincible:
-		blinker.start_blinking(self, invincibility_duration)
-		hurtbox.start_invincibility(invincibility_duration)
-		stats.health-=area.damage
+	if area.damage != 0:
+		if !hurtbox.is_invincible:
+			blinker.start_blinking(self, invincibility_duration)
+			hurtbox.start_invincibility(invincibility_duration)
+			stats.health-=area.damage
 
 
 func _on_SanityBar_killed():
