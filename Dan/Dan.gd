@@ -4,6 +4,8 @@ const ACC = 40.5
 const GRAVITY = 12
 const SPEED = 200
 
+export var damage = 0
+
 var velocity = Vector2(0,0)
 	
 	

@@ -2,6 +2,8 @@ extends Area2D
 
 var active = false
 
+export var damage = 0
+
 func _ready():
 	$"QuestionMark".visible = false
 	$"Control/DialogBox/RichTextLabel".visible = false

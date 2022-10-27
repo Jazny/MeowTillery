@@ -330,7 +330,6 @@ position = Vector2( -0.000122752, -1.02232 )
 scale = Vector2( 2.26255, 2.51395 )
 frames = SubResource( 8 )
 animation = "Idle"
-frame = 3
 playing = true
 
 [node name="Particles2D" type="Particles2D" parent="."]

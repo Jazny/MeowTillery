@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://assets/city_stuff/cyberpunk-street-files/PNG/cyberpunk-street.png" type="Texture" id=1]
 [ext_resource path="res://assets/city_stuff/cyberpunk-street-files/PNG/layers/far-buildings.png" type="Texture" id=2]
@@ -14,7 +14,6 @@
 [ext_resource path="res://Audio/[YT2mp3.info] - Punch Sound Effect - Gaming SFX (320kbps).mp3" type="AudioStream" id=12]
 [ext_resource path="res://Audio/[YT2mp3.info] - Fortnite Death - Sound Effect (HD) (320kbps).mp3" type="AudioStream" id=13]
 [ext_resource path="res://SanityBar.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Mr Godot.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Dialogue/Mr Godot.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Entrance.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Sanitybarprogress.png" type="Texture" id=17]
@@ -22,6 +21,7 @@
 [ext_resource path="res://Sanitybarover.png" type="Texture" id=19]
 [ext_resource path="res://HealthBar.gd" type="Script" id=20]
 [ext_resource path="res://Spike.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Turret.tscn" type="PackedScene" id=22]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 0, 0, 320, 0, 320, 64, 0, 64 )
@@ -411,6 +411,10 @@ position = Vector2( 131.465, 60.0842 )
 
 [node name="Spikes2" parent="." instance=ExtResource( 21 )]
 position = Vector2( 152.371, 60.5535 )
+
+[node name="Turret" parent="." instance=ExtResource( 22 )]
+position = Vector2( 59.8855, 12.2046 )
+scale = Vector2( 0.192621, 0.192621 )
 
 [connection signal="killed" from="HUD/Interface/SanityBar" to="Squango" method="_on_SanityBar_killed"]
 [connection signal="killed" from="HUD/Interface/SanityBar" to="HUD/Interface/SanityBar" method="_on_SanityBar_killed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/cat_cafe.png" type="Texture" id=1]
 [ext_resource path="res://Squango.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://wall.tscn" type="PackedScene" id=5]
 [ext_resource path="res://pink_cat.tscn" type="PackedScene" id=6]
 [ext_resource path="res://black_cat.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Dialogue/CAFE_NPC1.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 830.646, 38.4474 )
@@ -63,3 +64,6 @@ shape = SubResource( 2 )
 [node name="black_cat" parent="." instance=ExtResource( 7 )]
 position = Vector2( 926, 585 )
 scale = Vector2( 2.04504, 2.09092 )
+
+[node name="CAFE_NPC1" parent="." instance=ExtResource( 8 )]
+position = Vector2( 370, 579 )
