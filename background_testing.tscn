@@ -15,6 +15,7 @@
 [ext_resource path="res://Audio/[YT2mp3.info] - Fortnite Death - Sound Effect (HD) (320kbps).mp3" type="AudioStream" id=13]
 [ext_resource path="res://SanityBar.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Mr Godot.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Dialogue/Mr Godot.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Entrance.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Sanitybarprogress.png" type="Texture" id=17]
 [ext_resource path="res://Sanitybarback.png" type="Texture" id=18]
@@ -351,7 +352,7 @@ __meta__ = {
 }
 
 [node name="Mr Godot" parent="." instance=ExtResource( 15 )]
-position = Vector2( 296.239, 30.9808 )
+position = Vector2( 306.515, 36.6137 )
 
 [node name="Squango" parent="." instance=ExtResource( 9 )]
 position = Vector2( 180.72, -118.29 )

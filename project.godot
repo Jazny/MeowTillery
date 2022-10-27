@@ -45,6 +45,7 @@ config/icon="res://icon.png"
 [autoload]
 
 PlayerStat="*res://PlayerStat.tscn"
+JsonData="*res://Inventory/Data/JSON_DATA.gd"
 
 [gui]
 

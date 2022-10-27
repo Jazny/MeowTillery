@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Turret.gd" type="Script" id=1]
+[ext_resource path="res://Joey.jpg" type="Texture" id=2]
+
+[node name="Turret" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="." groups=["need_player"]]
+scale = Vector2( 0.296296, 0.296296 )
+texture = ExtResource( 2 )
+script = ExtResource( 1 )

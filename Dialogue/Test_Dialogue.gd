@@ -2,7 +2,6 @@ extends Area2D
 
 var active = false
 
-
 func _ready():
 	$"Control/DialogBox/RichTextLabel".visible = false
 	$"Control/DialogBox/TextureRect".visible = false
@@ -17,7 +16,6 @@ func _process(delta):
 		$"ExclamationMark".visible = false
 		
 
-
 func _on_NPC_body_entered(body):
 	if body.name == "Squango":
 		active = true
@@ -30,5 +28,3 @@ func _on_NPC_body_exited(body):
 	if body.name == "Squango":
 		active = false
 		$"ExclamationMark".visible = active
-
-
