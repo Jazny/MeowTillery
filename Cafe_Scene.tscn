@@ -63,10 +63,3 @@ shape = SubResource( 2 )
 [node name="black_cat" parent="." instance=ExtResource( 7 )]
 position = Vector2( 926, 585 )
 scale = Vector2( 2.04504, 2.09092 )
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
