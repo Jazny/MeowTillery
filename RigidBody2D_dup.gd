@@ -1,19 +1,9 @@
 extends KinematicBody2D
 
-
 const ACC = 50
 const GRAVITY = 20
 const SPEED = 200
 var velocity = Vector2(0,0)
-
-const invincibility_duration = 1.5
-onready var hurtbox = $Hurtbox
-onready var blinker = $Blinker
-
-var stats = PlayerStat
-
-func _ready():
-	stats.connect("killed", self, "_die")
 
 func _attack():
 	$Sprite.play("Attack")
@@ -27,8 +17,6 @@ func _jump():
 func _die():
 	$deathSFX.play(.1)
 	$Sprite.play("Death")
-	yield(get_tree().create_timer(2), "timeout")
-	get_tree().change_scene("res://Main_Menu.tscn")
 	
 func _physics_process(delta): 
 		
@@ -61,13 +49,3 @@ func _physics_process(delta):
 	move_and_slide(velocity)
 	velocity.x = lerp(velocity.x,0,0.15)
 
-
-func _on_Hurtbox_area_entered(area):
-	if !hurtbox.is_invincible:
-		blinker.start_blinking(self, invincibility_duration)
-		hurtbox.start_invincibility(invincibility_duration)
-		stats.health-=area.damage
-
-
-func _on_SanityBar_killed():
-	_die()
