@@ -42,6 +42,11 @@ config/name="Meowtillary"
 boot_splash/bg_color=Color( 0.141176, 0.141176, 0.141176, 1 )
 config/icon="res://icon.png"
 
+[autoload]
+
+PlayerStat="*res://PlayerStat.tscn"
+JsonData="*res://Inventory/Data/JSON_DATA.gd"
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
