@@ -104,6 +104,7 @@ texture = ExtResource( 1 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite"]
 position = Vector2( 0, 10.2788 )
+
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 73.5949, 2.6214 )
 
