@@ -300,7 +300,7 @@ animations = [ {
 extents = Vector2( 4.5, 9 )
 
 [node name="Squango" type="KinematicBody2D"]
-position = Vector2( 539, 34 )
+position = Vector2( 258, 145 )
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
@@ -311,6 +311,7 @@ position = Vector2( -3.05176e-05, -1 )
 scale = Vector2( 0.5625, 0.625 )
 frames = SubResource( 8 )
 animation = "Idle"
+frame = 2
 frame = 3
 playing = true
 

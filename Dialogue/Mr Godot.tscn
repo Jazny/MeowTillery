@@ -1,15 +1,24 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Dialogue/dialog-background.png" type="Texture" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Dialogue/IdleAnimation2.png" type="Texture" id=2]
 [ext_resource path="res://Dialogue/DialogBox.gd" type="Script" id=3]
 [ext_resource path="res://Dialogue/Test_Dialogue.gd" type="Script" id=4]
 [ext_resource path="res://Dialogue/Exclamation_mark.png" type="Texture" id=5]
 [ext_resource path="res://Dialogue/next-indicator.png" type="Texture" id=6]
 [ext_resource path="res://Fonts/GaramondPremrPro-Smbd.otf" type="DynamicFontData" id=7]
+[ext_resource path="res://Dialogue/IdleAnimation1.png" type="Texture" id=8]
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 6.5, 10 )
+extents = Vector2( 13, 19.0621 )
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [sub_resource type="DynamicFont" id=4]
 size = 13
@@ -51,19 +60,19 @@ tracks/0/keys = {
 radius = 39.538
 
 [node name="Mr Godot" type="RigidBody2D"]
-position = Vector2( 283.128, 44.1242 )
+position = Vector2( 291, 42 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 4.37201, -2.1242 )
+position = Vector2( -7, 6.9379 )
 shape = SubResource( 7 )
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 3.89786, -0.938812 )
-scale = Vector2( 0.470624, 0.528082 )
-texture = ExtResource( 2 )
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 9 )
+frame = 1
+playing = true
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2( 3.05176e-05, 7.62939e-06 )
@@ -127,7 +136,7 @@ position = Vector2( 3.37201, -1.1242 )
 shape = SubResource( 8 )
 
 [node name="ExclamationMark" type="Sprite" parent="Area2D"]
-position = Vector2( 2.83484, -43.1853 )
+position = Vector2( -13, -39 )
 scale = Vector2( 0.186696, 0.0883977 )
 texture = ExtResource( 5 )
 
