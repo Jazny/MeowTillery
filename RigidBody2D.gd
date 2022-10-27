@@ -68,6 +68,6 @@ func _on_Hurtbox_area_entered(area):
 		hurtbox.start_invincibility(invincibility_duration)
 		stats.health-=area.damage
 
+
 func _on_SanityBar_killed():
 	_die()
-	

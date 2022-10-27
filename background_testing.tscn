@@ -379,27 +379,6 @@ autoplay = true
 margin_right = 40.0
 margin_bottom = 40.0
 
-[node name="SanityBar" parent="HUD/Interface" instance=ExtResource( 14 )]
-margin_left = 697.0
-margin_top = 79.0
-margin_right = 697.0
-margin_bottom = 79.0
-rect_scale = Vector2( 0.5, 0.5 )
-
-[node name="Sanity2" type="TextureProgress" parent="HUD/Interface/SanityBar"]
-margin_left = 46.0
-margin_top = -18.0
-margin_right = 756.0
-margin_bottom = 272.0
-value = 100.0
-texture_under = ExtResource( 18 )
-texture_over = ExtResource( 19 )
-texture_progress = ExtResource( 17 )
-tint_progress = Color( 0.380392, 0.486275, 0.584314, 1 )
-
-[node name="Timer" type="Timer" parent="HUD/Interface/SanityBar"]
-autostart = true
-
 [node name="HealthBar" type="Control" parent="HUD/Interface"]
 margin_left = 697.0
 margin_top = 20.0
@@ -419,8 +398,12 @@ texture_over = ExtResource( 19 )
 texture_progress = ExtResource( 17 )
 tint_progress = Color( 0.886275, 0.0784314, 0.0784314, 1 )
 
-[node name="Timer" type="Timer" parent="HUD/Interface/HealthBar"]
-autostart = true
+[node name="SanityBar" parent="HUD/Interface" instance=ExtResource( 14 )]
+margin_left = 697.0
+margin_top = 75.0
+margin_right = 697.0
+margin_bottom = 75.0
+rect_scale = Vector2( 0.5, 0.5 )
 
 [node name="Spikes" parent="." instance=ExtResource( 21 )]
 position = Vector2( 131.465, 60.0842 )
@@ -429,4 +412,6 @@ position = Vector2( 131.465, 60.0842 )
 position = Vector2( 152.371, 60.5535 )
 
 [connection signal="killed" from="HUD/Interface/SanityBar" to="Squango" method="_on_SanityBar_killed"]
-[connection signal="timeout" from="HUD/Interface/HealthBar/Timer" to="HUD/Interface/HealthBar" method="_on_Timer_timeout"]
+[connection signal="killed" from="HUD/Interface/SanityBar" to="HUD/Interface/SanityBar" method="_on_SanityBar_killed"]
+
+[editable path="HUD/Interface/SanityBar"]

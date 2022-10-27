@@ -1,10 +1,11 @@
 extends Control
 
-onready var sanity_bar = $Sanity2
+#onready var sanity_bar = $Sanity
 signal killed()
 
 
 func _on_Timer_timeout():
-	if $Sanity2.value == 0:
+	if $Sanity.value == 0:
 		emit_signal("killed")
-	$Sanity2.value-=1
+	$Sanity.value-=1
+
