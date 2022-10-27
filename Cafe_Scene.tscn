@@ -217,8 +217,10 @@ scale = Vector2( 0.095348, 0.0410994 )
 texture = ExtResource( 7 )
 
 [connection signal="tween_completed" from="CAFE_NPC1/Area2D/Control/DialogBox/Tween" to="CAFE_NPC1/Area2D/Control/DialogBox" method="_on_Tween_tween_completed"]
+
 position = Vector2( 78, 560 )
 scale = Vector2( 5.15771, 4.59398 )
+
 [node name="Cat1" parent="." instance=ExtResource( 4 )]
 position = Vector2( 796, 585 )
 scale = Vector2( 1.9291, 1.81639 )
