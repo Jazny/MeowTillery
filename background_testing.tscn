@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://assets/city_stuff/cyberpunk-street-files/PNG/cyberpunk-street.png" type="Texture" id=1]
 [ext_resource path="res://assets/city_stuff/cyberpunk-street-files/PNG/layers/far-buildings.png" type="Texture" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://Sanitybarback.png" type="Texture" id=18]
 [ext_resource path="res://Sanitybarover.png" type="Texture" id=19]
 [ext_resource path="res://HealthBar.gd" type="Script" id=20]
+[ext_resource path="res://Spike.tscn" type="PackedScene" id=21]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 0, 0, 320, 0, 320, 64, 0, 64 )
@@ -300,7 +301,7 @@ scale = Vector2( 2.82205, 2.13035 )
 
 [node name="background_tilemap" type="TileMap" parent="."]
 process_priority = -4
-position = Vector2( -35.4352, 385.383 )
+position = Vector2( -47.1288, 424.343 )
 scale = Vector2( 1.58107, 1.37155 )
 tile_set = SubResource( 1 )
 cell_size = Vector2( 16, 16 )
@@ -323,7 +324,7 @@ __meta__ = {
 
 [node name="near_buildings_and_ground" type="TileMap" parent="."]
 position = Vector2( -17.0089, 51.6347 )
-scale = Vector2( 0.995624, 0.90599 )
+scale = Vector2( 0.985973, 1.20035 )
 tile_set = SubResource( 1 )
 cell_size = Vector2( 16, 16 )
 show_collision = true
@@ -421,4 +422,11 @@ tint_progress = Color( 0.886275, 0.0784314, 0.0784314, 1 )
 [node name="Timer" type="Timer" parent="HUD/Interface/HealthBar"]
 autostart = true
 
+[node name="Spikes" parent="." instance=ExtResource( 21 )]
+position = Vector2( 131.465, 60.0842 )
+
+[node name="Spikes2" parent="." instance=ExtResource( 21 )]
+position = Vector2( 152.371, 60.5535 )
+
+[connection signal="killed" from="HUD/Interface/SanityBar" to="Squango" method="_on_SanityBar_killed"]
 [connection signal="timeout" from="HUD/Interface/HealthBar/Timer" to="HUD/Interface/HealthBar" method="_on_Timer_timeout"]
