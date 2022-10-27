@@ -1,5 +1,4 @@
 [gd_scene load_steps=30 format=2]
-[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/cat_cafe.png" type="Texture" id=1]
 [ext_resource path="res://Squango.tscn" type="PackedScene" id=2]
