@@ -1,6 +1,5 @@
 extends KinematicBody2D
 
-
 const ACC = 50
 const GRAVITY = 20
 const SPEED = 100

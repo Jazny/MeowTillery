@@ -66,4 +66,5 @@ position = Vector2( 926, 585 )
 scale = Vector2( 2.04504, 2.09092 )
 
 [node name="CAFE_NPC1" parent="." instance=ExtResource( 8 )]
-position = Vector2( 370, 579 )
+position = Vector2( 369, 563 )
+scale = Vector2( 0.842326, 1.82494 )
