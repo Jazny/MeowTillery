@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://assets/city_stuff/cyberpunk-street-files/PNG/cyberpunk-street.png" type="Texture" id=1]
 [ext_resource path="res://assets/city_stuff/cyberpunk-street-files/PNG/layers/far-buildings.png" type="Texture" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://HealthBar.gd" type="Script" id=20]
 [ext_resource path="res://Spike.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Turret.tscn" type="PackedScene" id=22]
+[ext_resource path="res://assets/city_bg.png" type="Texture" id=23]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 0, 0, 320, 0, 320, 64, 0, 64 )
@@ -302,6 +303,7 @@ scale = Vector2( 2.82205, 2.13035 )
 
 [node name="background_tilemap" type="TileMap" parent="."]
 process_priority = -4
+visible = false
 position = Vector2( -47.1288, 424.343 )
 scale = Vector2( 1.58107, 1.37155 )
 tile_set = SubResource( 1 )
@@ -314,6 +316,7 @@ __meta__ = {
 
 [node name="closer_background_TM" type="TileMap" parent="."]
 process_priority = -4
+visible = false
 position = Vector2( -15.5915, 52.5735 )
 tile_set = SubResource( 1 )
 cell_size = Vector2( 16, 16 )
@@ -324,6 +327,7 @@ __meta__ = {
 }
 
 [node name="near_buildings_and_ground" type="TileMap" parent="."]
+visible = false
 position = Vector2( -17.0089, 51.6347 )
 scale = Vector2( 0.985973, 1.20035 )
 tile_set = SubResource( 1 )
@@ -331,6 +335,11 @@ cell_size = Vector2( 16, 16 )
 show_collision = true
 format = 1
 tile_data = PoolIntArray( -851967, 6, 0, -851959, 6, 0, -851951, 6, 0, -851948, 6, 0, -655351, 5, 0, -327678, 4, 0, -262142, 4, 0, -196606, 4, 0, -131070, 4, 0, -65534, 4, 0 )
+
+[node name="CityBg" type="Sprite" parent="."]
+position = Vector2( 240.96, -50.2265 )
+scale = Vector2( 0.2493, 0.331789 )
+texture = ExtResource( 23 )
 
 [node name="floor" type="TileMap" parent="."]
 position = Vector2( -65.9095, 22.5315 )
