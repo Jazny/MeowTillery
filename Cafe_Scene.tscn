@@ -6,7 +6,7 @@
 [ext_resource path="res://Cat1.tscn" type="PackedScene" id=4]
 [ext_resource path="res://wall.tscn" type="PackedScene" id=5]
 [ext_resource path="res://pink_cat.tscn" type="PackedScene" id=6]
-[ext_resource path="res://black_cat.tscn" type="PackedScene" id=7]
+[ext_resource path="res://cafe_to_dungeon.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Dialogue/CAFE_NPC1.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -61,10 +61,9 @@ scale = Vector2( 1.29397, 0.429861 )
 position = Vector2( -6.10352e-05, 6.10352e-05 )
 shape = SubResource( 2 )
 
-[node name="black_cat" parent="." instance=ExtResource( 7 )]
-position = Vector2( 926, 585 )
-scale = Vector2( 2.04504, 2.09092 )
-
 [node name="CAFE_NPC1" parent="." instance=ExtResource( 8 )]
 position = Vector2( 369, 563 )
 scale = Vector2( 0.842326, 1.82494 )
+
+[node name="cafe_to_dungeon" parent="." instance=ExtResource( 7 )]
+position = Vector2( 976, 547 )
