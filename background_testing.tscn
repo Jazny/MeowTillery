@@ -20,9 +20,9 @@
 [ext_resource path="res://Sanitybarback.png" type="Texture" id=18]
 [ext_resource path="res://Sanitybarover.png" type="Texture" id=19]
 [ext_resource path="res://HealthBar.gd" type="Script" id=20]
-[ext_resource path="res://Spike.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Turret.tscn" type="PackedScene" id=22]
 [ext_resource path="res://assets/city_bg.png" type="Texture" id=23]
+[ext_resource path="res://minion.tscn" type="PackedScene" id=25]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 0, 0, 320, 0, 320, 64, 0, 64 )
@@ -415,15 +415,13 @@ margin_right = 697.0
 margin_bottom = 75.0
 rect_scale = Vector2( 0.5, 0.5 )
 
-[node name="Spikes" parent="." instance=ExtResource( 21 )]
-position = Vector2( 131.465, 60.0842 )
-
-[node name="Spikes2" parent="." instance=ExtResource( 21 )]
-position = Vector2( 152.371, 60.5535 )
-
 [node name="Turret" parent="." instance=ExtResource( 22 )]
 position = Vector2( 59.8855, 12.2046 )
 scale = Vector2( 0.192621, 0.192621 )
+
+[node name="minion" parent="." instance=ExtResource( 25 )]
+position = Vector2( 257.614, 53.0429 )
+scale = Vector2( 0.230633, 0.286047 )
 
 [connection signal="killed" from="HUD/Interface/SanityBar" to="Squango" method="_on_SanityBar_killed"]
 [connection signal="killed" from="HUD/Interface/SanityBar" to="HUD/Interface/SanityBar" method="_on_SanityBar_killed"]
