@@ -293,7 +293,7 @@ points = PoolVector2Array( 0, 0, 320, 0, 320, 64, 0, 64 )
 17/shapes = [  ]
 17/z_index = 0
 
-[node name="Node2D" type="Node2D"]
+[node name="background_testing" type="Node2D"]
 position = Vector2( -48, 352 )
 scale = Vector2( 2.82205, 2.13035 )
 
@@ -399,15 +399,8 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="SanityBar" parent="HUD/Interface" index="1"]
-margin_left = 697.0
-margin_top = 80.0
-margin_right = 697.0
-margin_bottom = 80.0
-rect_scale = Vector2( 0.5, 0.5 )
-
-[connection signal="killed" from="HUD/Interface/SanityBar" to="Squango" method="_on_SanityBar_killed"]
-
+[editable path="Mr Godot"]
+[editable path="Spikes"]
 [editable path="HUD"]
 [editable path="HUD/Interface/HealthBar"]
 [editable path="HUD/Interface/SanityBar"]

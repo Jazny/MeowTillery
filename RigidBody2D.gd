@@ -18,7 +18,7 @@ func _ready():
 func _attack():
 	$Sprite.play("Attack")
 	$punchSFX.play(.18)
-		
+	
 func _jump():
 	$Sprite.play("Jump")
 	velocity.y = -450
@@ -45,10 +45,8 @@ func _physics_process(delta):
 		$Sprite.flip_h = true
 		$Sprite.play("Run")
 		velocity.x = max(velocity.x - ACC, -SPEED)
-	
 	elif(Input.is_action_just_pressed("mv_jump")):
 		_jump()
-	
 	elif(Input.is_action_pressed("mv_attack")):
 		_attack()
 		

@@ -19,6 +19,8 @@ onready var hurtbox = $Hurtbox
 onready var blinker = $Blinker
 var stats = PlayerStat
 
+export var damage = 0
+
 var stateJ = "idle"
 var stateR = "idle"
 
@@ -112,12 +114,12 @@ func _die():
 	get_tree().change_scene("res://Main_Menu.tscn")
 	
 func _on_Hurtbox_area_entered(area):
-	if area.damage != 0:
+	if area.damage != 0 and stats.health > 0 and stats.sanity > 0:
 		if !hurtbox.is_invincible:
 			blinker.start_blinking(self, invincibility_duration)
 			hurtbox.start_invincibility(invincibility_duration)
 			stats.health-=area.damage
 
 
-func _on_SanityBar_killed():
-	_die()
+#func _on_SanityBar_killed():
+#	_die()

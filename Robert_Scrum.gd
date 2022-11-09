@@ -12,8 +12,14 @@ var attackCooldown = false
 var squango = null
 var flipRequired = false
 
+const invincibility_duration = 0.5
+onready var Rstats = $Robert_Scrum_Stats
+onready var hurtbox = $RHurtbox
+onready var blinker = $Blinker
+
 func _ready():
 	isInRange = false
+	Rstats.connect("killed", self, "_die")
 	
 func _process(_delta):
 	if (isInRange):
@@ -55,6 +61,9 @@ func move_character():
 		velocity.x = SPEED
 		if (!is_moving_right):
 			flipRequired = true
+			#$HealthBar/Health.FILL_LEFT_TO_RIGHT = true
+			$HealthBar/Health.fill_mode = 1
+			
 			
 		is_moving_right = true
 	
@@ -62,11 +71,16 @@ func move_character():
 		velocity.x = -SPEED
 		if (is_moving_right):
 			flipRequired = true
+			$HealthBar/Health.fill_mode = 0
+			#$HealthBar/Health.FILL_RIGHT_TO_LEFT = true
+			
 		
 		is_moving_right = false
 		
 	if (flipRequired):
 		scale.x = -scale.x
+		
+		
 		flipRequired = false
 		
 	velocity.y += GRAVITY
@@ -75,6 +89,9 @@ func move_character():
 		velocity.y = GRAVITY * 20
 	
 	velocity = move_and_slide(velocity, Vector2.UP)
+
+func _die():
+	queue_free()
 
 func _on_PlayerDetector_body_entered(body):
 	isInRange = true
@@ -91,3 +108,11 @@ func _on_AttackDetector_body_exited(body):
 func _on_SquangoSeeker_body_entered(body):
 	if (body != self):
 		squango = body
+
+
+func _on_RHurtbox_area_entered(area):
+	if area.damage != 0 and Rstats.health > 0:
+		if !hurtbox.is_invincible:
+			blinker.start_blinking(self, invincibility_duration)
+			hurtbox.start_invincibility(invincibility_duration)
+			Rstats.health-=area.damage

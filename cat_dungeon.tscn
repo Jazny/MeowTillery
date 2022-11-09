@@ -1,15 +1,20 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/cat dungeon bg.png" type="Texture" id=1]
 [ext_resource path="res://Squango.tscn" type="PackedScene" id=2]
 [ext_resource path="res://caged_grey_cat.tscn" type="PackedScene" id=3]
 [ext_resource path="res://dungeon_to_cafe.tscn" type="PackedScene" id=4]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Bed.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Robert_Scrum.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 653.513, 38.8787 )
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 133.755, 240.777 )
+
+[node name="cat_dungeon" type="Node2D"]
 position = Vector2( 890, -194 )
 scale = Vector2( 0.939767, 0.913998 )
 
@@ -55,6 +60,35 @@ shape = SubResource( 1 )
 
 [node name="HUD" parent="." instance=ExtResource( 5 )]
 
+[node name="Bed" parent="." instance=ExtResource( 6 )]
+position = Vector2( 26.6024, 780.089 )
+scale = Vector2( 0.8, 0.8 )
+
+[node name="TextureRect" parent="Bed/Control/DialogBox" index="0"]
+rect_scale = Vector2( 0.4, 0.3 )
+
+[node name="RichTextLabel" parent="Bed/Control/DialogBox" index="1"]
+margin_left = 5.432
+margin_right = -88.424
+rect_scale = Vector2( 1.5, 1.5 )
+
+[node name="Next-indicator" parent="Bed/Control/DialogBox" index="2"]
+position = Vector2( 451.832, 66.4448 )
+
+[node name="Robert_Scrum" parent="." instance=ExtResource( 7 )]
+position = Vector2( -338.382, 782.277 )
+
+[node name="AnimatedSprite" parent="Robert_Scrum" index="0"]
+frame = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 278.793, 644.422 )
+shape = SubResource( 2 )
+
 [editable path="HUD"]
 [editable path="HUD/Interface/HealthBar"]
 [editable path="HUD/Interface/SanityBar"]
+[editable path="Bed"]
+[editable path="Robert_Scrum"]
+[editable path="Robert_Scrum/RHurtbox"]
+[editable path="Robert_Scrum/HealthBar"]
