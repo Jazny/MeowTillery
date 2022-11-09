@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://assets/city_stuff/cyberpunk-street-files/PNG/cyberpunk-street.png" type="Texture" id=1]
 [ext_resource path="res://assets/city_stuff/cyberpunk-street-files/PNG/layers/far-buildings.png" type="Texture" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://Spike.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Turret.tscn" type="PackedScene" id=22]
 [ext_resource path="res://assets/city_bg.png" type="Texture" id=23]
+[ext_resource path="res://Robert_Scrum.tscn" type="PackedScene" id=24]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 0, 0, 320, 0, 320, 64, 0, 64 )
@@ -424,6 +425,10 @@ position = Vector2( 152.371, 60.5535 )
 [node name="Turret" parent="." instance=ExtResource( 22 )]
 position = Vector2( 59.8855, 12.2046 )
 scale = Vector2( 0.192621, 0.192621 )
+
+[node name="Robert_Scrum" parent="." instance=ExtResource( 24 )]
+position = Vector2( 105.597, 49.2877 )
+scale = Vector2( 0.24272, 0.298455 )
 
 [connection signal="killed" from="HUD/Interface/SanityBar" to="Squango" method="_on_SanityBar_killed"]
 [connection signal="killed" from="HUD/Interface/SanityBar" to="HUD/Interface/SanityBar" method="_on_SanityBar_killed"]
