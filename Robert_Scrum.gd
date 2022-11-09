@@ -55,27 +55,37 @@ func _hitEnd():
 
 func move_character():
 	$AnimatedSprite.play("default")
-	smartDirection = position.direction_to(squango.position)
 	
-	if (smartDirection.x >= 0):
+	if (squango == null) :
 		velocity.x = SPEED
 		if (!is_moving_right):
 			flipRequired = true
 			#$HealthBar/Health.FILL_LEFT_TO_RIGHT = true
 			$HealthBar/Health.fill_mode = 1
-			
-			
-		is_moving_right = true
+      
+	else:
+		smartDirection = position.direction_to(squango.position)
 	
+		if (smartDirection.x >= 0):
+			velocity.x = SPEED
+			if (!is_moving_right):
+				flipRequired = true
+			
+			is_moving_right = true
+
 	else:
 		velocity.x = -SPEED
 		if (is_moving_right):
 			flipRequired = true
 			$HealthBar/Health.fill_mode = 0
 			#$HealthBar/Health.FILL_RIGHT_TO_LEFT = true
-			
+
+		else:
+			velocity.x = -SPEED
+			if (is_moving_right):
+				flipRequired = true
 		
-		is_moving_right = false
+			is_moving_right = false
 		
 	if (flipRequired):
 		scale.x = -scale.x
@@ -94,10 +104,12 @@ func _die():
 	queue_free()
 
 func _on_PlayerDetector_body_entered(body):
-	isInRange = true
+	if (body.name == "Squango"):
+		isInRange = true
 	
 func _on_PlayerDetector_body_exited(body):
-	isInRange = false
+	if (body.name == "Squango"):
+		isInRange = false
 
 func _on_AttackDetector_body_entered(body):
 	print("hit successful")
@@ -106,7 +118,7 @@ func _on_AttackDetector_body_exited(body):
 	pass
 
 func _on_SquangoSeeker_body_entered(body):
-	if (body != self):
+	if (body.name == "Squango"):
 		squango = body
 
 
