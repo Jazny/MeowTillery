@@ -48,27 +48,14 @@ func _hitEnd():
 	$AttackDetector.monitoring = false
 
 func move_character():
-	$AnimatedSprite.play("default")
-	smartDirection = position.direction_to(squango.position)
+	$AnimatedSprite.play("Walking")
 	
-	if (smartDirection.x >= 0):
+	if (is_moving_right):
 		velocity.x = SPEED
-		if (!is_moving_right):
-			flipRequired = true
-			
-		is_moving_right = true
-	
+		
 	else:
 		velocity.x = -SPEED
-		if (is_moving_right):
-			flipRequired = true
-		
-		is_moving_right = false
-		
-	if (flipRequired):
-		scale.x = -scale.x
-		flipRequired = false
-		
+	
 	velocity.y += GRAVITY
 	
 	if(velocity.y > GRAVITY * 20):
@@ -76,18 +63,18 @@ func move_character():
 	
 	velocity = move_and_slide(velocity, Vector2.UP)
 
-func _on_PlayerDetector_body_entered(body):
-	isInRange = true
-	
-func _on_PlayerDetector_body_exited(body):
-	isInRange = false
-
 func _on_AttackDetector_body_entered(body):
-	print("hit successful")
+	if (body.name == "Squango"):
+		print("hit successful")
 
-func _on_AttackDetector_body_exited(body):
-	pass
+	else:
+		if (is_moving_right):
+			scale.x = -scale.x
+			is_moving_right = false
+		else:
+			is_moving_right = true
+			scale.x = -scale.x
 
-func _on_SquangoSeeker_body_entered(body):
-	if (body != self):
-		squango = body
+func _on_StompDetector_body_entered(body):
+	if (body.name == "Squango"):
+		print("goomba stomped")
