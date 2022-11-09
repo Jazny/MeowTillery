@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://assets/city_stuff/cyberpunk-street-files/PNG/cyberpunk-street.png" type="Texture" id=1]
 [ext_resource path="res://assets/city_stuff/cyberpunk-street-files/PNG/layers/far-buildings.png" type="Texture" id=2]
@@ -13,9 +13,12 @@
 [ext_resource path="res://Audio/[YT2mp3.info] - Mario Jump - Gaming Sound Effect (HD) (320kbps).mp3" type="AudioStream" id=11]
 [ext_resource path="res://Audio/[YT2mp3.info] - Punch Sound Effect - Gaming SFX (320kbps).mp3" type="AudioStream" id=12]
 [ext_resource path="res://Audio/[YT2mp3.info] - Fortnite Death - Sound Effect (HD) (320kbps).mp3" type="AudioStream" id=13]
-[ext_resource path="res://SanityBar.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Dialogue/Mr Godot.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Entrance.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Spike.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Turret.tscn" type="PackedScene" id=22]
+[ext_resource path="res://assets/city_bg.png" type="Texture" id=23]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=24]
 [ext_resource path="res://Sanitybarprogress.png" type="Texture" id=17]
 [ext_resource path="res://Sanitybarback.png" type="Texture" id=18]
 [ext_resource path="res://Sanitybarover.png" type="Texture" id=19]
@@ -297,7 +300,7 @@ points = PoolVector2Array( 0, 0, 320, 0, 320, 64, 0, 64 )
 17/shapes = [  ]
 17/z_index = 0
 
-[node name="Node2D" type="Node2D"]
+[node name="background_testing" type="Node2D"]
 position = Vector2( -48, 352 )
 scale = Vector2( 2.82205, 2.13035 )
 
@@ -383,6 +386,12 @@ stream = ExtResource( 10 )
 volume_db = -16.605
 autoplay = true
 
+[node name="Spikes" parent="." instance=ExtResource( 21 )]
+position = Vector2( 131.465, 60.0842 )
+
+[node name="Spikes2" parent="." instance=ExtResource( 21 )]
+position = Vector2( 152.371, 60.5535 )
+
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="Interface" type="Control" parent="HUD"]
@@ -419,6 +428,15 @@ rect_scale = Vector2( 0.5, 0.5 )
 position = Vector2( 59.8855, 12.2046 )
 scale = Vector2( 0.192621, 0.192621 )
 
+[node name="HUD" parent="." instance=ExtResource( 24 )]
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Interface" parent="HUD" index="0"]
+__meta__ = {
+"_editor_description_": ""
+}
 [node name="minion" parent="." instance=ExtResource( 25 )]
 position = Vector2( 257.614, 53.0429 )
 scale = Vector2( 0.230633, 0.286047 )
@@ -426,4 +444,8 @@ scale = Vector2( 0.230633, 0.286047 )
 [connection signal="killed" from="HUD/Interface/SanityBar" to="Squango" method="_on_SanityBar_killed"]
 [connection signal="killed" from="HUD/Interface/SanityBar" to="HUD/Interface/SanityBar" method="_on_SanityBar_killed"]
 
+[editable path="Mr Godot"]
+[editable path="Spikes"]
+[editable path="HUD"]
+[editable path="HUD/Interface/HealthBar"]
 [editable path="HUD/Interface/SanityBar"]
