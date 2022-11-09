@@ -196,7 +196,7 @@ shape = SubResource( 25 )
 position = Vector2( -27, 0 )
 frames = SubResource( 24 )
 animation = "stand"
-frame = 5
+frame = 2
 playing = true
 
 [node name="left_ray" type="RayCast2D" parent="cat1"]

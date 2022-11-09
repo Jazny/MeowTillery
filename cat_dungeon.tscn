@@ -25,7 +25,6 @@ position = Vector2( -924.697, 794.312 )
 
 [node name="dungeon_to_bedroom" parent="." instance=ExtResource( 5 )]
 position = Vector2( 85.1274, 771.336 )
-scale = Vector2( 0.455863, 0.455863 )
 __meta__ = {
 "_edit_group_": true
 }
