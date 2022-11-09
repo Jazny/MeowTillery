@@ -86,15 +86,17 @@ tracks/0/keys = {
 radius = 66.1211
 
 [node name="CAFE_NPC1" type="KinematicBody2D"]
-position = Vector2( 425, 411 )
+position = Vector2( 432, 399 )
+collision_layer = 2
+collision_mask = 2
 script = ExtResource( 13 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 5, 2 )
-scale = Vector2( 0.515, 0.166667 )
+position = Vector2( 5, -2.99997 )
+scale = Vector2( 0.515, 0.2 )
 frames = SubResource( 7 )
 animation = "Idle"
 frame = 1
@@ -121,10 +123,10 @@ __meta__ = {
 }
 
 [node name="DialogBox" type="Control" parent="Area2D/Control"]
-margin_left = 25.128
-margin_top = -149.876
-margin_right = 400.128
-margin_bottom = -102.876
+margin_left = -12.872
+margin_top = -72.8758
+margin_right = 362.128
+margin_bottom = -25.8758
 rect_scale = Vector2( 0.870576, 0.875 )
 rect_pivot_offset = Vector2( 1.19152, -0.33243 )
 script = ExtResource( 2 )
@@ -171,8 +173,21 @@ position = Vector2( -2.98023e-05, 12 )
 shape = SubResource( 6 )
 
 [node name="QuestionMark" type="Sprite" parent="Area2D"]
-position = Vector2( 2, -39 )
+position = Vector2( 2, -48 )
 scale = Vector2( 0.095348, 0.0410994 )
 texture = ExtResource( 12 )
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="right_ray" type="RayCast2D" parent="."]
+position = Vector2( -26, 0 )
+enabled = true
+cast_to = Vector2( 10, 0 )
+
+[node name="left_ray" type="RayCast2D" parent="."]
+position = Vector2( -26, 0 )
+enabled = true
+cast_to = Vector2( -12, 0 )
+collision_mask = 2
 
 [connection signal="tween_completed" from="Area2D/Control/DialogBox/Tween" to="Area2D/Control/DialogBox" method="_on_Tween_tween_completed"]

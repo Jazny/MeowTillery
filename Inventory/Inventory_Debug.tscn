@@ -1,0 +1,126 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Audio/[YT2mp3.info] - Mario Jump - Gaming Sound Effect (HD) (320kbps).mp3" type="AudioStream" id=1]
+[ext_resource path="res://Audio/[YT2mp3.info] - Punch Sound Effect - Gaming SFX (320kbps).mp3" type="AudioStream" id=2]
+[ext_resource path="res://Audio/[YT2mp3.info] - Fortnite Death - Sound Effect (HD) (320kbps).mp3" type="AudioStream" id=3]
+[ext_resource path="res://HUD.gd" type="Script" id=4]
+[ext_resource path="res://Sanitybarover.png" type="Texture" id=5]
+[ext_resource path="res://Sanitybarprogress.png" type="Texture" id=6]
+[ext_resource path="res://Joey.jpg" type="Texture" id=7]
+[ext_resource path="res://Sanitybarback.png" type="Texture" id=8]
+[ext_resource path="res://HealthBar.gd" type="Script" id=9]
+[ext_resource path="res://SanityBar.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Inventory/ItemDropLatte.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Floor.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Inventory/ItemDrop.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Inventory/Inventory.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Squango.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Inventory/ItemDropSword.tscn" type="PackedScene" id=16]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 513, 61.5 )
+
+[node name="World" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 516, 571 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -4, 15.5 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D"]
+position = Vector2( -4.99992, 18.25 )
+scale = Vector2( 3.80741, 0.457407 )
+texture = ExtResource( 7 )
+
+[node name="Squango" parent="." instance=ExtResource( 15 )]
+position = Vector2( 182, 392 )
+collision_mask = 2
+
+[node name="punchSFX2" type="AudioStreamPlayer" parent="Squango"]
+stream = ExtResource( 2 )
+volume_db = -13.983
+
+[node name="jumpSFX2" type="AudioStreamPlayer" parent="Squango"]
+stream = ExtResource( 1 )
+volume_db = -21.881
+
+[node name="deathSFX2" type="AudioStreamPlayer" parent="Squango"]
+stream = ExtResource( 3 )
+volume_db = -7.866
+
+[node name="Floor" parent="." instance=ExtResource( 12 )]
+position = Vector2( -40, 465 )
+scale = Vector2( 7.12292, 0.97468 )
+
+[node name="Stick" parent="." instance=ExtResource( 13 )]
+position = Vector2( 465, 495 )
+
+[node name="Stick2" parent="." instance=ExtResource( 13 )]
+position = Vector2( 465, 495 )
+
+[node name="Stick3" parent="." instance=ExtResource( 13 )]
+position = Vector2( 465, 495 )
+
+[node name="Stick4" parent="." instance=ExtResource( 13 )]
+position = Vector2( 465, 495 )
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource( 4 )
+
+[node name="Interface" type="Control" parent="HUD"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="HealthBar" type="Control" parent="HUD/Interface"]
+margin_left = 697.0
+margin_top = 20.0
+margin_right = 737.0
+margin_bottom = 60.0
+rect_scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 9 )
+
+[node name="Health" type="TextureProgress" parent="HUD/Interface/HealthBar"]
+margin_left = 46.0
+margin_top = -18.0
+margin_right = 756.0
+margin_bottom = 272.0
+value = 100.0
+texture_under = ExtResource( 8 )
+texture_over = ExtResource( 5 )
+texture_progress = ExtResource( 6 )
+tint_progress = Color( 0.886275, 0.0784314, 0.0784314, 1 )
+
+[node name="SanityBar" parent="HUD/Interface" instance=ExtResource( 10 )]
+margin_left = 697.0
+margin_top = 75.0
+margin_right = 697.0
+margin_bottom = 75.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Inventory" parent="HUD" instance=ExtResource( 14 )]
+visible = false
+position = Vector2( 369, 209 )
+
+[node name="Latte" parent="." instance=ExtResource( 11 )]
+position = Vector2( 372, 267 )
+
+[node name="Latte2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 591, 364 )
+
+[node name="Sword" parent="." instance=ExtResource( 16 )]
+position = Vector2( 858, 335 )
+
+[node name="Sword2" parent="." instance=ExtResource( 16 )]
+position = Vector2( 946, 413 )
+
+[node name="Sword3" parent="." instance=ExtResource( 16 )]
+position = Vector2( 746, 353 )
+
+[node name="Sword4" parent="." instance=ExtResource( 16 )]
+position = Vector2( 815, 234 )
+
+[connection signal="killed" from="HUD/Interface/SanityBar" to="HUD/Interface/SanityBar" method="_on_SanityBar_killed"]
+
+[editable path="HUD/Interface/SanityBar"]

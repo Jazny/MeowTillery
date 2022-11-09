@@ -4,7 +4,7 @@ var item_name
 var item_quantity
 
 func _ready():
-	item_name = "Tree Branch"
+	item_name = "Latte"
 	
 	$TextureRect.texture = load("res://Inventory/Item_Icons/" + item_name + ".png")
 	var stack_size = int(JsonData.item_data[item_name]["StackSize"])

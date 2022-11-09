@@ -121,3 +121,11 @@ func _on_Hurtbox_area_entered(area):
 
 func _on_SanityBar_killed():
 	_die()
+
+
+func _input(event):
+	if event.is_action_pressed("pickup"):
+		if $PickupZone.items_in_range.size() > 0:
+			var pickup_item = $PickupZone.items_in_range.values()[0]
+			pickup_item.pick_up_item(self)
+			$PickupZone.items_in_range.erase(pickup_item)

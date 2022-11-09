@@ -3,6 +3,7 @@ extends Control
 var dialog = [
 	'Hello there.',
 	'Hey.',
+	"How's it hanging?",
 	"What's up?",
 	"So, how is life going?",
 	"I haven't seen you in ages!",
@@ -42,6 +43,18 @@ var dialog = [
 	"There is so much fur everywhere!",
 	"This place is meowsome! Sorry, I couldn't resist.",
 	"So, is something happening over there?",
+	"Does this place serve hummus?",
+	"What's with the giant Macaroon?",
+	"Is that cat glowing?",
+	"Is it just me or is that a ghost cat?",
+	"So, are we going to mention why that cat is glowing green?",
+	"I took the wrong door, and wound up in some weird cat dungeon?!",
+	"My favorite punctuation mark is the interrobang because I am quirky.",
+	"How come nobody has taken my order yet?",
+	"I am so thankful that these walls are just so soft because otherwise, I would just not wlak into them.",
+	"Say, why haven't we come here before?",
+	"So, why is this place called Meowtillery?",
+	"Tell me why! Ain't nothing but a heartache!",
 	"Why didn't we come earlier?",
 	"I need to tell my husband about this place.",
 	"I need to tell my sister about this place.",
@@ -93,7 +106,7 @@ var dialog = [
 	"What else can I even say?",
 	"Oh, hello. Goodbye.",
 	"There is something sus about PITA.",
-	"This is why we should legalize sefdom, and here'smy TED talk on why.",
+	"This is why we should legalize serfdom, and here's my TED talk on why.",
 	"I woke up and chose cats today.",
 	"So, there are only so many things to say, but so much time to say it.",
 	"This is not a story that PITA would tell you. It's an old cat legend.",
@@ -101,7 +114,15 @@ var dialog = [
 	"Damn, I need to pet some cats.",
 	"Looks like I have come to the right place.",
 	"This was quite difficult.",
-	"Please help me, I am too weak to keep petting cats."
+	"Please help me, I am too weak to keep petting cats.",
+	"Welcome to the cafe, no I don't work here.",
+	"I enjoy all kinds of cats, orange ones, black ones, the weird glowing ones. All of them!",
+	"So, what do we want? A coffee worth fighting for!",
+	"How much for a gian macaroon?",
+	"So, why can't I get more macaroons?",
+	"My favorite color is beige.",
+	"Why does everyone keep walking into walls? Including me!",
+	"How come there aren't enough events in this place."
 ]
 
 var dialog_index = RandomNumberGenerator.new()
