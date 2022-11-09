@@ -28,7 +28,7 @@ margin_right = 401.0
 margin_bottom = 195.0
 columns = 15
 
-[node name="Panel" type="Panel" parent="GridContainer"]
+[node name="Panel1" type="Panel" parent="GridContainer"]
 margin_right = 18.0
 margin_bottom = 18.0
 rect_min_size = Vector2( 18, 18 )

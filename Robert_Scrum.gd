@@ -62,7 +62,7 @@ func move_character():
 			flipRequired = true
 			#$HealthBar/Health.FILL_LEFT_TO_RIGHT = true
 			$HealthBar/Health.fill_mode = 1
-      
+	  
 	else:
 		smartDirection = position.direction_to(squango.position)
 	

@@ -8,6 +8,7 @@ var empty_style: StyleBoxTexture = null
 
 var ItemClass = preload("res://Inventory/Test_Item.tscn")
 var Item = null
+var slot_index
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,9 +18,6 @@ func _ready():
 	default_style.texture = default_tex
 	empty_style.texture = empty_tex
 	
-	if randi() % 25 == 1:
-		Item = ItemClass.instance()
-		add_child(Item)
 	refresh_style()
 
 func refresh_style():
@@ -43,3 +41,11 @@ func put_into_slot(nuItem):
 	add_child(Item)
 	refresh_style()
 	
+func intialize_item(item_name, item_quantity):
+	if Item == null:
+		Item = ItemClass.instance()
+		add_child(Item)
+		Item.set_item(item_name, item_quantity)
+	else:
+		Item.set_item(item_name, item_quantity)
+	refresh_style()

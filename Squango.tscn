@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=2]
+[gd_scene load_steps=69 format=2]
 
 [ext_resource path="res://1 Pink_Monster/Pink_Monster_Idle_4.png" type="Texture" id=1]
 [ext_resource path="res://1 Pink_Monster/Walk_Run_Push_Dust_6.png" type="Texture" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://white_material.tres" type="Material" id=13]
 [ext_resource path="res://Hurtbox.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Blink.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Pickup Zone.gd" type="Script" id=16]
 
 [sub_resource type="AtlasTexture" id=24]
 flags = 4
@@ -321,6 +322,9 @@ scale = 2.0
 scale_random = 1.0
 color = Color( 0.8, 0.0745098, 0.0745098, 1 )
 
+[sub_resource type="RectangleShape2D" id=80]
+extents = Vector2( 16, 17.5 )
+
 [node name="Squango" type="KinematicBody2D"]
 position = Vector2( 258, 145 )
 script = ExtResource( 3 )
@@ -334,7 +338,7 @@ position = Vector2( -3.05176e-05, -1 )
 scale = Vector2( 0.5625, 0.625 )
 frames = SubResource( 8 )
 animation = "Idle"
-frame = 3
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -371,7 +375,17 @@ randomness = 1.0
 fract_delta = false
 process_material = SubResource( 79 )
 
+[node name="PickupZone" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource( 16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupZone"]
+position = Vector2( 0.5, 0 )
+shape = SubResource( 80 )
+
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
+[connection signal="body_entered" from="PickupZone" to="PickupZone" method="_on_PickupZone_body_entered"]
+[connection signal="body_exited" from="PickupZone" to="PickupZone" method="_on_PickupZone_body_exited"]
 
 [editable path="Hurtbox"]
-[editable path="Blinker"]
