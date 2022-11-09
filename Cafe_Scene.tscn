@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/cat_cafe.png" type="Texture" id=1]
 [ext_resource path="res://Squango.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://pink_cat.tscn" type="PackedScene" id=6]
 [ext_resource path="res://cafe_to_dungeon.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Dialogue/CAFE_NPC1.tscn" type="PackedScene" id=8]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 830.646, 38.4474 )
@@ -39,6 +40,9 @@ scale = Vector2( 1.90351, 1.90351 )
 position = Vector2( 78, 560 )
 scale = Vector2( 5.15771, 4.59398 )
 
+[node name="Sprite" parent="Squango" index="0"]
+frame = 0
+
 [node name="Cat1" parent="." instance=ExtResource( 4 )]
 position = Vector2( 796, 585 )
 scale = Vector2( 1.9291, 1.81639 )
@@ -67,3 +71,11 @@ scale = Vector2( 0.842326, 1.82494 )
 
 [node name="cafe_to_dungeon" parent="." instance=ExtResource( 7 )]
 position = Vector2( 976, 547 )
+
+[node name="HUD" parent="." instance=ExtResource( 9 )]
+
+[editable path="Squango"]
+[editable path="Squango/Hurtbox"]
+[editable path="HUD"]
+[editable path="HUD/Interface/HealthBar"]
+[editable path="HUD/Interface/SanityBar"]

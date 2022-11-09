@@ -14,6 +14,7 @@ func start_invincibility(invincibility_duration):
 	is_invincible = false
 
 func _on_Hurtbox_area_entered(area):
-	whiten_material.set_shader_param("whiten", true)
-	yield(get_tree().create_timer(whiten_duration), "timeout")
-	whiten_material.set_shader_param("whiten", false)
+	if area.damage != 0:
+		whiten_material.set_shader_param("whiten", true)
+		yield(get_tree().create_timer(whiten_duration), "timeout")
+		whiten_material.set_shader_param("whiten", false)
