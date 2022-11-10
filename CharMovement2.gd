@@ -85,14 +85,25 @@ func flip():
 	sprite.flip_h = !sprite.flip_h
 	
 func animate():
-	if(Input.is_action_pressed("mv_right") or Input.is_action_pressed("mv_left")):
-		sprite.play("Run")
+	if(stateR == "dead"):
+		sprite.play("death")
+		return
+	elif(is_on_wall() and (stateJ == "jump1" or stateJ == "jump2") and Input.is_action_pressed("mv_wall_slide")):
+		sprite.play("Wall Slide")
+		return
 	elif(Input.is_action_just_pressed("mv_jump")):
-		sprite.set_animation("Jump")
-		sprite.set_playing(1)
-	else:
+		sprite.play("Jump")
+		return
+	elif(Input.is_action_pressed("mv_right") or Input.is_action_pressed("mv_left")):
+		sprite.play("Run")
+		return
+	elif(Input.is_action_just_released("mv_right") or Input.is_action_just_released("mv_left")):
 		sprite.play("Idle")
-		
+		return
+	if(xVelocity == 0 and yVelocity <= 5):
+		sprite.play("Idle")
+
+
 func wallJump():
 	yVelocity = -JUMP_FORCE / 2
 	if(lookingRight):
@@ -105,8 +116,7 @@ func wallJump():
 func _die():
 	stateJ = "dead"
 	stateR = "dead"
-	$Particles2D.emitting = true 
-	$deathSFX.play(.1)
+	$Particles2D.emitting = true
 	$Sprite.play("Death")
 	yield(get_tree().create_timer(2), "timeout")
 	get_tree().change_scene("res://Main_Menu.tscn")
@@ -123,9 +133,5 @@ func _on_SanityBar_killed():
 	_die()
 
 
-func _input(event):
-	if event.is_action_pressed("pickup"):
-		if $PickupZone.items_in_range.size() > 0:
-			var pickup_item = $PickupZone.items_in_range.values()[0]
-			pickup_item.pick_up_item(self)
-			$PickupZone.items_in_range.erase(pickup_item)
+func _on_Sprite_animation_finished():
+	sprite.play("Idle")

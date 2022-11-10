@@ -4,7 +4,7 @@ var movement = Vector2()
 const SPEED = 250
 export var damage = 34
 func _physics_process(delta):
-	rotate(0.08)
+	rotate(0.04)
 	var collision = move_and_collide(movement * SPEED * delta)
 	if collision:
 		if collision.collider.name == "Player":

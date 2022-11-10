@@ -1,6 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Ingrid.gd" type="Script" id=2]
+[ext_resource path="res://Ingrid.jpg" type="Texture" id=3]
 [ext_resource path="res://icon.png" type="Texture" id=6]
 [ext_resource path="res://Turret.tscn" type="PackedScene" id=12]
 
@@ -16,16 +18,22 @@ extents = Vector2( 193, 12.5 )
 [sub_resource type="RectangleShape2D" id=85]
 extents = Vector2( 34.5, 201.5 )
 
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 76, 135.5 )
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 474.157
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 752, 460 )
+position = Vector2( 1347, 418 )
 
 [node name="Turret" parent="." instance=ExtResource( 12 )]
-position = Vector2( 275, 328 )
+position = Vector2( -362, 820 )
 
 [node name="Floor" type="StaticBody2D" parent="."]
-position = Vector2( -383, -145 )
+position = Vector2( 730, 202 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -70,7 +78,7 @@ scale = Vector2( 0.828125, 5.5 )
 texture = ExtResource( 6 )
 
 [node name="Platform" type="StaticBody2D" parent="."]
-position = Vector2( 638, 377 )
+position = Vector2( 785, 818 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -85,7 +93,7 @@ position = Vector2( 1, 1.5 )
 shape = SubResource( 84 )
 
 [node name="OtherWall" type="StaticBody2D" parent="."]
-position = Vector2( 946, 159 )
+position = Vector2( 1633, 167 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -98,3 +106,26 @@ texture = ExtResource( 6 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OtherWall"]
 position = Vector2( 0.5, 182.5 )
 shape = SubResource( 85 )
+
+[node name="Node2D" type="KinematicBody2D" parent="." groups=["need_player"]]
+position = Vector2( 683, 370 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Node2D"]
+position = Vector2( -7.62939e-06, -3.8147e-06 )
+scale = Vector2( 0.381481, 0.674074 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D"]
+position = Vector2( 0, -0.5 )
+shape = SubResource( 1 )
+
+[node name="Sight" type="Area2D" parent="Node2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Sight"]
+shape = SubResource( 2 )
+
+[connection signal="body_entered" from="Node2D/Sight" to="Node2D" method="_on_Sight_body_entered"]
