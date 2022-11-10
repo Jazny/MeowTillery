@@ -73,18 +73,13 @@ func move_character():
 			
 			is_moving_right = true
 
-	else:
-		velocity.x = -SPEED
-		if (is_moving_right):
-			flipRequired = true
-			$HealthBar/Health.fill_mode = 0
-			#$HealthBar/Health.FILL_RIGHT_TO_LEFT = true
-
 		else:
 			velocity.x = -SPEED
 			if (is_moving_right):
 				flipRequired = true
-		
+				$HealthBar/Health.fill_mode = 0
+				#$HealthBar/Health.FILL_RIGHT_TO_LEFT = true
+
 			is_moving_right = false
 		
 	if (flipRequired):
