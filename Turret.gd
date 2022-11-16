@@ -1,4 +1,4 @@
-extends Sprite
+extends Node2D
 
 const RANGE = 500
 const FIRERATE = 1.0
@@ -28,3 +28,7 @@ func shoot():
 
 func set_player(p):
 	player = p
+
+
+func _on_Area2D_body_entered(body):
+	queue_free()
