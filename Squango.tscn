@@ -1,13 +1,13 @@
-[gd_scene load_steps=69 format=2]
+[gd_scene load_steps=76 format=2]
 
-[ext_resource path="res://1 Pink_Monster/Pink_Monster_Idle_4.png" type="Texture" id=1]
+[ext_resource path="res://Squango_assets/running/IMG_0879.PNG" type="Texture" id=1]
 [ext_resource path="res://1 Pink_Monster/Walk_Run_Push_Dust_6.png" type="Texture" id=2]
 [ext_resource path="res://CharMovement2.gd" type="Script" id=3]
 [ext_resource path="res://New Piskel.png" type="Texture" id=4]
-[ext_resource path="res://1 Pink_Monster/Pink_Monster_Jump_8.png" type="Texture" id=5]
-[ext_resource path="res://1 Pink_Monster/Pink_Monster_Attack1_4.png" type="Texture" id=6]
-[ext_resource path="res://1 Pink_Monster/Pink_Monster_Run_6.png" type="Texture" id=7]
-[ext_resource path="res://1 Pink_Monster/Pink_Monster_Death_8.png" type="Texture" id=8]
+[ext_resource path="res://Squango_assets/death/IMG_0975.png" type="Texture" id=5]
+[ext_resource path="res://Squango_assets/hit/IMG_0883.PNG" type="Texture" id=6]
+[ext_resource path="res://Squango_assets/death/IMG_0976.png" type="Texture" id=7]
+[ext_resource path="res://Squango_assets/running/IMG_0877.PNG" type="Texture" id=8]
 [ext_resource path="res://1 Pink_Monster/Pink_Monster_Attack2_6.png" type="Texture" id=9]
 [ext_resource path="res://Audio/[YT2mp3.info] - Mario Jump - Gaming Sound Effect (HD) (320kbps).mp3" type="AudioStream" id=10]
 [ext_resource path="res://Audio/[YT2mp3.info] - Punch Sound Effect - Gaming SFX (320kbps).mp3" type="AudioStream" id=11]
@@ -16,131 +16,48 @@
 [ext_resource path="res://Hurtbox.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Blink.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Pickup Zone.gd" type="Script" id=16]
-
-[sub_resource type="AtlasTexture" id=24]
-flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 0, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=25]
-flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 32, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=26]
-flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 64, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=27]
-flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 96, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=28]
-flags = 4
-atlas = ExtResource( 8 )
-region = Rect2( 0, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=29]
-flags = 4
-atlas = ExtResource( 8 )
-region = Rect2( 32, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=30]
-flags = 4
-atlas = ExtResource( 8 )
-region = Rect2( 64, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=31]
-flags = 4
-atlas = ExtResource( 8 )
-region = Rect2( 96, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=32]
-flags = 4
-atlas = ExtResource( 8 )
-region = Rect2( 128, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=33]
-flags = 4
-atlas = ExtResource( 8 )
-region = Rect2( 160, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=34]
-flags = 4
-atlas = ExtResource( 8 )
-region = Rect2( 192, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=35]
-flags = 4
-atlas = ExtResource( 8 )
-region = Rect2( 224, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=4]
-flags = 4
-atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=5]
-flags = 4
-atlas = ExtResource( 1 )
-region = Rect2( 32, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=6]
-flags = 4
-atlas = ExtResource( 1 )
-region = Rect2( 64, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=7]
-flags = 4
-atlas = ExtResource( 1 )
-region = Rect2( 96, 0, 32, 32 )
+[ext_resource path="res://Squango_assets/running/IMG_0878.PNG" type="Texture" id=17]
+[ext_resource path="res://Squango_assets/death/IMG_0973.png" type="Texture" id=18]
+[ext_resource path="res://Squango_assets/hit/IMG_0881.PNG" type="Texture" id=19]
+[ext_resource path="res://Squango_assets/idle/IMG_0876.PNG" type="Texture" id=20]
+[ext_resource path="res://Squango_assets/idle/IMG_0875.PNG" type="Texture" id=21]
+[ext_resource path="res://Squango_assets/jump/IMG_0880.PNG" type="Texture" id=22]
+[ext_resource path="res://Squango_assets/death/IMG_0974.png" type="Texture" id=23]
+[ext_resource path="res://Squango_assets/jump+catana/IMG_0921.PNG" type="Texture" id=24]
+[ext_resource path="res://Squango_assets/hit+catana/IMG_0922.PNG" type="Texture" id=25]
+[ext_resource path="res://Squango_assets/idle+catana/IMG_0916.PNG" type="Texture" id=26]
+[ext_resource path="res://Squango_assets/hit+catana/IMG_0924.PNG" type="Texture" id=27]
+[ext_resource path="res://Squango_assets/idle+catana/IMG_0917.PNG" type="Texture" id=28]
+[ext_resource path="res://Squango_assets/run+catana/IMG_0918.PNG" type="Texture" id=29]
+[ext_resource path="res://Squango_assets/run+catana/IMG_0919.PNG" type="Texture" id=30]
+[ext_resource path="res://Squango_assets/run+catana/IMG_0920.PNG" type="Texture" id=31]
+[ext_resource path="res://Squango_assets/run+catlass/IMG_1037.png" type="Texture" id=32]
+[ext_resource path="res://Squango_assets/hit+ACat-47/IMG_0997.png" type="Texture" id=33]
+[ext_resource path="res://Squango_assets/idle+ACat-47/IMG_0990.png" type="Texture" id=34]
+[ext_resource path="res://Squango_assets/idle+meowchinegun/IMG_0998.png" type="Texture" id=35]
+[ext_resource path="res://Squango_assets/jump+catlass/IMG_1040.png" type="Texture" id=36]
+[ext_resource path="res://Squango_assets/hit+meowchinegun/IMG_1004.png" type="Texture" id=37]
+[ext_resource path="res://Squango_assets/idle+catlass/IMG_1036.png" type="Texture" id=38]
+[ext_resource path="res://Squango_assets/hit+catlass/IMG_1042.png" type="Texture" id=39]
+[ext_resource path="res://Squango_assets/run+catlass/IMG_1039.png" type="Texture" id=40]
+[ext_resource path="res://Squango_assets/run+ACat-47/IMG_0993.png" type="Texture" id=41]
+[ext_resource path="res://Squango_assets/run+ACat-47/IMG_0994.png" type="Texture" id=42]
+[ext_resource path="res://Squango_assets/run+ACat-47/IMG_0992.png" type="Texture" id=43]
+[ext_resource path="res://Squango_assets/hit+ACat-47/IMG_0996.png" type="Texture" id=44]
+[ext_resource path="res://Squango_assets/hit+meowchinegun/IMG_1003.png" type="Texture" id=45]
+[ext_resource path="res://Squango_assets/run+meowchinegun/IMG_0999.png" type="Texture" id=46]
+[ext_resource path="res://Squango_assets/run+meowchinegun/IMG_1001.png" type="Texture" id=47]
+[ext_resource path="res://Squango_assets/hit+catlass/IMG_1041.png" type="Texture" id=48]
+[ext_resource path="res://Squango_assets/idle+meowchinegun/IMG_0999.png" type="Texture" id=49]
+[ext_resource path="res://Squango_assets/run+catlass/IMG_1038.png" type="Texture" id=50]
+[ext_resource path="res://Squango_assets/idle+catlass/IMG_1035.png" type="Texture" id=51]
+[ext_resource path="res://Squango_assets/jump+ACat-47/IMG_0995.png" type="Texture" id=52]
+[ext_resource path="res://Squango_assets/idle+ACat-47/IMG_0991.png" type="Texture" id=53]
 
 [sub_resource type="AtlasTexture" id=42]
 flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 0, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=16]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 0, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=17]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 32, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=18]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 64, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=19]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 96, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=20]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 128, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=21]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 160, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=22]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 192, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=23]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 224, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=36]
 flags = 4
@@ -170,36 +87,6 @@ region = Rect2( 128, 0, 32, 32 )
 [sub_resource type="AtlasTexture" id=41]
 flags = 4
 atlas = ExtResource( 9 )
-region = Rect2( 160, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=9]
-flags = 4
-atlas = ExtResource( 7 )
-region = Rect2( 0, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=10]
-flags = 4
-atlas = ExtResource( 7 )
-region = Rect2( 32, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=11]
-flags = 4
-atlas = ExtResource( 7 )
-region = Rect2( 64, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=12]
-flags = 4
-atlas = ExtResource( 7 )
-region = Rect2( 96, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=13]
-flags = 4
-atlas = ExtResource( 7 )
-region = Rect2( 128, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=14]
-flags = 4
-atlas = ExtResource( 7 )
 region = Rect2( 160, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=43]
@@ -254,27 +141,27 @@ region = Rect2( 160, 0, 32, 32 )
 
 [sub_resource type="SpriteFrames" id=8]
 animations = [ {
-"frames": [ SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
-"loop": true,
-"name": "Attack",
-"speed": 16.0
-}, {
-"frames": [ SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), null ],
+"frames": [ ExtResource( 19 ), ExtResource( 6 ) ],
 "loop": false,
-"name": "Death",
-"speed": 8.0
+"name": "Attack",
+"speed": 2.0
 }, {
-"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
+"frames": [ ExtResource( 18 ), ExtResource( 23 ), ExtResource( 5 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "Death",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 21 ), ExtResource( 20 ) ],
 "loop": true,
 "name": "Idle",
-"speed": 8.0
+"speed": 4.0
 }, {
 "frames": [ SubResource( 42 ) ],
 "loop": true,
 "name": "Idle2",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
+"frames": [ ExtResource( 22 ) ],
 "loop": true,
 "name": "Jump",
 "speed": 10.0
@@ -284,10 +171,10 @@ animations = [ {
 "name": "New Anim",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
+"frames": [ ExtResource( 8 ), ExtResource( 17 ), ExtResource( 1 ), ExtResource( 17 ) ],
 "loop": true,
 "name": "Run",
-"speed": 10.0
+"speed": 6.0
 }, {
 "frames": [ SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ) ],
 "loop": true,
@@ -298,10 +185,85 @@ animations = [ {
 "loop": true,
 "name": "Rundust",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 44 ), ExtResource( 33 ) ],
+"loop": false,
+"name": "hit+ACat-47",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 25 ), ExtResource( 27 ) ],
+"loop": true,
+"name": "hit+catana",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 38 ), ExtResource( 39 ), ExtResource( 48 ) ],
+"loop": true,
+"name": "hit+catlass",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 45 ), ExtResource( 37 ) ],
+"loop": false,
+"name": "hit+meowchinegun",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 34 ), ExtResource( 53 ) ],
+"loop": true,
+"name": "idle+ACat-47",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 26 ), ExtResource( 28 ) ],
+"loop": true,
+"name": "idle+catana",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 51 ), ExtResource( 38 ) ],
+"loop": true,
+"name": "idle+catlass",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 35 ), ExtResource( 49 ) ],
+"loop": true,
+"name": "idle+meowchinegun",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 52 ) ],
+"loop": true,
+"name": "jump+ACat-47",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 24 ) ],
+"loop": true,
+"name": "jump+catana",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 36 ) ],
+"loop": true,
+"name": "jump+catlass",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 43 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 41 ) ],
+"loop": true,
+"name": "run+ACat47",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 30 ) ],
+"loop": true,
+"name": "run+catana",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 32 ), ExtResource( 50 ), ExtResource( 40 ), ExtResource( 50 ) ],
+"loop": true,
+"name": "run+catlass",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 46 ), ExtResource( 47 ) ],
+"loop": true,
+"name": "run+meowchinegun",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 4.5, 9 )
+extents = Vector2( 4.5, 16.5 )
 
 [sub_resource type="CapsuleShape2D" id=78]
 radius = 6.0
@@ -326,7 +288,7 @@ color = Color( 0.8, 0.0745098, 0.0745098, 1 )
 extents = Vector2( 16, 17.5 )
 
 [node name="Squango" type="KinematicBody2D"]
-position = Vector2( 258, 145 )
+position = Vector2( 1, -1 )
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
@@ -335,13 +297,14 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="."]
 material = ExtResource( 13 )
 position = Vector2( -3.05176e-05, -1 )
-scale = Vector2( 0.5625, 0.625 )
+scale = Vector2( 0.126485, 0.137574 )
 frames = SubResource( 8 )
-animation = "Idle"
+animation = "run+ACat47"
 frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -0.5 )
 shape = SubResource( 3 )
 
 [node name="punchSFX" type="AudioStreamPlayer" parent="."]
