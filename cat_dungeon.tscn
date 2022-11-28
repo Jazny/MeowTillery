@@ -5,7 +5,7 @@
 [ext_resource path="res://caged_grey_cat.tscn" type="PackedScene" id=3]
 [ext_resource path="res://dungeon_to_cafe.tscn" type="PackedScene" id=4]
 [ext_resource path="res://dungeon_to_bedroom.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Bed.tscn" type="PackedScene" id=6]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 653.513, 38.8787 )
@@ -63,26 +63,15 @@ position = Vector2( 193.625, 387.708 )
 rotation = 0.0144674
 shape = SubResource( 1 )
 
-[node name="HUD" parent="." instance=ExtResource( 5 )]
-
-[node name="Bed" parent="." instance=ExtResource( 6 )]
-position = Vector2( 26.6024, 780.089 )
-scale = Vector2( 0.8, 0.8 )
-
-[node name="TextureRect" parent="Bed/Control/DialogBox" index="0"]
-rect_scale = Vector2( 0.4, 0.3 )
-
-[node name="RichTextLabel" parent="Bed/Control/DialogBox" index="1"]
-margin_left = 5.432
-margin_right = -88.424
-rect_scale = Vector2( 1.5, 1.5 )
-
-[node name="Next-indicator" parent="Bed/Control/DialogBox" index="2"]
-position = Vector2( 451.832, 66.4448 )
+[node name="doorL" parent="." instance=ExtResource( 5 )]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 278.793, 644.422 )
 shape = SubResource( 2 )
 
+[node name="HUD" parent="." instance=ExtResource( 7 )]
+
+[editable path="doorL"]
 [editable path="HUD"]
-[editable path="Bed"]
+[editable path="HUD/Interface/HealthBar"]
+[editable path="HUD/Interface/SanityBar"]

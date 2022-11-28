@@ -267,7 +267,7 @@ extents = Vector2( 4.5, 16.5 )
 
 [sub_resource type="CapsuleShape2D" id=78]
 radius = 6.0
-height = 4.0
+height = 26.0
 
 [sub_resource type="ParticlesMaterial" id=79]
 emission_shape = 2
@@ -290,9 +290,6 @@ extents = Vector2( 16, 17.5 )
 [node name="Squango" type="KinematicBody2D"]
 position = Vector2( 1, -1 )
 script = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 material = ExtResource( 13 )
@@ -300,7 +297,6 @@ position = Vector2( -3.05176e-05, -1 )
 scale = Vector2( 0.126485, 0.137574 )
 frames = SubResource( 8 )
 animation = "run+ACat47"
-frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -348,6 +344,7 @@ position = Vector2( 0.5, 0 )
 shape = SubResource( 80 )
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
+[connection signal="area_entered" from="PickupZone" to="PickupZone" method="_on_PickupZone_area_entered"]
 [connection signal="body_entered" from="PickupZone" to="PickupZone" method="_on_PickupZone_body_entered"]
 [connection signal="body_exited" from="PickupZone" to="PickupZone" method="_on_PickupZone_body_exited"]
 
