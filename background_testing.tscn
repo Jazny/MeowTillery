@@ -1,6 +1,6 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
+
 [ext_resource path="res://assets/city_background.png" type="Texture" id=1]
-[ext_resource path="res://Padthai_Timer.gd" type="Script" id=3]
 [ext_resource path="res://SpawnSystem.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/city_stuff/warped city files/ENVIRONMENT/background/near-buildings-bg.png" type="Texture" id=3]
 [ext_resource path="res://Squango.tscn" type="PackedScene" id=9]
@@ -12,7 +12,6 @@
 [ext_resource path="res://Entrance.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Turret.tscn" type="PackedScene" id=22]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=24]
-
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 2674.34, 24.0753 )
@@ -48,6 +47,9 @@ __meta__ = {
 [node name="Mr Godot" parent="." instance=ExtResource( 15 )]
 visible = false
 position = Vector2( 306.515, 36.6137 )
+
+[node name="AnimatedSprite" parent="Mr Godot" index="1"]
+frame = 1
 
 [node name="Squango" parent="." instance=ExtResource( 9 )]
 position = Vector2( 329.193, 75.105 )
