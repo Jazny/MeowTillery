@@ -1,9 +1,9 @@
 extends Popup
 
 func _ready():
-	pass
+	pass 
 
-## popup menu show:
+## popup show:
 func _on_Area2D_body_entered(body):
 	if body is KinematicBody2D:
 		if body.name == "Squango":
@@ -15,7 +15,8 @@ func _on_Area2D_body_entered(body):
 				get_node("Button").visible = true
 				get_node("Button").disabled = false
 
-## popup menu hide:
+
+## popup hide:
 func _on_Area2D_body_exited(body):
 	if body is KinematicBody2D:
 		if body.name == "Squango":
