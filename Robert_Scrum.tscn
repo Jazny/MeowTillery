@@ -116,6 +116,7 @@ extents = Vector2( 27, 10 )
 extents = Vector2( 71.5, 57 )
 
 [node name="Robert_Scrum" type="KinematicBody2D"]
+scale = Vector2( 0.4, 0.4 )
 script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
@@ -123,7 +124,7 @@ material = ExtResource( 10 )
 scale = Vector2( 0.162386, 0.162386 )
 frames = SubResource( 16 )
 animation = "shooting"
-frame = 7
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
