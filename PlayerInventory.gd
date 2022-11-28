@@ -1,11 +1,21 @@
 extends Node
 
+signal active_item_updated
+
 const SlotClass = preload("Inventory_Panel.gd")
 const ItemClass = preload("Inventory/Test_Item.gd")
 const NUM_INVENTORY_SLOTS = 20
+const NUM_HOTBAR_SLOTS = 8
+
+var active_item_slot = 0
+
 
 var inventory = {
 	0: ["Tree Branch", 1]
+}
+
+var hotbar = {
+	0: ["Tree Branch", 1],  #--> slot_index: [item_name, item_quantity]
 }
 
 func add_item(item_name, item_quantity):
@@ -35,10 +45,33 @@ func update_slot_visual(slot_index, item_name, neoquantity):
 		slot.Item.set_item(item_name, neoquantity)
 
 func remove_item(slot: SlotClass):
-	inventory.erase(slot.slot_index)
+	match slot.SlotType:
+		SlotClass.SlotType.HOTBAR:
+			hotbar.erase(slot.slot_index)
+		SlotClass.SlotType.INVENTORY:
+			inventory.erase(slot.slot_index)
 
 func add_item_to_empty_slot(Item: ItemClass, slot: SlotClass):
-	inventory[slot.slot_index] = [Item.item_name, Item.item_quantity]
+	match slot.SlotType:
+		SlotClass.SlotType.HOTBAR:
+			hotbar[slot.slot_index] = [Item.item_name, Item.item_quantity]
+		SlotClass.SlotType.INVENTORY:
+			inventory[slot.slot_index] = [Item.item_name, Item.item_quantity]
 
 func add_item_quantity(slot: SlotClass, quantity_to_add: int):
-	inventory[slot.slot_index][1] += quantity_to_add
+	match slot.SlotType:
+		SlotClass.SlotType.HOTBAR:
+			hotbar[slot.slot_index][1] += quantity_to_add
+		SlotClass.SlotType.INVENTORY:
+			inventory[slot.slot_index][1] += quantity_to_add
+
+func active_item_scroll_up() -> void:
+	active_item_slot = (active_item_slot + 1) % NUM_HOTBAR_SLOTS
+	emit_signal("active_item_updated")
+
+func active_item_scroll_down() -> void:
+	if active_item_slot == 0:
+		active_item_slot = NUM_HOTBAR_SLOTS - 1
+	else:
+		active_item_slot -= 1
+	emit_signal("active_item_updated")
