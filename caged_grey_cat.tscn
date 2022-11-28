@@ -15,7 +15,7 @@
 [ext_resource path="res://cat_sprites/grey_007.png" type="Texture" id=13]
 [ext_resource path="res://cat_sprites/grey_008.png" type="Texture" id=14]
 [ext_resource path="res://cat_sprites/grey_002_spritesheet.png" type="Texture" id=15]
-[ext_resource path="res://grey_cat_hunger.tscn" type="PackedScene" id=16]
+[ext_resource path="res://HungerBar.gd" type="Script" id=16]
 [ext_resource path="res://cat_sprites/grey_2_death9.png" type="Texture" id=19]
 [ext_resource path="res://cat_sprites/grey_2_death10.png" type="Texture" id=20]
 [ext_resource path="res://cat_sprites/grey_2_death3.png" type="Texture" id=21]
@@ -133,12 +133,28 @@ shape = SubResource( 8 )
 
 [node name="AnimationPlayer" parent="." instance=ExtResource( 7 )]
 
-[node name="grey_cat_hunger" parent="." instance=ExtResource( 16 )]
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="HungerBar" type="TextureProgress" parent="Control"]
+margin_left = -50.1256
+margin_top = -126.404
+margin_right = -10.1256
+margin_bottom = -86.4036
+script = ExtResource( 16 )
+
+[node name="Timer" type="Timer" parent="Control/HungerBar"]
 
 [connection signal="pressed" from="Popup/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Popup/Button" to="Popup" method="_on_Button_pressed"]
 [connection signal="pressed" from="Popup/Button" to="Area2D" method="_on_Button_pressed"]
+[connection signal="pressed" from="Popup/Button" to="Control/HungerBar" method="_on_Button_pressed"]
 [connection signal="pressed" from="Popup/Button2" to="." method="_on_Button2_pressed"]
 [connection signal="pressed" from="Popup/Button2" to="Popup" method="_on_Button2_pressed"]
 [connection signal="body_entered" from="Area2D" to="Popup" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Popup" method="_on_Area2D_body_exited"]
+[connection signal="timeout" from="Control/HungerBar/Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Control/HungerBar/Timer" to="Popup" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Control/HungerBar/Timer" to="Area2D" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Control/HungerBar/Timer" to="Control/HungerBar" method="_on_Timer_timeout"]

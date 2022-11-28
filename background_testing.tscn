@@ -48,9 +48,6 @@ __meta__ = {
 visible = false
 position = Vector2( 306.515, 36.6137 )
 
-[node name="AnimatedSprite" parent="Mr Godot" index="1"]
-frame = 1
-
 [node name="Squango" parent="." instance=ExtResource( 9 )]
 position = Vector2( 329.193, 75.105 )
 scale = Vector2( 0.780755, 0.900815 )

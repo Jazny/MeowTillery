@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/[YT2mp3.info] - Punch Sound Effect - Gaming SFX (320kbps) 2.mp3-08aec84727e3632f4a4ac803cace446b.mp3str"
+
+[deps]
+
+source_file="res://Audio/[YT2mp3.info] - Punch Sound Effect - Gaming SFX (320kbps) 2.mp3"
+dest_files=[ "res://.import/[YT2mp3.info] - Punch Sound Effect - Gaming SFX (320kbps) 2.mp3-08aec84727e3632f4a4ac803cace446b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
