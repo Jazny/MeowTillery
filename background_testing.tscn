@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=2]
-
+[gd_scene load_steps=15 format=2]
 [ext_resource path="res://assets/city_background.png" type="Texture" id=1]
 [ext_resource path="res://Padthai_Timer.gd" type="Script" id=3]
+[ext_resource path="res://SpawnSystem.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/city_stuff/warped city files/ENVIRONMENT/background/near-buildings-bg.png" type="Texture" id=3]
 [ext_resource path="res://Squango.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Audio/[YT2mp3.info] - Super Mario Bros. Theme Song (320kbps).mp3" type="AudioStream" id=10]
 [ext_resource path="res://Audio/[YT2mp3.info] - Mario Jump - Gaming Sound Effect (HD) (320kbps).mp3" type="AudioStream" id=11]
@@ -11,10 +12,15 @@
 [ext_resource path="res://Entrance.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Turret.tscn" type="PackedScene" id=22]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=24]
-[ext_resource path="res://minion.tscn" type="PackedScene" id=25]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 2674.34, 24.0753 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10, 111.23 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 10, 70.6868 )
 
 [node name="background_testing" type="Node2D"]
 position = Vector2( -48, 352 )
@@ -32,7 +38,7 @@ position = Vector2( 29.1367, 362.206 )
 shape = SubResource( 1 )
 
 [node name="Entrance" parent="." instance=ExtResource( 16 )]
-position = Vector2( 320.689, 64.7781 )
+position = Vector2( 484.045, 66.1863 )
 scale = Vector2( 0.484684, 0.627367 )
 __meta__ = {
 "_edit_group_": true
@@ -43,7 +49,7 @@ visible = false
 position = Vector2( 306.515, 36.6137 )
 
 [node name="Squango" parent="." instance=ExtResource( 9 )]
-position = Vector2( 177.885, -118.29 )
+position = Vector2( 329.193, 75.105 )
 scale = Vector2( 0.780755, 0.900815 )
 __meta__ = {
 "_edit_group_": true
@@ -61,6 +67,12 @@ volume_db = -21.881
 stream = ExtResource( 13 )
 volume_db = -7.866
 
+[node name="Camera2D" type="Camera2D" parent="Squango"]
+current = true
+smoothing_enabled = true
+smoothing_speed = 20.0
+offset_v = -1.0
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
 volume_db = -16.605
@@ -73,6 +85,35 @@ scale = Vector2( 0.192621, 0.192621 )
 [node name="minion" parent="." instance=ExtResource( 25 )]
 position = Vector2( 257.614, 53.0429 )
 scale = Vector2( 0.230633, 0.286047 )
+
+[node name="HUD" parent="." instance=ExtResource( 24 )]
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="SpawnSystem" parent="." instance=ExtResource( 2 )]
+
+[node name="RightWall" type="Sprite" parent="."]
+position = Vector2( 758.668, -31.4502 )
+scale = Vector2( 1, 1.27261 )
+texture = ExtResource( 3 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="RightWall"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall/StaticBody2D"]
+position = Vector2( -223.242, -4.17203 )
+shape = SubResource( 2 )
+
+[node name="LeftWall" type="Sprite" parent="."]
+position = Vector2( -660.867, -115.943 )
+scale = Vector2( 1, 2.0295 )
+texture = ExtResource( 3 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="LeftWall"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall/StaticBody2D"]
+position = Vector2( 233.164, 31.8736 )
+shape = SubResource( 3 )
 
 [node name="HUD" parent="." instance=ExtResource( 24 )]
 
