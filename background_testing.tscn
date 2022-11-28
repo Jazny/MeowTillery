@@ -13,6 +13,7 @@
 [ext_resource path="res://Turret.tscn" type="PackedScene" id=22]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=24]
 
+
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 2674.34, 24.0753 )
 
@@ -81,10 +82,6 @@ autoplay = true
 [node name="Turret" parent="." instance=ExtResource( 22 )]
 position = Vector2( 59.8855, 12.2046 )
 scale = Vector2( 0.192621, 0.192621 )
-
-[node name="minion" parent="." instance=ExtResource( 25 )]
-position = Vector2( 257.614, 53.0429 )
-scale = Vector2( 0.230633, 0.286047 )
 
 [node name="HUD" parent="." instance=ExtResource( 24 )]
 __meta__ = {
