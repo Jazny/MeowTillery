@@ -4,6 +4,7 @@
 [ext_resource path="res://Turret-1.png.png" type="Texture" id=2]
 
 [node name="Turret" type="Node2D"]
+scale = Vector2( 0.25, 0.25 )
 
 [node name="Sprite" type="Sprite" parent="." groups=["need_player"]]
 position = Vector2( -2, 2 )
