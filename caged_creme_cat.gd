@@ -1,5 +1,6 @@
 extends Node2D
 
+const Catlass = preload("res://Inventory/ItemDropCatlass.tscn")
 func _ready():
 	get_node("creme_cat_chilling").play("default")
 	
@@ -8,6 +9,8 @@ func _on_Button_pressed():
 	get_node("creme_cat_chilling").hide()
 	get_node("Cage").hide()
 	get_node("AnimationPlayer").play("Weapon Unlocked")
+	var catlass = Catlass.instance()
+	get_parent().add_child(catlass)
 
 
 func _on_Button2_pressed():

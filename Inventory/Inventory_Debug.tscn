@@ -1,8 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
+[ext_resource path="res://Inventory/ItemDropCatana.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Inventory/ItemDropCatlass.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Inventory/ItemDropACat-47.tscn" type="PackedScene" id=3]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Inventory/ItemDropMeowchineGun.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Joey.jpg" type="Texture" id=7]
-[ext_resource path="res://Inventory/ItemDropLatte.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Floor.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Inventory/ItemDrop.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Squango.tscn" type="PackedScene" id=15]
@@ -12,6 +15,12 @@
 extents = Vector2( 513, 61.5 )
 
 [node name="World" type="Node2D"]
+
+[node name="ACat-47" parent="." instance=ExtResource( 3 )]
+position = Vector2( 693, 436 )
+
+[node name="Catlass" parent="." instance=ExtResource( 2 )]
+position = Vector2( 824, 489 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( 516, 571 )
@@ -41,25 +50,16 @@ position = Vector2( 465, 495 )
 [node name="Stick4" parent="." instance=ExtResource( 13 )]
 position = Vector2( 465, 495 )
 
-[node name="Latte" parent="." instance=ExtResource( 11 )]
-position = Vector2( 372, 267 )
-
-[node name="Latte2" parent="." instance=ExtResource( 11 )]
-position = Vector2( 591, 364 )
-
 [node name="Sword" parent="." instance=ExtResource( 16 )]
 position = Vector2( 858, 335 )
-
-[node name="Sword2" parent="." instance=ExtResource( 16 )]
-position = Vector2( 946, 413 )
-
-[node name="Sword3" parent="." instance=ExtResource( 16 )]
-position = Vector2( 746, 353 )
-
-[node name="Sword4" parent="." instance=ExtResource( 16 )]
-position = Vector2( 815, 234 )
 
 [node name="HUD" parent="." instance=ExtResource( 4 )]
 
 [node name="Squango" parent="." instance=ExtResource( 15 )]
 position = Vector2( 184, 279 )
+
+[node name="Catana" parent="." instance=ExtResource( 1 )]
+position = Vector2( 279, 350 )
+
+[node name="MeowchineGun" parent="." instance=ExtResource( 5 )]
+position = Vector2( 381, 433 )
