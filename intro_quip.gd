@@ -5,6 +5,7 @@ onready var exposition = get_node("Control/Label")
 
 func _ready():
 	scenes.play("scene 1")
+	$AnimationPlayer.play("fade in")
 	scenes.centered = true
 	exposition.autowrap = true
 	exposition.set_align(Label.ALIGN_CENTER)
@@ -29,6 +30,8 @@ func _process(delta):
 			scenes.play("scene 6")
 			exposition.text = ""
 		elif (scenes.animation == "scene 6"):
+			$AnimationPlayer.play("fade out")
+			yield(get_tree().create_timer(2.0), "timeout")
 			get_tree().change_scene("res://background_testing.tscn")
 
 func _on_intro_scenes_animation_finished():
