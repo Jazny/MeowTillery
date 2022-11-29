@@ -14,10 +14,3 @@ func start_invincibility(invincibility_duration):
 	yield(get_tree().create_timer(invincibility_duration),"timeout")
 	collision_shape.set_deferred("disabled", false)
 	is_invincible = false
-
-
-#func _on_RHurtbox_area_entered(area):
-#	if area.damage != 0:
-#		whiten_material.set_shader_param("whiten", true)
-#		yield(get_tree().create_timer(whiten_duration), "timeout")
-#		whiten_material.set_shader_param("whiten", false)

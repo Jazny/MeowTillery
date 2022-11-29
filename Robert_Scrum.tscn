@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Robert_Scrum.gd" type="Script" id=1]
 [ext_resource path="res://Robert_Scrum/Robert_Scrum_Swing.png" type="Texture" id=2]
@@ -10,8 +10,6 @@
 [ext_resource path="res://RHurtbox.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Blink.tscn" type="PackedScene" id=9]
 [ext_resource path="res://white_material.tres" type="Material" id=10]
-[ext_resource path="res://HealthBar.tscn" type="PackedScene" id=11]
-[ext_resource path="res://RHealthBar.gd" type="Script" id=12]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -124,7 +122,7 @@ material = ExtResource( 10 )
 scale = Vector2( 0.162386, 0.162386 )
 frames = SubResource( 16 )
 animation = "shooting"
-frame = 2
+frame = 7
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -173,23 +171,11 @@ shape = SubResource( 21 )
 
 [node name="Blinker" parent="." instance=ExtResource( 9 )]
 
-[node name="HealthBar" parent="." instance=ExtResource( 11 )]
-script = ExtResource( 12 )
-
-[node name="Health" parent="HealthBar" index="0"]
-margin_left = -1448.0
-margin_top = -190.0
-margin_right = -738.0
-margin_bottom = 99.9999
-rect_scale = Vector2( 0.2, 0.2 )
-
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_PlayerDetector_body_entered"]
 [connection signal="body_exited" from="PlayerDetector" to="." method="_on_PlayerDetector_body_exited"]
 [connection signal="body_entered" from="AttackDetector" to="." method="_on_AttackDetector_body_entered"]
 [connection signal="body_exited" from="AttackDetector" to="." method="_on_AttackDetector_body_exited"]
 [connection signal="body_entered" from="SquangoSeeker" to="." method="_on_SquangoSeeker_body_entered"]
-[connection signal="health_updated" from="Robert_Scrum_Stats" to="HealthBar" method="_on_Robert_Scrum_Stats_health_updated"]
 [connection signal="area_entered" from="RHurtbox" to="." method="_on_RHurtbox_area_entered"]
 
 [editable path="RHurtbox"]
-[editable path="HealthBar"]

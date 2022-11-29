@@ -12,8 +12,15 @@ var attackCooldown = false
 var squango = null
 var flipRequired = false
 
+const invincibility_duration = 0.5
+onready var Cstats = $Charger_Stats
+onready var hurtbox = $RHurtbox
+onready var blinker = $Blinker
+
 func _ready():
 	isInRange = false
+	Cstats.connect("killed", self, "_die")
+	#$HealthBar/Health.fill_mode = 0
 	
 func _process(_delta):
 	if (isInRange):
@@ -43,14 +50,21 @@ func _attack():
 	if (flipRequired):
 		scale.x = -scale.x
 		flipRequired = false
+		if($HealthBar/Health.fill_mode == 1):
+			$HealthBar/Health.fill_mode = 0
+		else:
+			$HealthBar/Health.fill_mode = 1
+		
 		
 	velocity = move_and_slide(velocity, Vector2.UP)
 
 func move_character():
 	if (!is_moving_right):
 		velocity.x = -SPEED
+		$HealthBar/Health.fill_mode = 0
 	else:
 		velocity.x = SPEED
+		$HealthBar/Health.fill_mode = 1
 		
 	velocity.y += GRAVITY
 	
@@ -59,6 +73,9 @@ func move_character():
 	
 	velocity = move_and_slide(velocity, Vector2.UP)
 
+func _die():
+	queue_free()
+
 func _on_AttackDetector_body_entered(body):
 	if (body.name == "Squango"):
 		print("hit successful")
@@ -66,9 +83,11 @@ func _on_AttackDetector_body_entered(body):
 		if (is_moving_right):
 			scale.x = -scale.x
 			is_moving_right = false
+			$HealthBar/Health.fill_mode = 1
 		else:
 			is_moving_right = true
 			scale.x = -scale.x
+			$HealthBar/Health.fill_mode = 0
 
 func _on_SquangoSeeker_body_entered(body):
 	if (body.name == "Squango"):
@@ -79,3 +98,12 @@ func _on_SquangoSeeker_body_entered(body):
 func _on_SquangoSeeker_body_exited(body):
 	if (body.name == "Squango"):
 		isInRange = false
+
+
+func _on_RHurtbox_area_entered(area):
+	if (area.name == "Hurtbox"):
+		if area.damage != 0 and Cstats.health > 0:
+			if !hurtbox.is_invincible:
+				blinker.start_blinking(self, invincibility_duration)
+				hurtbox.start_invincibility(invincibility_duration)
+				Cstats.health-=area.damage
