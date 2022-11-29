@@ -19,6 +19,14 @@ var projectile = preload("res://IngridProjectile.tscn")
 var fireTime = 0.0
 var burstCounter = 0;
 
+const invincibility_duration = 0.5
+onready var Istats = $Ingrid_Stats
+onready var hurtbox = $RHurtbox
+onready var blinker = $Blinker
+
+func _ready():
+	Istats.connect("killed", self, "_die")
+
 func _physics_process(delta):
 	if(player == null):
 		return
@@ -77,12 +85,30 @@ func _move():
 	yVelocity += GRAVITY
 	if(yVelocity > TERMINAL_VELOCITY):
 		yVelocity = TERMINAL_VELOCITY	
-		
+
+
+func _die():
+	queue_free()
+	
+
 func flip():
 	lookingRight = !lookingRight
 	sprite.flip_h = !sprite.flip_h
+	if($BHealthBar/Health.fill_mode == 1):
+			$BHealthBar/Health.fill_mode = 0
+	else:
+			$BHealthBar/Health.fill_mode = 1
 	
 func set_player(p):
 	player = p
 
 
+
+
+func _on_RHurtbox_area_entered(area):
+	if (area.name == "Hurtbox"):
+		if area.damage != 0 and Istats.health > 0:
+			if !hurtbox.is_invincible:
+				blinker.start_blinking(self, invincibility_duration)
+				hurtbox.start_invincibility(invincibility_duration)
+				Istats.health-=area.damage

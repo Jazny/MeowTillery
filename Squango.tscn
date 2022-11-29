@@ -297,11 +297,8 @@ position = Vector2( -3.05176e-05, -1 )
 scale = Vector2( 0.126485, 0.137574 )
 frames = SubResource( 8 )
 animation = "run+ACat47"
-<<<<<<< HEAD
-frame = 1
 =======
-frame = 2
->>>>>>> e2a580a08c8f6f0d6924b85406d1ae5440fc02ba
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
