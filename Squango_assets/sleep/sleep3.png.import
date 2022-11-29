@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Question_mark 2.png-c2ef3812e74fb321c45b34c3afa5bc8e.stex"
+path="res://.import/sleep3.png-20e6ed8f1107de44eec39655b9e9dabc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Dialogue/Question_mark 2.png"
-dest_files=[ "res://.import/Question_mark 2.png-c2ef3812e74fb321c45b34c3afa5bc8e.stex" ]
+source_file="res://Squango_assets/sleep/sleep3.png"
+dest_files=[ "res://.import/sleep3.png-20e6ed8f1107de44eec39655b9e9dabc.stex" ]
 
 [params]
 

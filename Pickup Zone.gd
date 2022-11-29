@@ -17,4 +17,6 @@ func _on_PickupZone_body_exited(body):
 func _on_PickupZone_area_entered(area):
 	if(area.name == "PtArea" and PlayerStat.health > 0):
 		PlayerStat._set_health(PlayerStat.health + 20)
+		self.get_parent().get_parent().get_node("Padthai_Timer").ptCount -= 1
 		area.get_parent().queue_free()
+		

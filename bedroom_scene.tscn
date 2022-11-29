@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Untitled design.png" type="Texture" id=1]
 [ext_resource path="res://Squango.tscn" type="PackedScene" id=2]
 [ext_resource path="res://bedroom_to_dungeon.tscn" type="PackedScene" id=3]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Bed.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Spike.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 644.812, 25.4052 )
@@ -51,17 +52,13 @@ __meta__ = {
 position = Vector2( -1.90588, 1.18782 )
 shape = SubResource( 1 )
 
-[node name="Squango" parent="." instance=ExtResource( 2 )]
-position = Vector2( -483.756, 369.626 )
-scale = Vector2( 3.01495, 3.01495 )
-
 [node name="bedroom_to_dungeon" parent="." instance=ExtResource( 3 )]
 position = Vector2( -529.437, 359.132 )
 
 [node name="HUD" parent="." instance=ExtResource( 4 )]
 
 [node name="Bed" parent="." instance=ExtResource( 5 )]
-position = Vector2( 527.094, 311.326 )
+position = Vector2( 525.923, 325.318 )
 scale = Vector2( 0.778109, 0.778109 )
 
 [node name="DialogBox" parent="Bed/Control" index="0"]
@@ -74,6 +71,14 @@ __meta__ = {
 "_edit_group_": true,
 "_editor_description_": ""
 }
+
+[node name="Squango" parent="." instance=ExtResource( 2 )]
+position = Vector2( -483.756, 369.626 )
+scale = Vector2( 3.01495, 3.01495 )
+
+[node name="Spikes" parent="." instance=ExtResource( 6 )]
+position = Vector2( -207.324, 373.124 )
+scale = Vector2( 0.321818, 0.323768 )
 
 [editable path="HUD"]
 [editable path="HUD/Interface/HealthBar"]
