@@ -16,7 +16,14 @@ func _ready():
 		slots[i].slotType = SlotClass.SlotType.HOTBAR
 		slots[i].slot_index = i
 	initialize_hotbar()
+	update_active_item_label()
 
+func update_active_item_label():
+	if slots[PlayerInventory.active_item_slot].Item != null:
+		active_item_label.text = slots[PlayerInventory.active_item_slot].Item.item_name
+	else:
+		active_item_label.text = ""
+	
 func initialize_hotbar():
 	for i in range(slots.size()):
 		if PlayerInventory.hotbar.has(i):
@@ -39,6 +46,7 @@ func slot_gui_input(event: InputEvent, slot: SlotClass):
 						left_click_same_item(slot)
 			elif slot.Item:
 				left_click_not_holding(slot)
+			update_active_item_label()
 
 func left_click_empty_slot(slot: SlotClass):
 	PlayerInventory.add_item_to_empty_slot(find_parent("HUD").holding_item, slot)
@@ -55,11 +63,11 @@ func left_click_different_item(event: InputEvent, slot: SlotClass):
 	find_parent("HUD").holding_item = temp_item
 
 func left_click_same_item(slot: SlotClass):
-	var stack_size = int(JsonData.item_data[slot.item.item_name]["StackSize"])
-	var able_to_add = stack_size - slot.item.item_quantity
+	var stack_size = int(JsonData.item_data[slot.Item.item_name]["StackSize"])
+	var able_to_add = stack_size - slot.Item.item_quantity
 	if able_to_add >= find_parent("HUD").holding_item.item_quantity:
 		PlayerInventory.add_item_quantity(slot, find_parent("HUD").holding_item.item_quantity)
-		slot.item.add_item_quantity(find_parent("HUD").holding_item.item_quantity)
+		slot.Item.add_item_quantity(find_parent("HUD").holding_item.item_quantity)
 		find_parent("HUD").holding_item.queue_free()
 		find_parent("HUD").holding_item = null
 	else:

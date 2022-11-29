@@ -1,10 +1,14 @@
+
 [gd_scene load_steps=20 format=2]
+
 
 [ext_resource path="res://assets/city_background.png" type="Texture" id=1]
 [ext_resource path="res://SpawnSystem.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/city_stuff/warped city files/ENVIRONMENT/background/near-buildings-bg.png" type="Texture" id=3]
+
 [ext_resource path="res://Robert_Scrum.tscn" type="PackedScene" id=4]
 [ext_resource path="res://minion.tscn" type="PackedScene" id=5]
+
 [ext_resource path="res://Padthai_Timer.gd" type="Script" id=6]
 [ext_resource path="res://Kendall_Jenner.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Squango.tscn" type="PackedScene" id=9]
@@ -14,7 +18,6 @@
 [ext_resource path="res://Audio/[YT2mp3.info] - Fortnite Death - Sound Effect (HD) (320kbps).mp3" type="AudioStream" id=13]
 [ext_resource path="res://Dialogue/Mr Godot.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Entrance.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Turret.tscn" type="PackedScene" id=22]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=24]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -26,7 +29,7 @@ extents = Vector2( 10, 111.23 )
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 10, 70.6868 )
 
-[node name="background_testing" type="Node2D"]
+[node name="World" type="Node2D"]
 position = Vector2( -48, 352 )
 scale = Vector2( 2.82205, 2.13035 )
 
@@ -85,10 +88,6 @@ stream = ExtResource( 10 )
 volume_db = -16.605
 autoplay = true
 
-[node name="Turret" parent="." instance=ExtResource( 22 )]
-position = Vector2( 59.8855, 12.2046 )
-scale = Vector2( 0.192621, 0.192621 )
-
 [node name="SpawnSystem" parent="." instance=ExtResource( 2 )]
 
 [node name="RightWall" type="Sprite" parent="."]
@@ -120,6 +119,7 @@ wait_time = 5.0
 autostart = true
 script = ExtResource( 6 )
 
+
 [node name="Robert_Scrum" parent="." instance=ExtResource( 4 )]
 position = Vector2( -19.8437, 46.4712 )
 
@@ -128,6 +128,7 @@ position = Vector2( 111.621, 66.6557 )
 
 [node name="minion" parent="." instance=ExtResource( 5 )]
 position = Vector2( 177.531, 65.2475 )
+
 
 [connection signal="timeout" from="Padthai_Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="Padthai_Timer" to="Padthai_Timer" method="_on_Padthai_Timer_timeout"]

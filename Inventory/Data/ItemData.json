@@ -1,17 +1,47 @@
 {
    "Tree Branch": {
-     "Item Category": "Resource",
+     "ItemCategory": "Resource",
      "StackSize": 98,
      "Description": "A tree branch. Did you really need me to describe that to you? Go outside for reference."
    },
    "Latte": {
-   "Item Category": "Resource",
+   "ItemCategory": "Resource",
    "StackSize": 20,
    "Description": "A latte, a very realistic latte that is definitely not a placeholder."
    },
    "Sword": {
-   "Item Category": "Weapon",
+   "ItemCategory": "Weapon",
+   "ItemAttack": 1,
+   "ItemSpeed": 0.75,
    "StackSize": 1,
-   "Description": "A keen and sharp blade that Squango cannot wield yet."
-   }
+   "Description": "A keen and sharp blade that Squango had lying around for no particular reason."
+   },
+   "Catana": {
+   "ItemCategory": "Weapon",
+   "ItemAttack": 2.5,
+   "ItemSpeed": 1,
+   "StackSize": 1,
+   "Description": "A strange weapon that purs for more murder"
+   },
+   "Catlass": {
+   "ItemCategory": "Weapon",
+   "ItemAttack": 5,
+   "ItemSpeed": 0.25,
+   "StackSize": 1,
+   "Description": "Arr, and the heavy swing of a catlass were the last thing that many buccaneers ever heard."
+   },
+   "MeowchineGun": {
+   "ItemCategory": "Weapon",
+   "ItemAttack": 0.33,
+   "FireRate": 10,
+   "StackSize": 1,
+   "Description": "This is a tactical SAM, Squad Automatic Meowtillery"
+   },
+   "ACat-47": {
+   "ItemCategory": "Weapon",
+   "ItemAttack": 0.40,
+   "FireRate": 7.5,
+   "StackSize": 1,
+   "Description": "Produced by the Soviet Union, this Meowtillery has seen war from Meowghanistan to  South Ameowrica. Meow."
+   },
 }
