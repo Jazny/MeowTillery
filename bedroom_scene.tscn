@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Untitled design.png" type="Texture" id=1]
 [ext_resource path="res://Squango.tscn" type="PackedScene" id=2]
 [ext_resource path="res://bedroom_to_dungeon.tscn" type="PackedScene" id=3]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Bed.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Padthai.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 644.812, 25.4052 )
@@ -76,11 +75,7 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Padthai" parent="." instance=ExtResource( 6 )]
-position = Vector2( -319.771, -52.4706 )
-
 [editable path="HUD"]
 [editable path="HUD/Interface/HealthBar"]
 [editable path="HUD/Interface/SanityBar"]
 [editable path="Bed"]
-[editable path="Padthai"]

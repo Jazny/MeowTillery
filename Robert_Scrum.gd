@@ -61,7 +61,6 @@ func move_character():
 		if (!is_moving_right):
 			flipRequired = true
 			#$HealthBar/Health.FILL_LEFT_TO_RIGHT = true
-			$HealthBar/Health.fill_mode = 1
 	  
 	else:
 		smartDirection = position.direction_to(squango.position)
@@ -72,18 +71,22 @@ func move_character():
 				flipRequired = true
 			
 			is_moving_right = true
+			
 
 		else:
 			velocity.x = -SPEED
 			if (is_moving_right):
 				flipRequired = true
-				$HealthBar/Health.fill_mode = 0
 				#$HealthBar/Health.FILL_RIGHT_TO_LEFT = true
 
 			is_moving_right = false
 		
 	if (flipRequired):
 		scale.x = -scale.x
+		#if($HealthBar/Health.fill_mode == 1):
+		#	$HealthBar/Health.fill_mode = 0
+		#else:
+		#	$HealthBar/Health.fill_mode = 1
 		
 		
 		flipRequired = false
@@ -118,8 +121,9 @@ func _on_SquangoSeeker_body_entered(body):
 
 
 func _on_RHurtbox_area_entered(area):
-	if area.damage != 0 and Rstats.health > 0:
-		if !hurtbox.is_invincible:
-			blinker.start_blinking(self, invincibility_duration)
-			hurtbox.start_invincibility(invincibility_duration)
-			Rstats.health-=area.damage
+	if (area.name == "Hurtbox"):
+		if area.damage != 0 and Rstats.health > 0:
+			if !hurtbox.is_invincible:
+				blinker.start_blinking(self, invincibility_duration)
+				hurtbox.start_invincibility(invincibility_duration)
+				Rstats.health-=area.damage

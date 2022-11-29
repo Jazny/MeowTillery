@@ -1,9 +1,14 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://minion.gd" type="Script" id=1]
 [ext_resource path="res://minion/goomba.png" type="Texture" id=2]
 [ext_resource path="res://AttackDetector.gd" type="Script" id=3]
 [ext_resource path="res://StompDetector.gd" type="Script" id=4]
+[ext_resource path="res://Minion_Stats.tscn" type="PackedScene" id=5]
+[ext_resource path="res://RHurtbox.tscn" type="PackedScene" id=6]
+[ext_resource path="res://HealthBar.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Blink.tscn" type="PackedScene" id=8]
+[ext_resource path="res://MHealthBar.gd" type="Script" id=9]
 
 [sub_resource type="AtlasTexture" id=7]
 flags = 4
@@ -52,6 +57,9 @@ extents = Vector2( 4.5, 32 )
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 31, 2 )
 
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 54, 32 )
+
 [node name="minion" type="KinematicBody2D"]
 scale = Vector2( 0.25, 0.25 )
 script = ExtResource( 1 )
@@ -79,5 +87,33 @@ script = ExtResource( 4 )
 position = Vector2( 0, -35 )
 shape = SubResource( 8 )
 
+[node name="Minion_Stats" parent="." instance=ExtResource( 5 )]
+
+[node name="RHurtbox" parent="." instance=ExtResource( 6 )]
+
+[node name="CollisionShape2D" parent="RHurtbox" index="0"]
+position = Vector2( 2, 0 )
+shape = SubResource( 9 )
+
+[node name="Blinker" parent="." instance=ExtResource( 8 )]
+
+[node name="HealthBar" parent="." instance=ExtResource( 7 )]
+margin_left = -64.0
+margin_top = -72.0
+margin_right = -24.0
+margin_bottom = -32.0
+rect_scale = Vector2( 0.2, 0.2 )
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_group_": true,
+"_editor_description_": ""
+}
+
 [connection signal="body_entered" from="AttackDetector" to="." method="_on_AttackDetector_body_entered"]
 [connection signal="body_entered" from="StompDetector" to="." method="_on_StompDetector_body_entered"]
+[connection signal="health_updated" from="Minion_Stats" to="HealthBar" method="_on_Minion_Stats_health_updated"]
+[connection signal="area_entered" from="RHurtbox" to="." method="_on_RHurtbox_area_entered"]
+
+[editable path="RHurtbox"]
+[editable path="Blinker"]
+[editable path="HealthBar"]

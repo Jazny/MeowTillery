@@ -9,6 +9,8 @@ var jenner = preload("res://Kendall_Jenner.tscn")
 var scrum = preload("res://Robert_Scrum.tscn")
 var ingrid = preload("res://Ingrid.tscn")
 var turret = preload("res://Turret.tscn")
+var BB = preload("res://BossBar.tscn")
+var MBB = preload("res://MiniBossBar.tscn")
 
 
 # Called when the node enters the scene tree for the first time.
@@ -90,6 +92,8 @@ func _newWave():
 			var minion5 = minion.instance()
 			var robert = scrum.instance()
 			
+			var TheMiniBossBar = MBB.instance()
+			
 			
 			minion1.position = Vector2(-200, 60)
 			minion2.position = Vector2(-250, 60)
@@ -97,6 +101,7 @@ func _newWave():
 			robert.position = Vector2(-350, 60)
 			minion4.position = Vector2(-400, 60)
 			minion5.position = Vector2(-450, 60)
+			TheMiniBossBar.rect_position = Vector2(400,480)
 			
 			minion1.is_moving_right = true
 			minion1.scale.x = -minion1.scale.x
@@ -112,7 +117,14 @@ func _newWave():
 			add_child(minion5)
 			add_child(robert)
 			
+
+			get_parent().get_node("HUD").get_node("Interface").add_child(TheMiniBossBar)
+			robert.get_node("Robert_Scrum_Stats").connect("health_updated",TheMiniBossBar, "_on_Robert_Scrum_Stats_health_updated")
+			robert.get_node("Robert_Scrum_Stats").connect("killed", TheMiniBossBar, "queue_free")
+			
+
 			WaveTracker.enemiesRemaining = 6
+
 		4:
 			var minion1 = minion.instance()
 			var minion2 = minion.instance()
@@ -139,8 +151,10 @@ func _newWave():
 			add_child(minion3)
 			add_child(minion4)
 			add_child(minion5)
+
 			
 			WaveTracker.enemiesRemaining = 5
+
 		5:
 			var minion1 = minion.instance()
 			var minion2 = minion.instance()
@@ -211,10 +225,15 @@ func _newWave():
 			WaveTracker.enemiesRemaining = 7
 		7:
 			var TheIngrid = ingrid.instance()
+			var TheBossBar = BB.instance()
 			
 			TheIngrid.position = Vector2(-350, 60)
+			TheBossBar.rect_position = Vector2(400,480)
 			
 			add_child(TheIngrid)
+			get_parent().get_node("HUD").get_node("Interface").add_child(TheBossBar)
+			TheIngrid.get_node("Ingrid_Stats").connect("health_updated",TheBossBar, "_on_Ingrid_Stats_health_updated")
+			TheIngrid.get_node("Ingrid_Stats").connect("killed", TheBossBar, "queue_free")
 			
 			WaveTracker.enemiesRemaining = 1
 			
