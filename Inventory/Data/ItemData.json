@@ -16,4 +16,18 @@
    "StackSize": 1,
    "Description": "A keen and sharp blade that Squango cannot wield yet."
    }
+   "Catana": {
+   "ItemCategory": "Weapon",
+   "ItemAttack": 2.5,
+   "ItemSpeed": 1,
+   "StackSize": 1,
+   "Description": "A strange weapon that purs for more murder"
+   }
+   "Catlass": {
+   "ItemCategory": "Weapon",
+   "ItemAttack": 5,
+   "ItemSpeed": 0.25,
+   "StackSize": 1,
+   "Description": "Arr, and the heavy swing of a catlass were the last thing that many buccaneers ever heard."
+   }
 }
