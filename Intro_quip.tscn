@@ -142,7 +142,7 @@ anims/RESET = SubResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="AnimationPlayer"]
 margin_left = -24.0
-margin_top = 24.0
+margin_top = -18.0
 margin_right = 1041.0
 margin_bottom = 714.0
 color = Color( 0, 0, 0, 1 )
