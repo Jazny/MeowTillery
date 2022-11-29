@@ -17,6 +17,7 @@ func _ready():
 	equip_slots[0].slotType = SlotClass.SlotType.SHIRT
 	equip_slots[1].slotType = SlotClass.SlotType.PANTS
 	equip_slots[2].slotType = SlotClass.SlotType.SHOES
+	equip_slots[3].slotType = SlotClass.SlotType.WEAPONS
 	
 	intialize_inventory()
 	initialize_equips()
@@ -58,6 +59,8 @@ func able_to_put_into_slot(slot: SlotClass):
 		return holding_item_category == "Pants"
 	elif slot.slotType == SlotClass.SlotType.SHOES:
 		return holding_item_category == "Shoes"
+	elif slot.slotType == SlotClass.SlotType.WEAPONS:
+		return holding_item_category == "Weapon"
 	return true
 
 func left_click_empty_slot(slot: SlotClass):
