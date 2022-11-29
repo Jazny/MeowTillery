@@ -6,7 +6,7 @@ func _ready():
 
 
 func _on_Start_pressed():
-	get_tree().change_scene("res://background_testing.tscn")
+	get_tree().change_scene("res://Intro_quip.tscn")
 	PlayerStat._set_health(100)
 	PlayerStat._set_sanity(100)
 	
