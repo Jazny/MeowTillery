@@ -1,15 +1,15 @@
 [gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://cage.png" type="Texture" id=1]
-[ext_resource path="res://cat_sprites/creme_001_eating/creme_001_eating5.png" type="Texture" id=2]
+[ext_resource path="res://cat_sprites/creme_001_eating5.png" type="Texture" id=2]
 [ext_resource path="res://cat_sprites/creme_001.png" type="Texture" id=3]
-[ext_resource path="res://cat_sprites/creme_001_eating/creme_001_eating4.png" type="Texture" id=4]
-[ext_resource path="res://cat_sprites/creme_001_eating/creme_001_eating3.png" type="Texture" id=5]
+[ext_resource path="res://cat_sprites/creme_001_eating4.png" type="Texture" id=4]
+[ext_resource path="res://cat_sprites/creme_001_eating3.png" type="Texture" id=5]
 [ext_resource path="res://assets/WEAPONIZE.png" type="Texture" id=6]
-[ext_resource path="res://grey_cat_hunger.tscn" type="PackedScene" id=7]
+[ext_resource path="res://creme_HungerBar.gd" type="Script" id=7]
 [ext_resource path="res://assets/FEED.png" type="Texture" id=8]
-[ext_resource path="res://cat_sprites/creme_001_eating/creme_001_eating1.png" type="Texture" id=9]
-[ext_resource path="res://cat_sprites/creme_001_eating/creme_001_eating2.png" type="Texture" id=10]
+[ext_resource path="res://cat_sprites/creme_001_eating1.png" type="Texture" id=9]
+[ext_resource path="res://cat_sprites/creme_001_eating2.png" type="Texture" id=10]
 [ext_resource path="res://caged_creme_cat.gd" type="Script" id=11]
 [ext_resource path="res://creme_cat_popup.gd" type="Script" id=12]
 [ext_resource path="res://caged_creme_cat_Area2D.gd" type="Script" id=13]
@@ -271,8 +271,6 @@ script = ExtResource( 13 )
 position = Vector2( -8.01153, -29.5282 )
 shape = SubResource( 8 )
 
-[node name="grey_cat_hunger" parent="." instance=ExtResource( 7 )]
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 19 )
 "anims/Weapon Unlocked" = SubResource( 18 )
@@ -295,10 +293,26 @@ modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 519, 509 )
 texture = ExtResource( 15 )
 
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="HungerBar" type="TextureProgress" parent="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 7 )
+
+[node name="Timer" type="Timer" parent="Control/HungerBar"]
+
 [connection signal="pressed" from="Popup/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Popup/Button" to="Popup" method="_on_Button_pressed"]
 [connection signal="pressed" from="Popup/Button" to="Area2D" method="_on_Button_pressed"]
+[connection signal="pressed" from="Popup/Button" to="Control/HungerBar" method="_on_Button_pressed"]
 [connection signal="pressed" from="Popup/Button2" to="." method="_on_Button2_pressed"]
 [connection signal="pressed" from="Popup/Button2" to="Popup" method="_on_Button2_pressed"]
 [connection signal="body_entered" from="Area2D" to="Popup" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Popup" method="_on_Area2D_body_exited"]
+[connection signal="timeout" from="Control/HungerBar/Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Control/HungerBar/Timer" to="Popup" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Control/HungerBar/Timer" to="Area2D" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Control/HungerBar/Timer" to="Control/HungerBar" method="_on_Timer_timeout"]

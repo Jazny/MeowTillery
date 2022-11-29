@@ -1,0 +1,159 @@
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 1) extends Node2D
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 2) 
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 3) func _ready():
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 4) 	$AnimationPlayer.play("fade_in")
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 5) 	yield(get_tree().create_timer(5), "timeout")
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 6) 	get_tree().change_scene("res://background_testing.tscn")
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 1) extends Node2D
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 2) 
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 3) func _ready():
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 4) 	$AnimationPlayer.play("fade_in")
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 5) 	yield(get_tree().create_timer(5), "timeout")
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 6) 	get_tree().change_scene("res://background_testing.tscn")
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400  1) [gd_scene load_steps=5 format=2]
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400  2) 
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400  3) [ext_resource path="res://StartupScene.gd" type="Script" id=1]
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400  4) [ext_resource path="res://Meowtillary (14).png" type="Texture" id=7]
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400  5) 
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400  6) [sub_resource type="Animation" id=1]
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400  7) length = 0.001
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400  8) tracks/0/type = "value"
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400  9) tracks/0/path = NodePath("ColorRect:color")
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 10) tracks/0/interp = 1
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 11) tracks/0/loop_wrap = true
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 12) tracks/0/imported = false
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 13) tracks/0/enabled = true
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 14) tracks/0/keys = {
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 15) "times": PoolRealArray( 0 ),
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 16) "transitions": PoolRealArray( 1 ),
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 17) "update": 0,
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 18) "values": [ Color( 1, 1, 1, 0 ) ]
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 19) }
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 20) 
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 21) [sub_resource type="Animation" id=2]
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 22) resource_name = "fade_in"
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 23) length = 5.0
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 24) tracks/0/type = "value"
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 25) tracks/0/path = NodePath("ColorRect:color")
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 26) tracks/0/interp = 1
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 27) tracks/0/loop_wrap = true
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 28) tracks/0/imported = false
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 29) tracks/0/enabled = true
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 30) tracks/0/keys = {
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 31) "times": PoolRealArray( 0.1, 2, 2.3, 2.6, 3, 4 ),
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 32) "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 33) "update": 0,
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 34) "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.32549 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.176471 ), Color( 1, 1, 1, 0 ) ]
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 35) }
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 36) 
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 37) [node name="StartupScene" type="Node2D"]
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 38) script = ExtResource( 1 )
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 39) 
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 40) [node name="Sprite" type="Sprite" parent="."]
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 41) position = Vector2( 525, 302 )
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 42) scale = Vector2( 0.932031, 0.920833 )
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 43) texture = ExtResource( 7 )
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 44) 
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 45) [node name="ColorRect" type="ColorRect" parent="."]
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 46) margin_left = 1164.0
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 47) margin_top = 666.0
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 48) margin_right = 1204.0
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 49) margin_bottom = 706.0
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 50) rect_scale = Vector2( -33.709, -18.2213 )
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 51) color = Color( 1, 1, 1, 0 )
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 52) 
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 53) [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 54) anims/RESET = SubResource( 1 )
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 55) anims/fade_in = SubResource( 2 )
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400  1) [gd_scene load_steps=5 format=2]
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400  2) 
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400  3) [ext_resource path="res://StartupScene.gd" type="Script" id=1]
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400  4) [ext_resource path="res://Meowtillary (14).png" type="Texture" id=7]
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400  5) 
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400  6) [sub_resource type="Animation" id=1]
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400  7) length = 0.001
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400  8) tracks/0/type = "value"
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400  9) tracks/0/path = NodePath("ColorRect:color")
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 10) tracks/0/interp = 1
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 11) tracks/0/loop_wrap = true
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 12) tracks/0/imported = false
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 13) tracks/0/enabled = true
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 14) tracks/0/keys = {
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 15) "times": PoolRealArray( 0 ),
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 16) "transitions": PoolRealArray( 1 ),
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 17) "update": 0,
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 18) "values": [ Color( 1, 1, 1, 0 ) ]
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 19) }
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 20) 
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 21) [sub_resource type="Animation" id=2]
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 22) resource_name = "fade_in"
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 23) length = 5.0
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 24) tracks/0/type = "value"
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 25) tracks/0/path = NodePath("ColorRect:color")
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 26) tracks/0/interp = 1
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 27) tracks/0/loop_wrap = true
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 28) tracks/0/imported = false
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 29) tracks/0/enabled = true
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 30) tracks/0/keys = {
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 31) "times": PoolRealArray( 0.1, 2, 2.3, 2.6, 3, 4 ),
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 32) "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 33) "update": 0,
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 34) "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.32549 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.176471 ), Color( 1, 1, 1, 0 ) ]
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 35) }
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 36) 
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 37) [node name="StartupScene" type="Node2D"]
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 38) script = ExtResource( 1 )
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 39) 
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 40) [node name="Sprite" type="Sprite" parent="."]
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 41) position = Vector2( 525, 302 )
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 42) scale = Vector2( 0.932031, 0.920833 )
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 43) texture = ExtResource( 7 )
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 44) 
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 45) [node name="ColorRect" type="ColorRect" parent="."]
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 46) margin_left = 1164.0
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 47) margin_top = 666.0
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 48) margin_right = 1204.0
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 49) margin_bottom = 706.0
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 50) rect_scale = Vector2( -33.709, -18.2213 )
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 51) color = Color( 1, 1, 1, 0 )
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 52) 
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 53) [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 54) anims/RESET = SubResource( 1 )
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 55) anims/fade_in = SubResource( 2 )
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 1) extends Node2D
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 2) 
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 3) func _ready():
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 4) 	$AnimationPlayer.play("fade_in")
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 5) 	yield(get_tree().create_timer(5), "timeout")
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 6) 	get_tree().change_scene("res://background_testing.tscn")
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400  1) extends KinematicBody2D
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400  2) 
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400  3) const ACC = 40.5
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400  4) const GRAVITY = 12
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400  5) const SPEED = 200
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400  6) 
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400  7) var velocity = Vector2(0,0)
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400  8) 	
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400  9) 	
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 10) func _physics_process(delta): 
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 11) 		
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 12) 	velocity.y += GRAVITY
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 13) 	if(velocity.y > GRAVITY * 20):
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 14) 		velocity.y = GRAVITY * 20
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 15) 	
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 16) 	if(Input.is_action_pressed("mv_right")):
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 17) 		$AnimatedSprite.flip_h = true
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 18) 		$AnimatedSprite.play("running_left")
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 19) 		velocity.x = min(velocity.x + ACC, SPEED)
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 20) 		
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 21) 	elif(Input.is_action_pressed("mv_left")):
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 22) 		$AnimatedSprite.flip_h = false
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 23) 		$AnimatedSprite.play("running_left")
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 24) 		velocity.x = max(velocity.x - ACC, -SPEED)
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 25) 		
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 26) 	else: 
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 27) 		$AnimatedSprite.play("idle_left")
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 28) 	
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 29) 	move_and_slide(velocity)
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 30) 	velocity.x = lerp(velocity.x,0,0.15)
+e7fd8f9d (Jazny 2022-10-13 04:34:22 -0400 31) 
