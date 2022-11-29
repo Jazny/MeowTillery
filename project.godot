@@ -47,6 +47,7 @@ config/icon="res://icon.png"
 PlayerStat="*res://PlayerStat.tscn"
 JsonData="*res://Inventory/Data/JSON_DATA.gd"
 PlayerInventory="*res://PlayerInventory.gd"
+WaveTracker="*res://wave_tracker.gd"
 
 [gui]
 

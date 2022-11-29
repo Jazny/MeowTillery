@@ -2,7 +2,6 @@ extends Node2D
 
 
 # Declare member variables here
-var enemiesRemaining = 0
 
 var minion = preload("res://minion.tscn")
 var jenner = preload("res://Kendall_Jenner.tscn")
@@ -11,10 +10,15 @@ var ingrid = preload("res://Ingrid.tscn")
 var turret = preload("res://Turret.tscn")
 var BB = preload("res://BossBar.tscn")
 var MBB = preload("res://MiniBossBar.tscn")
+var doorBlock = preload("res://DoorBlocker.tscn")
+var wavestarted = 0
+var blockFreed = 0
 
+var block = doorBlock.instance()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	wavestarted = 0
 	_newWave()
 
 func _newWave():
@@ -36,9 +40,9 @@ func _newWave():
 			minion1.is_moving_right = true
 			minion1.scale.x = -minion1.scale.x
 			minion2.is_moving_right = true
-			minion2.scale.x = -minion1.scale.x
+			minion2.scale.x = -minion2.scale.x
 			minion3.is_moving_right = true
-			minion3.scale.x = -minion1.scale.x
+			minion3.scale.x = -minion3.scale.x
 			
 			add_child(minion1)
 			add_child(minion2)
@@ -236,14 +240,16 @@ func _newWave():
 			TheIngrid.get_node("Ingrid_Stats").connect("killed", TheBossBar, "queue_free")
 			
 			WaveTracker.enemiesRemaining = 1
-			
-	_currentWave()
-	
-func _currentWave():
-	if (WaveTracker.enemiesRemaining == 0):
-		#wave over, despawn door block
-		print("wave cleared")
 
 
 func _process(delta):
-	_newWave()
+
+	if (!wavestarted):
+		block.position = Vector2(475,115)
+		add_child(block)
+		wavestarted = 1
+		
+	if (WaveTracker.enemiesRemaining == 0 && !blockFreed):
+		print("wave cleared")
+		block.queue_free()
+		blockFreed = 1
