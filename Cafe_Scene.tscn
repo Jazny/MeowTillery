@@ -45,7 +45,9 @@ position = Vector2( 78, 560 )
 scale = Vector2( 5.15771, 4.59398 )
 
 [node name="Sprite" parent="Squango" index="0"]
+
 frame = 2
+
 
 [node name="Cat1" parent="." instance=ExtResource( 4 )]
 position = Vector2( 796, 585 )
