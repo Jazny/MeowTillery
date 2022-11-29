@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Ingrid.gd" type="Script" id=1]
-[ext_resource path="res://Ingrid.jpg" type="Texture" id=2]
+[ext_resource path="res://Ingrid Prototype.png" type="Texture" id=2]
 [ext_resource path="res://Ingrid_Stats.tscn" type="PackedScene" id=3]
 [ext_resource path="res://RHurtbox.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Blink.tscn" type="PackedScene" id=6]
@@ -17,8 +17,8 @@ collision_layer = 2
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -7.62939e-06, -3.8147e-06 )
-scale = Vector2( 0.381481, 0.674074 )
+position = Vector2( 5, -5 )
+scale = Vector2( 0.263333, 0.337952 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
