@@ -63,11 +63,11 @@ func left_click_different_item(event: InputEvent, slot: SlotClass):
 	find_parent("HUD").holding_item = temp_item
 
 func left_click_same_item(slot: SlotClass):
-	var stack_size = int(JsonData.item_data[slot.item.item_name]["StackSize"])
-	var able_to_add = stack_size - slot.item.item_quantity
+	var stack_size = int(JsonData.item_data[slot.Item.item_name]["StackSize"])
+	var able_to_add = stack_size - slot.Item.item_quantity
 	if able_to_add >= find_parent("HUD").holding_item.item_quantity:
 		PlayerInventory.add_item_quantity(slot, find_parent("HUD").holding_item.item_quantity)
-		slot.item.add_item_quantity(find_parent("HUD").holding_item.item_quantity)
+		slot.Item.add_item_quantity(find_parent("HUD").holding_item.item_quantity)
 		find_parent("HUD").holding_item.queue_free()
 		find_parent("HUD").holding_item = null
 	else:
