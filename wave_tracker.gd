@@ -1,4 +1,4 @@
 extends Node
 
-var waveNum = 0
+var waveNum = 1
 var enemiesRemaining = 0
