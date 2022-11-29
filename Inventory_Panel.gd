@@ -12,13 +12,14 @@ var empty_style: StyleBoxTexture = null
 var ItemClass = preload("res://Inventory/Test_Item.tscn")
 var Item = null
 var slot_index
-#Everything to the next cooment needs to be added
+#Everything to the next comment needs to be added
 enum SlotType {
 	HOTBAR = 0,
 	INVENTORY,
 	SHIRT,
 	PANTS,
 	SHOES,
+	WEAPONS,
 }
 var slotType = null
 # Called when the node enters the scene tree for the first time, so everything above this comment.

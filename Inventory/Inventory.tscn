@@ -579,3 +579,14 @@ margin_top = 1.0
 margin_right = 18.0
 margin_bottom = 17.0
 texture = ExtResource( 7 )
+
+[node name="WeaponsSlot" type="Panel" parent="EquipSlots"]
+margin_top = 66.0
+margin_right = 18.0
+margin_bottom = 84.0
+rect_min_size = Vector2( 18, 18 )
+custom_styles/panel = SubResource( 79 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
