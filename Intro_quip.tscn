@@ -142,9 +142,15 @@ anims/RESET = SubResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="AnimationPlayer"]
 margin_left = -24.0
-margin_top = -16.0
+margin_top = 24.0
 margin_right = 1041.0
-margin_bottom = 674.0
+margin_bottom = 714.0
 color = Color( 0, 0, 0, 1 )
+
+[node name="guide" type="Label" parent="."]
+margin_left = 912.171
+margin_top = 559.855
+margin_right = 1124.17
+margin_bottom = 626.855
 
 [connection signal="animation_finished" from="intro scenes" to="." method="_on_intro_scenes_animation_finished"]

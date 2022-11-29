@@ -16,6 +16,7 @@ func _process(delta):
 	if (Input.is_action_just_pressed("ui_accept")):
 		if (scenes.animation == "scene 1" || scenes.animation == "scene 1 loop"):
 			scenes.play("scene 2")
+			get_node("guide").text = ""
 			exposition.text = "At the age of 2, Squango bio-engineered his mother's pet cat into a (harmless) detonation device."
 		elif (scenes.animation == "scene 2"):
 			scenes.play("scene 3")
@@ -29,6 +30,7 @@ func _process(delta):
 		elif (scenes.animation == "scene 5"):
 			scenes.play("scene 6")
 			exposition.text = ""
+			get_node("guide").text = ">> Enter (play)"
 		elif (scenes.animation == "scene 6"):
 			$AnimationPlayer.play("fade out")
 			yield(get_tree().create_timer(2.0), "timeout")
@@ -36,5 +38,6 @@ func _process(delta):
 
 func _on_intro_scenes_animation_finished():
 	if (scenes.animation == "scene 1"):
+		get_node("guide").text = ">> Enter"
 		scenes.play("scene 1 loop")
 		
