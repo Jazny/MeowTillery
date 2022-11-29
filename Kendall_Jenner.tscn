@@ -24,6 +24,7 @@ extents = Vector2( 74, 56 )
 
 [node name="Kendall_Jenner" type="KinematicBody2D"]
 scale = Vector2( 0.25, 0.25 )
+collision_layer = 2
 script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -35,6 +36,7 @@ texture = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="SquangoSeeker" type="Area2D" parent="."]
+collision_layer = 2
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SquangoSeeker"]
@@ -42,6 +44,7 @@ scale = Vector2( 0.772291, -0.316073 )
 shape = SubResource( 2 )
 
 [node name="AttackDetector" type="Area2D" parent="."]
+collision_layer = 2
 script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackDetector"]
@@ -52,6 +55,7 @@ shape = SubResource( 3 )
 [node name="Charger_Stats" parent="." instance=ExtResource( 9 )]
 
 [node name="RHurtbox" parent="." instance=ExtResource( 6 )]
+collision_layer = 2
 
 [node name="CollisionShape2D" parent="RHurtbox" index="0"]
 position = Vector2( -6, 0 )

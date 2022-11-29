@@ -12,6 +12,7 @@ extents = Vector2( 49.5, 36.5 )
 
 [node name="Padthai" type="KinematicBody2D"]
 scale = Vector2( 0.5, 0.5 )
+collision_layer = 4
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -30,3 +31,6 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PtArea"]
 shape = SubResource( 1 )
+
+[connection signal="body_entered" from="PtArea" to="." method="_on_PtArea_body_entered"]
+[connection signal="body_exited" from="PtArea" to="." method="_on_PtArea_body_exited"]

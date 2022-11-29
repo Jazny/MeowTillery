@@ -13,6 +13,7 @@ extents = Vector2( 75, 135 )
 extents = Vector2( 96, 72.5 )
 
 [node name="Ingrid" type="KinematicBody2D" groups=["need_player"]]
+collision_layer = 2
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -26,6 +27,7 @@ shape = SubResource( 1 )
 [node name="Ingrid_Stats" parent="." instance=ExtResource( 3 )]
 
 [node name="RHurtbox" parent="." instance=ExtResource( 5 )]
+collision_layer = 2
 
 [node name="CollisionShape2D" parent="RHurtbox" index="0"]
 position = Vector2( -1, 62.5 )
