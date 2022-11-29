@@ -12,7 +12,7 @@ const DASH_FORCE = 2500
 onready var sprite = $Sprite
 var yVelocity = 0
 var xVelocity = 0
-var lookingRight = true
+var lookingRight = false
 
 const invincibility_duration = 1.5
 onready var hurtbox = $Hurtbox

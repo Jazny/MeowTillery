@@ -2,8 +2,6 @@ extends Node2D
 
 
 # Declare member variables here
-var wave = 7
-var cooldown = 0
 var enemiesRemaining = 0
 
 var minion = preload("res://minion.tscn")
@@ -15,12 +13,11 @@ var turret = preload("res://Turret.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	_newWave()
 
-func _newWave(waveNum):
-	cooldown = 1
+func _newWave():
 	
-	match(waveNum):
+	match(WaveTracker.waveNum):
 		1:
 			var minion1 = minion.instance()
 			var minion2 = minion.instance()
@@ -46,6 +43,8 @@ func _newWave(waveNum):
 			add_child(minion3)
 			add_child(minion4)
 			add_child(minion5)
+			
+			WaveTracker.enemiesRemaining = 5
 			
 		2:
 			var minion1 = minion.instance()
@@ -82,6 +81,7 @@ func _newWave(waveNum):
 			add_child(jenner2)
 			add_child(jenner3)
 			
+			WaveTracker.enemiesRemaining = 6
 		3:
 			var minion1 = minion.instance()
 			var minion2 = minion.instance()
@@ -111,19 +111,19 @@ func _newWave(waveNum):
 			add_child(minion4)
 			add_child(minion5)
 			add_child(robert)
+			
+			WaveTracker.enemiesRemaining = 6
 		4:
 			var minion1 = minion.instance()
 			var minion2 = minion.instance()
 			var minion3 = minion.instance()
 			var minion4 = minion.instance()
 			var minion5 = minion.instance()
-			var robert = scrum.instance()
 			
 			
 			minion1.position = Vector2(-200, 60)
 			minion2.position = Vector2(-250, 60)
 			minion3.position = Vector2(-300, 60)
-			robert.position = Vector2(-350, 60)
 			minion4.position = Vector2(-400, 60)
 			minion5.position = Vector2(-450, 60)
 			
@@ -139,7 +139,8 @@ func _newWave(waveNum):
 			add_child(minion3)
 			add_child(minion4)
 			add_child(minion5)
-			add_child(robert)
+			
+			WaveTracker.enemiesRemaining = 5
 		5:
 			var minion1 = minion.instance()
 			var minion2 = minion.instance()
@@ -179,6 +180,8 @@ func _newWave(waveNum):
 			add_child(jenner3)
 			add_child(turret1)
 			add_child(turret2)
+			
+			WaveTracker.enemiesRemaining = 9
 		6:
 			#this should be robert scrum 2 btw
 			var robert = scrum.instance()
@@ -204,6 +207,8 @@ func _newWave(waveNum):
 			add_child(turret2)
 			add_child(turret3)
 			add_child(robert)
+			
+			WaveTracker.enemiesRemaining = 7
 		7:
 			var TheIngrid = ingrid.instance()
 			
@@ -211,16 +216,15 @@ func _newWave(waveNum):
 			
 			add_child(TheIngrid)
 			
+			WaveTracker.enemiesRemaining = 1
+			
 	_currentWave()
 	
 func _currentWave():
-	pass
+	if (WaveTracker.enemiesRemaining == 0):
+		#wave over, despawn door block
+		print("wave cleared")
 
-func _startCooldown():
-	cooldown = 1
-	yield(get_tree().create_timer(30), "timeout")
-	cooldown = 0
 
 func _process(delta):
-	if (cooldown == 0):
-		_newWave(wave)
+	_newWave()

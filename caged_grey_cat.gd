@@ -6,6 +6,7 @@ func _ready():
 
 func _on_Button_pressed():
 	get_node("grey_cat_chilling").hide()
+	get_node("Cage").hide()
 	get_node("AnimationPlayer").play("Weapon Unlocked")
 
 

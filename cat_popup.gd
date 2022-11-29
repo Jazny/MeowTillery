@@ -8,6 +8,12 @@ func _on_Area2D_body_entered(body):
 	if body is KinematicBody2D:
 		if body.name == "Squango":
 			popup()
+			if get_node("../Control/HungerBar").value < 50:
+				get_node("Button").visible = false
+				get_node("Button").disabled = true
+			else:
+				get_node("Button").visible = true
+				get_node("Button").disabled = false
 
 ## popup menu hide:
 func _on_Area2D_body_exited(body):
