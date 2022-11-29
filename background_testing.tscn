@@ -1,6 +1,6 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
+
 [ext_resource path="res://assets/city_background.png" type="Texture" id=1]
-[ext_resource path="res://Padthai_Timer.gd" type="Script" id=3]
 [ext_resource path="res://SpawnSystem.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/city_stuff/warped city files/ENVIRONMENT/background/near-buildings-bg.png" type="Texture" id=3]
 [ext_resource path="res://Squango.tscn" type="PackedScene" id=9]
@@ -13,7 +13,6 @@
 [ext_resource path="res://Turret.tscn" type="PackedScene" id=22]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=24]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 2674.34, 24.0753 )
 
@@ -23,7 +22,7 @@ extents = Vector2( 10, 111.23 )
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 10, 70.6868 )
 
-[node name="background_testing" type="Node2D"]
+[node name="World" type="Node2D"]
 position = Vector2( -48, 352 )
 scale = Vector2( 2.82205, 2.13035 )
 
@@ -86,6 +85,11 @@ scale = Vector2( 0.192621, 0.192621 )
 [node name="HUD" parent="." instance=ExtResource( 24 )]
 __meta__ = {
 "_editor_description_": ""
+}
+
+[node name="Inventory" parent="HUD" index="1"]
+__meta__ = {
+"_edit_group_": true
 }
 
 [node name="SpawnSystem" parent="." instance=ExtResource( 2 )]
