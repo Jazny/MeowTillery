@@ -86,3 +86,35 @@ func active_item_scroll_down() -> void:
 	else:
 		active_item_slot -= 1
 	emit_signal("active_item_updated")
+
+func active_item_1():
+	active_item_slot = 0
+	emit_signal("active_item_updated")
+
+func active_item_2():
+	active_item_slot = 1
+	emit_signal("active_item_updated")
+
+func active_item_3():
+	active_item_slot = 2
+	emit_signal("active_item_updated")
+
+func active_item_4():
+	active_item_slot = 3
+	emit_signal("active_item_updated")
+
+func active_item_5():
+	active_item_slot = 4
+	emit_signal("active_item_updated")
+
+func active_item_6():
+	active_item_slot = 5
+	emit_signal("active_item_updated")
+
+func active_item_7():
+	active_item_slot = 6
+	emit_signal("active_item_updated")
+
+func active_item_8():
+	active_item_slot = 7
+	emit_signal("active_item_updated")

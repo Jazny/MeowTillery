@@ -1,4 +1,5 @@
 extends Node2D
+const Catana = preload("res://Inventory/ItemDropCatana.tscn")
 
 func _ready():
 	get_node("grey_cat_chilling").play("default")
@@ -8,6 +9,8 @@ func _on_Button_pressed():
 	get_node("grey_cat_chilling").hide()
 	get_node("Cage").hide()
 	get_node("AnimationPlayer").play("Weapon Unlocked")
+	var catana = Catana.instance()
+	get_parent().add_child(catana)
 
 
 func _on_Button2_pressed():
