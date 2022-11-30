@@ -77,6 +77,7 @@ func move_character():
 	velocity = move_and_slide(velocity, Vector2.UP)
 
 func _die():
+	WaveTracker.enemiesRemaining -= 1
 	queue_free()
 
 func _on_AttackDetector_body_entered(body):

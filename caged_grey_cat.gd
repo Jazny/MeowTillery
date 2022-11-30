@@ -12,6 +12,7 @@ func _on_Button_pressed():
 	get_node("AnimationPlayer").play("Weapon Unlocked")
 	var catana = Catana.instance()
 	get_parent().add_child(catana)
+	WaveTracker.waveNum = 1
 	yield(get_tree().create_timer(3), "timeout")
 	queue_free()
 
