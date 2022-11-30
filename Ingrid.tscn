@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Ingrid.gd" type="Script" id=1]
-[ext_resource path="res://Ingrid Prototype.png" type="Texture" id=2]
+[ext_resource path="res://Ingrid.jpg" type="Texture" id=2]
 [ext_resource path="res://Ingrid_Stats.tscn" type="PackedScene" id=3]
 [ext_resource path="res://RHurtbox.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Blink.tscn" type="PackedScene" id=6]

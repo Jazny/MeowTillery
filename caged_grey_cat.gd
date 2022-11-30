@@ -1,6 +1,7 @@
 extends Node2D
 const Catana = preload("res://Inventory/ItemDropCatana.tscn")
 
+
 func _ready():
 	get_node("grey_cat_chilling").play("default")
 	
@@ -11,6 +12,8 @@ func _on_Button_pressed():
 	get_node("AnimationPlayer").play("Weapon Unlocked")
 	var catana = Catana.instance()
 	get_parent().add_child(catana)
+	yield(get_tree().create_timer(3), "timeout")
+	queue_free()
 
 
 func _on_Button2_pressed():
@@ -21,3 +24,5 @@ func _on_Button2_pressed():
 
 func _on_Timer_timeout():
 	get_node("grey_cat_chilling").play("death")
+	yield(get_tree().create_timer(3), "timeout")
+	queue_free()

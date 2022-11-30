@@ -11,6 +11,8 @@ func _on_Button_pressed():
 	get_node("AnimationPlayer").play("Weapon Unlocked")
 	var catlass = Catlass.instance()
 	get_parent().add_child(catlass)
+	yield(get_tree().create_timer(3), "timeout")
+	queue_free()
 
 
 func _on_Button2_pressed():
@@ -21,3 +23,5 @@ func _on_Button2_pressed():
 
 func _on_Timer_timeout():
 	get_node("creme_cat_chilling").play("death")
+	yield(get_tree().create_timer(3), "timeout")
+	queue_free()

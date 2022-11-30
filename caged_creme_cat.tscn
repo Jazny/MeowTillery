@@ -317,6 +317,7 @@ script = ExtResource( 7 )
 [connection signal="pressed" from="Popup/Button" to="Control/HungerBar" method="_on_Button_pressed"]
 [connection signal="pressed" from="Popup/Button2" to="." method="_on_Button2_pressed"]
 [connection signal="pressed" from="Popup/Button2" to="Popup" method="_on_Button2_pressed"]
+[connection signal="pressed" from="Popup/Button2" to="Control/HungerBar" method="_on_Button2_pressed"]
 [connection signal="body_entered" from="Area2D" to="Popup" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Popup" method="_on_Area2D_body_exited"]
 [connection signal="timeout" from="Control/HungerBar/Timer" to="." method="_on_Timer_timeout"]
