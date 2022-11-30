@@ -16,6 +16,7 @@ const invincibility_duration = 0.5
 onready var Cstats = $Charger_Stats
 onready var hurtbox = $RHurtbox
 onready var blinker = $Blinker
+onready var animation = $AnimatedSprite
 
 func _ready():
 	isInRange = false
@@ -24,9 +25,11 @@ func _ready():
 	
 func _process(_delta):
 	if (isInRange):
+		animation.play("rushing")
 		_attack()
 		
 	else:
+		animation.play("walking")
 		move_character()
 
 func _attack():
