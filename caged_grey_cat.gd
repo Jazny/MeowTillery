@@ -11,6 +11,7 @@ func _on_Button_pressed():
 	get_node("AnimationPlayer").play("Weapon Unlocked")
 	var catana = Catana.instance()
 	get_parent().add_child(catana)
+	WaveTracker.waveNum = 1
 
 
 func _on_Button2_pressed():
