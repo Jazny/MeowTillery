@@ -24,8 +24,6 @@ onready var Istats = $Ingrid_Stats
 onready var hurtbox = $RHurtbox
 onready var blinker = $Blinker
 
-func _ready():
-	Istats.connect("killed", self, "_die")
 
 func _physics_process(delta):
 	if(player == null):
@@ -56,10 +54,10 @@ func _fire():
 	var dirToPlayer = (player.global_position - global_position).normalized()
 	if(dirToPlayer.x > 0):
 		projInstance.global_position.x = global_position.x + 100
-		projInstance.global_position.y = global_position.y
+		projInstance.global_position.y = global_position.y + 50
 	if(dirToPlayer.x < 0):
 		projInstance.global_position.x = global_position.x - 100
-		projInstance.global_position.y = global_position.y
+		projInstance.global_position.y = global_position.y + 50
 	projInstance.movement = dirToPlayer
 	
 	
