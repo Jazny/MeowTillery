@@ -1,8 +1,10 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://assets/city_background.png" type="Texture" id=1]
 [ext_resource path="res://SpawnSystem.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/city_stuff/warped city files/ENVIRONMENT/background/near-buildings-bg.png" type="Texture" id=3]
+[ext_resource path="res://advanced_pixel-7.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://WaveDisplay.gd" type="Script" id=5]
 [ext_resource path="res://Padthai_Timer.gd" type="Script" id=6]
 [ext_resource path="res://Squango.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Audio/[YT2mp3.info] - Super Mario Bros. Theme Song (320kbps).mp3" type="AudioStream" id=10]
@@ -21,6 +23,10 @@ extents = Vector2( 10, 111.23 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 10, 70.6868 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 100
+font_data = ExtResource( 4 )
 
 [node name="World" type="Node2D"]
 position = Vector2( -48, 352 )
@@ -54,6 +60,9 @@ scale = Vector2( 0.780755, 0.900815 )
 __meta__ = {
 "_edit_group_": true
 }
+
+[node name="Sprite" parent="Squango" index="0"]
+frame = 1
 
 [node name="punchSFX" type="AudioStreamPlayer" parent="Squango"]
 stream = ExtResource( 12 )
@@ -103,6 +112,15 @@ position = Vector2( 233.164, 31.8736 )
 shape = SubResource( 3 )
 
 [node name="HUD" parent="." instance=ExtResource( 24 )]
+
+[node name="WaveDisplay" type="RichTextLabel" parent="HUD/Interface" index="2"]
+margin_left = 336.0
+margin_top = 82.0
+margin_right = 778.0
+margin_bottom = 206.0
+custom_fonts/normal_font = SubResource( 4 )
+text = "WAVE 1"
+script = ExtResource( 5 )
 
 [node name="Padthai_Timer" type="Timer" parent="."]
 wait_time = 5.0

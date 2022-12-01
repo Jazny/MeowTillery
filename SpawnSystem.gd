@@ -273,7 +273,7 @@ func _process(delta):
 			add_child(turret3)
 		
 	if (WaveTracker.enemiesRemaining == 0 && !blockFreed):
-		print("wave cleared")
+		WaveTracker.waveCleared = 1
 		block.queue_free()
 		if (WaveTracker.waveNum == 4 || WaveTracker.waveNum == 5):
 			turret1.queue_free()
@@ -282,6 +282,7 @@ func _process(delta):
 			turret1.queue_free()
 			turret2.queue_free()
 			turret3.queue_free()
-			
-		WaveTracker.waveNum += 1
+		
+		if (WaveTracker.waveNum != 0):
+			WaveTracker.waveNum += 1
 		blockFreed = 1
