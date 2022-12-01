@@ -19,8 +19,14 @@ onready var hurtbox = $Hurtbox
 onready var blinker = $Blinker
 var stats = PlayerStat
 
+var spacer = 0
 var stateJ = "idle"
 var stateR = "idle"
+
+var stateW = "none"
+var stateW2 = "none"
+## stateW: either "gun" or "sword" or "none"
+## stateW2: either "ACat" or "MeowchineGun" or "Catana" or "Catlass" or "none"
 
 func _ready():
 	stats.connect("killed", self, "_die")
@@ -77,6 +83,12 @@ func _physics_process(delta):
 		yVelocity = TERMINAL_VELOCITY
 	if(onFloor and yVelocity >= 5):
 		yVelocity = 5
+	
+	if(stateW == "gun"):
+		_shoot()
+		
+	if(stateW == "sword"):
+		_stab()
 		
 	animate()
 		
@@ -91,17 +103,71 @@ func animate():
 	elif(is_on_wall() and (stateJ == "jump1" or stateJ == "jump2") and Input.is_action_pressed("mv_wall_slide")):
 		sprite.play("Wall Slide")
 		return
-	elif(Input.is_action_just_pressed("mv_jump")):
-		sprite.play("Jump")
-		return
-	elif(Input.is_action_pressed("mv_right") or Input.is_action_pressed("mv_left")):
-		sprite.play("Run")
-		return
-	elif(Input.is_action_just_released("mv_right") or Input.is_action_just_released("mv_left")):
-		sprite.play("Idle")
-		return
-	if(xVelocity == 0 and yVelocity <= 5):
-		sprite.play("Idle")
+		
+	elif(stateW == "none"):
+		if(Input.is_action_just_pressed("mv_jump")):
+			sprite.play("Jump")
+			return
+		elif(Input.is_action_pressed("mv_right") or Input.is_action_pressed("mv_left")):
+			sprite.play("Run")
+			return
+		elif(Input.is_action_just_released("mv_right") or Input.is_action_just_released("mv_left")):
+			sprite.play("Idle")
+			return
+		if(xVelocity == 0 and yVelocity <= 5):
+			sprite.play("Idle")
+			
+	elif(stateW == "gun" and stateW2 == "ACat"):
+		if(Input.is_action_just_pressed("mv_jump")):
+			sprite.play("jump+ACat-47")
+			return
+		elif(Input.is_action_pressed("mv_right") or Input.is_action_pressed("mv_left")):
+			sprite.play("run+ACat47")
+			return
+		elif(Input.is_action_just_released("mv_right") or Input.is_action_just_released("mv_left")):
+			sprite.play("idle+ACat-47")
+			return
+		if(xVelocity == 0 and yVelocity <= 5):
+			sprite.play("idle+ACat-47")
+			
+	elif(stateW == "gun" and stateW2 == "MeowchineGun"):
+		if(Input.is_action_just_pressed("mv_jump")):
+			sprite.play("jump+meowchinegun")
+			return
+		elif(Input.is_action_pressed("mv_right") or Input.is_action_pressed("mv_left")):
+			sprite.play("run+meowchinegun")
+			return
+		elif(Input.is_action_just_released("mv_right") or Input.is_action_just_released("mv_left")):
+			sprite.play("idle+meowchinegun")
+			return
+		if(xVelocity == 0 and yVelocity <= 5):
+			sprite.play("idle+meowchinegun")
+	
+	elif(stateW == "sword" and stateW2 == "Catana"):
+		if(Input.is_action_just_pressed("mv_jump")):
+			sprite.play("jump+catana")
+			return
+		elif(Input.is_action_pressed("mv_right") or Input.is_action_pressed("mv_left")):
+			sprite.play("run+catana")
+			return
+		elif(Input.is_action_just_released("mv_right") or Input.is_action_just_released("mv_left")):
+			sprite.play("idle+catana")
+			return
+		if(xVelocity == 0 and yVelocity <= 5):
+			sprite.play("idle+catana")
+			
+	elif(stateW == "sword" and stateW2 == "Catlass"):
+		if(Input.is_action_just_pressed("mv_jump")):
+			sprite.play("jump+catlass")
+			return
+		elif(Input.is_action_pressed("mv_right") or Input.is_action_pressed("mv_left")):
+			sprite.play("run+catlass")
+			return
+		elif(Input.is_action_just_released("mv_right") or Input.is_action_just_released("mv_left")):
+			sprite.play("idle+catlass")
+			return
+		if(xVelocity == 0 and yVelocity <= 5):
+			sprite.play("idle+catlass")
 
 
 func wallJump():
@@ -112,6 +178,47 @@ func wallJump():
 	else:
 		xVelocity = WALL_JUMP_FORCE
 		stateJ = "jump2"
+		
+func _stab():
+	
+	return
+
+func _shoot():
+	if(stateW2 == "ACat" and Input.is_action_just_pressed("shoot")):
+		sprite.play("hit+ACat-47")
+		var projectileACat = preload("res://ACatProjectile.tscn")
+		var projInstanceACat = projectileACat.instance()
+		get_tree().get_root().add_child(projInstanceACat)
+		
+		if(lookingRight == true):
+			projInstanceACat.global_position.x = global_position.x + 50
+			projInstanceACat.global_position.y = global_position.y
+			projInstanceACat.movement = Vector2(1, 0)
+		if(lookingRight == false):
+			projInstanceACat.global_position.x = global_position.x - 50
+			projInstanceACat.global_position.y = global_position.y
+			projInstanceACat.movement = Vector2(-1, 0)
+		yield(get_tree().create_timer(0.5), "timeout")
+			
+			
+	if(stateW2 == "MeowchineGun" and Input.is_action_pressed("shoot")):
+		sprite.play("hit+meowchinegun")
+		var projectileACat = preload("res://MeowchineGunProjectile.tscn")
+		var projInstanceACat = projectileACat.instance()
+		if(spacer > 5):
+			get_tree().get_root().add_child(projInstanceACat)
+			if(lookingRight == true):
+				projInstanceACat.global_position.x = global_position.x + 50
+				projInstanceACat.global_position.y = global_position.y
+				projInstanceACat.movement = Vector2(1, 0)
+			if(lookingRight == false):
+				projInstanceACat.global_position.x = global_position.x - 50
+				projInstanceACat.global_position.y = global_position.y
+				projInstanceACat.movement = Vector2(-1, 0)
+			yield(get_tree().create_timer(0.5), "timeout")
+			spacer = 0
+		spacer = spacer + 1
+		
 		
 func _die():
 	stateJ = "dead"
