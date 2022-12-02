@@ -31,4 +31,4 @@ func _on_Button_pressed():
 
 
 func _on_Button2_pressed():
-	get_node("Timer").start(get_node("Timer").wait_time)
+	get_node("Timer").start(100)

@@ -12,7 +12,7 @@ resource_name = "entrance"
 
 [node name="Entrance" type="Node2D"]
 position = Vector2( -4, -3 )
-scale = Vector2( 0.484684, 0.484684 )
+scale = Vector2( 0.862979, 0.862979 )
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]

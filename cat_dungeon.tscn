@@ -19,32 +19,37 @@ extents = Vector2( 133.755, 240.777 )
 position = Vector2( 890, -194 )
 scale = Vector2( 0.939767, 0.913998 )
 
-[node name="Floor" parent="." instance=ExtResource( 8 )]
-position = Vector2( -1057.71, 800.877 )
-scale = Vector2( 3.19997, 1.04135 )
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -1824.0
+margin_top = -202.0
+margin_right = 1672.0
+margin_bottom = 1238.0
+color = Color( 0, 0, 0, 1 )
 
 [node name="CatDungeonBg" type="Sprite" parent="."]
-position = Vector2( -426.702, 509.848 )
+position = Vector2( -274.536, 450.767 )
+scale = Vector2( 0.651931, 0.651931 )
 texture = ExtResource( 1 )
 
+[node name="Floor" parent="." instance=ExtResource( 8 )]
+position = Vector2( -1057.71, 800.877 )
+scale = Vector2( 4.07794, 1.04135 )
+
 [node name="caged_creme_cat" parent="." instance=ExtResource( 6 )]
-position = Vector2( -657.61, 781.183 )
+position = Vector2( -569.29, 777.901 )
 
 [node name="caged_grey_cat" parent="." instance=ExtResource( 3 )]
-position = Vector2( -791.685, 780.089 )
+position = Vector2( -676.764, 780.089 )
 
 [node name="dungeon_to_cafe" parent="." instance=ExtResource( 4 )]
-position = Vector2( -924.697, 794.312 )
+position = Vector2( -943.851, 778.995 )
+scale = Vector2( 3.56383, 3.52038 )
 
 [node name="dungeon_to_bedroom" parent="." instance=ExtResource( 5 )]
-position = Vector2( 85.1274, 771.336 )
+position = Vector2( 366.048, 752.737 )
 __meta__ = {
 "_edit_group_": true
 }
-
-[node name="Squango" parent="." instance=ExtResource( 2 )]
-position = Vector2( -821.48, 812.912 )
-scale = Vector2( 6.21217, 6.21217 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( -320.292, 907.004 )
@@ -55,7 +60,7 @@ position = Vector2( -3.41589, 4.37998 )
 shape = SubResource( 1 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2( -610.88, 95.2646 )
+position = Vector2( -643.61, 94.112 )
 rotation = 1.55717
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
@@ -64,7 +69,7 @@ rotation = 0.0144674
 shape = SubResource( 1 )
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
-position = Vector2( 752.314, 98.4688 )
+position = Vector2( 838.737, 72.9623 )
 rotation = 1.55717
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
@@ -72,15 +77,16 @@ position = Vector2( 193.625, 387.708 )
 rotation = 0.0144674
 shape = SubResource( 1 )
 
-[node name="doorL" parent="." instance=ExtResource( 5 )]
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 278.793, 644.422 )
 shape = SubResource( 2 )
 
 [node name="HUD" parent="." instance=ExtResource( 7 )]
 
-[editable path="doorL"]
+[node name="Squango" parent="." instance=ExtResource( 2 )]
+position = Vector2( 276.664, 817.289 )
+scale = Vector2( 3.26578, 3.26578 )
+
 [editable path="HUD"]
 [editable path="HUD/Interface/HealthBar"]
 [editable path="HUD/Interface/SanityBar"]

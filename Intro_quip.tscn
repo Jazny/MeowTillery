@@ -68,7 +68,7 @@ func _process(delta):
 		elif (scenes.animation == \"scene 6\"):
 			$AnimationPlayer.play(\"fade out\")
 			yield(get_tree().create_timer(2.0), \"timeout\")
-			get_tree().change_scene(\"res://background_testing.tscn\")
+			get_tree().change_scene(\"res://cafe_overtake.tscn\")
 
 func _on_intro_scenes_animation_finished():
 	if (scenes.animation == \"scene 1\"):
@@ -170,7 +170,15 @@ tracks/0/keys = {
 font_data = ExtResource( 29 )
 
 [node name="intro_quip" type="Node2D"]
+position = Vector2( 32, 33 )
 script = SubResource( 8 )
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_left = -56.0
+margin_top = -51.0
+margin_right = 1084.0
+margin_bottom = 714.0
+color = Color( 0, 0, 0, 1 )
 
 [node name="intro scenes" type="AnimatedSprite" parent="."]
 position = Vector2( 512, 328 )
@@ -207,8 +215,8 @@ anims/RESET = SubResource( 2 )
 [node name="ColorRect" type="ColorRect" parent="AnimationPlayer"]
 margin_left = -24.0
 margin_top = -18.0
-margin_right = 1041.0
-margin_bottom = 714.0
+margin_right = 1116.0
+margin_bottom = 747.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="guide" type="Label" parent="."]
