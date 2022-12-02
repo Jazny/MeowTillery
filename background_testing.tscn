@@ -61,9 +61,6 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" parent="Squango" index="0"]
-frame = 1
-
 [node name="punchSFX" type="AudioStreamPlayer" parent="Squango"]
 stream = ExtResource( 12 )
 volume_db = -13.983
