@@ -1,5 +1,7 @@
 extends Popup
 
+var num_times_fed = 0
+
 func _ready():
 	pass 
 
@@ -8,7 +10,10 @@ func _on_Area2D_body_entered(body):
 	if body is KinematicBody2D:
 		if body.name == "Squango":
 			popup()
-			if get_node("../Control/HungerBar").value < 50:
+			if num_times_fed < 2:
+				get_node("Button").visible = false
+				get_node("Button").disabled = true
+			elif get_node("../Control/HungerBar").value < 50:
 				get_node("Button").visible = false
 				get_node("Button").disabled = true
 			else:
@@ -28,6 +33,7 @@ func _on_Button_pressed():
 
 
 func _on_Button2_pressed():
+	num_times_fed = num_times_fed + 1
 	hide()
 
 

@@ -20,6 +20,9 @@ func _process(delta):
 			hide()
 			is_showing = false
 		enter = enter + 1
+	
+	elif (enter == 12):
+		get_tree().change_scene("res://cafe_overtake_dual.tscn")
 
 
 func go_through_dialogue():

@@ -1,6 +1,7 @@
 extends Popup
 
 onready var speech = get_node("Label")
+onready var owner_popup = get_node("../friendly_owner")
 var enter = 0
 var is_showing = false
 
@@ -9,7 +10,7 @@ func _ready():
 
 
 func _physics_process(delta):
-	if (Input.is_action_just_pressed("ui_accept")):
+	if (Input.is_action_just_pressed("ui_accept") && owner_popup.can_speak == true):
 		if (enter % 2 == 1):
 			popup()
 			is_showing = true
@@ -18,6 +19,10 @@ func _physics_process(delta):
 			hide()
 			is_showing = false
 		enter = enter + 1
+	
+	elif (owner_popup.can_speak == false):
+		hide()
+		is_showing = false
 
 
 func go_through_dialogue():
@@ -33,4 +38,3 @@ func go_through_dialogue():
 		speech.text = "..."
 	elif (enter == 11):
 		speech.text = "Okay. I am instigating violence now."
-

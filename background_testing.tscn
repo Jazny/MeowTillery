@@ -50,8 +50,35 @@ shape = SubResource( 1 )
 visible = false
 position = Vector2( 306.515, 36.6137 )
 
+<<<<<<< HEAD
 [node name="AnimatedSprite" parent="Mr Godot" index="1"]
 frame = 1
+=======
+[node name="Squango" parent="." instance=ExtResource( 9 )]
+position = Vector2( 329.193, 75.105 )
+scale = Vector2( 0.780755, 0.900815 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="punchSFX" type="AudioStreamPlayer" parent="Squango"]
+stream = ExtResource( 12 )
+volume_db = -13.983
+
+[node name="jumpSFX" type="AudioStreamPlayer" parent="Squango"]
+stream = ExtResource( 11 )
+volume_db = -21.881
+
+[node name="deathSFX" type="AudioStreamPlayer" parent="Squango"]
+stream = ExtResource( 13 )
+volume_db = -7.866
+
+[node name="Camera2D" type="Camera2D" parent="Squango"]
+current = true
+smoothing_enabled = true
+smoothing_speed = 20.0
+offset_v = -1.0
+>>>>>>> 425bf1f6141c438edb0e9dc8dfb880146af3003f
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
