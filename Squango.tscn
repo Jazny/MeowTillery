@@ -294,18 +294,20 @@ scale_random = 1.0
 color = Color( 0.8, 0.0745098, 0.0745098, 1 )
 
 [sub_resource type="RectangleShape2D" id=80]
-extents = Vector2( 16, 17.5 )
+extents = Vector2( 15.75, 17.5 )
 
 [node name="Squango" type="KinematicBody2D"]
 position = Vector2( 1, -1 )
+scale = Vector2( 1.77414, 1.77414 )
 script = ExtResource( 3 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 material = ExtResource( 13 )
-position = Vector2( -3.05176e-05, -1 )
-scale = Vector2( 0.126485, 0.137574 )
+position = Vector2( 0.51361, -1 )
+scale = Vector2( 0.129909, 0.137574 )
 frames = SubResource( 8 )
 animation = "Idle"
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -349,8 +351,13 @@ collision_mask = 4
 script = ExtResource( 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupZone"]
-position = Vector2( 0.5, 0 )
+position = Vector2( 0.25, 0 )
 shape = SubResource( 80 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2( 1.1739, 1.1739 )
+current = true
+zoom = Vector2( 0.8, 0.8 )
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="area_entered" from="PickupZone" to="PickupZone" method="_on_PickupZone_area_entered"]

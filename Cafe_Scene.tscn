@@ -40,13 +40,6 @@ shape = SubResource( 1 )
 position = Vector2( 14, 547 )
 scale = Vector2( 1.90351, 1.90351 )
 
-[node name="Squango" parent="." instance=ExtResource( 2 )]
-position = Vector2( 78, 560 )
-scale = Vector2( 5.15771, 4.59398 )
-
-[node name="Sprite" parent="Squango" index="0"]
-frame = 1
-
 [node name="Cat1" parent="." instance=ExtResource( 4 )]
 position = Vector2( 796, 585 )
 scale = Vector2( 1.9291, 1.81639 )
@@ -78,9 +71,10 @@ position = Vector2( 976, 547 )
 
 [node name="HUD" parent="." instance=ExtResource( 9 )]
 
-[editable path="Squango"]
-[editable path="Squango/Hurtbox"]
-[editable path="Squango/Blinker"]
+[node name="Squango" parent="." instance=ExtResource( 2 )]
+position = Vector2( 187, 554 )
+scale = Vector2( 3.11996, 3.11996 )
+
 [editable path="HUD"]
 [editable path="HUD/Interface/HealthBar"]
 [editable path="HUD/Interface/SanityBar"]
