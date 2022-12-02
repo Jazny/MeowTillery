@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Untitled design.png-29c718846b946bd0667a82ad345979c8.stex"
+path="res://.import/squango's room.png-3cab4bebf2a93c4814245be9e9d03992.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Untitled design.png"
-dest_files=[ "res://.import/Untitled design.png-29c718846b946bd0667a82ad345979c8.stex" ]
+source_file="res://assets/squango's room.png"
+dest_files=[ "res://.import/squango's room.png-3cab4bebf2a93c4814245be9e9d03992.stex" ]
 
 [params]
 

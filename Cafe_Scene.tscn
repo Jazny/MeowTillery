@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/cat_cafe.png" type="Texture" id=1]
 [ext_resource path="res://Squango.tscn" type="PackedScene" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://wall.tscn" type="PackedScene" id=5]
 [ext_resource path="res://pink_cat.tscn" type="PackedScene" id=6]
 [ext_resource path="res://cafe_to_dungeon.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Dialogue/CAFE_NPC1.tscn" type="PackedScene" id=8]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Floor.tscn" type="PackedScene" id=10]
 
@@ -19,6 +18,13 @@ extents = Vector2( 73.5949, 2.6214 )
 
 [node name="Cafe_Scene" type="Node2D"]
 position = Vector2( 0, 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -1007.0
+margin_top = -365.0
+margin_right = 2489.0
+margin_bottom = 1075.0
+color = Color( 0, 0, 0, 1 )
 
 [node name="Floor" parent="." instance=ExtResource( 10 )]
 
@@ -62,17 +68,13 @@ scale = Vector2( 1.29397, 0.429861 )
 position = Vector2( -6.10352e-05, 6.10352e-05 )
 shape = SubResource( 2 )
 
-[node name="CAFE_NPC1" parent="." instance=ExtResource( 8 )]
-position = Vector2( 369, 563 )
-scale = Vector2( 0.842326, 1.82494 )
-
 [node name="cafe_to_dungeon" parent="." instance=ExtResource( 7 )]
 position = Vector2( 976, 547 )
 
 [node name="HUD" parent="." instance=ExtResource( 9 )]
 
 [node name="Squango" parent="." instance=ExtResource( 2 )]
-position = Vector2( 187, 554 )
+position = Vector2( 918, 555 )
 scale = Vector2( 3.11996, 3.11996 )
 
 [editable path="HUD"]

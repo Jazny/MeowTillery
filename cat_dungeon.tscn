@@ -19,6 +19,13 @@ extents = Vector2( 133.755, 240.777 )
 position = Vector2( 890, -194 )
 scale = Vector2( 0.939767, 0.913998 )
 
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -1824.0
+margin_top = -202.0
+margin_right = 1672.0
+margin_bottom = 1238.0
+color = Color( 0, 0, 0, 1 )
+
 [node name="CatDungeonBg" type="Sprite" parent="."]
 position = Vector2( -274.536, 450.767 )
 scale = Vector2( 0.651931, 0.651931 )
@@ -35,10 +42,10 @@ position = Vector2( -569.29, 777.901 )
 position = Vector2( -676.764, 780.089 )
 
 [node name="dungeon_to_cafe" parent="." instance=ExtResource( 4 )]
-position = Vector2( -924.697, 794.312 )
+position = Vector2( -924.697, 787.748 )
 
 [node name="dungeon_to_bedroom" parent="." instance=ExtResource( 5 )]
-position = Vector2( 366.048, 753.831 )
+position = Vector2( 366.048, 752.737 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -76,7 +83,7 @@ shape = SubResource( 2 )
 [node name="HUD" parent="." instance=ExtResource( 7 )]
 
 [node name="Squango" parent="." instance=ExtResource( 2 )]
-position = Vector2( 23.4101, 822.759 )
+position = Vector2( 276.664, 817.289 )
 scale = Vector2( 3.17783, 3.17783 )
 
 [editable path="HUD"]
