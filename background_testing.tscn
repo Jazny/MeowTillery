@@ -17,9 +17,6 @@ extents = Vector2( 2674.34, 24.0753 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 10, 111.23 )
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 10, 70.6868 )
-
 [sub_resource type="DynamicFont" id=4]
 size = 100
 font_data = ExtResource( 4 )
@@ -56,30 +53,6 @@ scale = Vector2( 0.780755, 0.900815 )
 __meta__ = {
 "_edit_group_": true
 }
-
-[node name="punchSFX" type="AudioStreamPlayer" parent="Squango"]
-stream = ExtResource( 12 )
-volume_db = -13.983
-
-[node name="jumpSFX" type="AudioStreamPlayer" parent="Squango"]
-stream = ExtResource( 11 )
-volume_db = -21.881
-
-[node name="deathSFX" type="AudioStreamPlayer" parent="Squango"]
-stream = ExtResource( 13 )
-volume_db = -7.866
-
-[node name="Camera2D" type="Camera2D" parent="Squango"]
-current = true
-smoothing_enabled = true
-smoothing_speed = 20.0
-offset_v = -1.0
->>>>>>> 425bf1f6141c438edb0e9dc8dfb880146af3003f
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 10 )
-volume_db = -16.605
-autoplay = true
 
 [node name="SpawnSystem" parent="." instance=ExtResource( 2 )]
 
