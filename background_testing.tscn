@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/city_background.png" type="Texture" id=1]
 [ext_resource path="res://SpawnSystem.tscn" type="PackedScene" id=2]
@@ -6,13 +6,15 @@
 [ext_resource path="res://WaveDisplay.gd" type="Script" id=5]
 [ext_resource path="res://Padthai_Timer.gd" type="Script" id=6]
 [ext_resource path="res://Squango.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Audio/[YT2mp3.info] - Super Mario Bros. Theme Song (320kbps).mp3" type="AudioStream" id=10]
 [ext_resource path="res://Dialogue/Mr Godot.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Entrance.tscn" type="PackedScene" id=16]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=24]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 2674.34, 24.0753 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 21, 72.7636 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 10, 111.23 )
@@ -47,30 +49,24 @@ shape = SubResource( 1 )
 visible = false
 position = Vector2( 306.515, 36.6137 )
 
-[node name="Squango" parent="." instance=ExtResource( 9 )]
-position = Vector2( 329.193, 75.105 )
-scale = Vector2( 0.780755, 0.900815 )
-__meta__ = {
-"_edit_group_": true
-}
-
 [node name="SpawnSystem" parent="." instance=ExtResource( 2 )]
 
-[node name="RightWall" type="Sprite" parent="."]
-position = Vector2( 1061.2, -38 )
-scale = Vector2( 1, 1.27261 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="RightWall"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall/StaticBody2D"]
-position = Vector2( -223.242, -4.17203 )
-shape = SubResource( 2 )
-
-[node name="LeftWall" type="Sprite" parent="."]
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2( -1069.2, -111.6 )
 scale = Vector2( 1, 2.0295 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="LeftWall"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 223.4, 28.6148 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 5 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 1061.2, -38 )
+scale = Vector2( 1, 1.27261 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -223.242, -4.17203 )
+shape = SubResource( 2 )
 
 [node name="Entrance" parent="." instance=ExtResource( 16 )]
 position = Vector2( 462.8, 54 )

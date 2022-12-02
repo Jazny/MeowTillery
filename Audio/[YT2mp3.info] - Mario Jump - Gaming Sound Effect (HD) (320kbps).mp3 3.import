@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/[YT2mp3.info] - Mario Jump - Gaming Sound Effect (HD) (320kbps).mp3-901b57b24f23af0fc75bc6f8cb28b398.mp3str"
+
+[deps]
+
+source_file="res://Audio/[YT2mp3.info] - Mario Jump - Gaming Sound Effect (HD) (320kbps).mp3"
+dest_files=[ "res://.import/[YT2mp3.info] - Mario Jump - Gaming Sound Effect (HD) (320kbps).mp3-901b57b24f23af0fc75bc6f8cb28b398.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
