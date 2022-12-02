@@ -60,8 +60,8 @@ position = Vector2( -1.90588, 1.18782 )
 shape = SubResource( 1 )
 
 [node name="bedroom_to_dungeon" parent="." instance=ExtResource( 3 )]
-position = Vector2( -489.612, 314.824 )
-scale = Vector2( 0.400059, 0.400063 )
+position = Vector2( -486.098, 303.164 )
+scale = Vector2( 0.464986, 0.46499 )
 
 [node name="HUD" parent="." instance=ExtResource( 4 )]
 
@@ -97,7 +97,7 @@ __meta__ = {
 
 [node name="Squango" parent="." instance=ExtResource( 2 )]
 position = Vector2( -426.361, 348.638 )
-scale = Vector2( 2.7805, 2.7805 )
+scale = Vector2( 3.25773, 3.25773 )
 
 [editable path="HUD"]
 [editable path="HUD/Interface/HealthBar"]

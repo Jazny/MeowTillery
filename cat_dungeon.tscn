@@ -42,7 +42,8 @@ position = Vector2( -569.29, 777.901 )
 position = Vector2( -676.764, 780.089 )
 
 [node name="dungeon_to_cafe" parent="." instance=ExtResource( 4 )]
-position = Vector2( -924.697, 787.748 )
+position = Vector2( -943.851, 778.995 )
+scale = Vector2( 3.56383, 3.52038 )
 
 [node name="dungeon_to_bedroom" parent="." instance=ExtResource( 5 )]
 position = Vector2( 366.048, 752.737 )
@@ -59,7 +60,7 @@ position = Vector2( -3.41589, 4.37998 )
 shape = SubResource( 1 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2( -610.88, 95.2646 )
+position = Vector2( -643.61, 94.112 )
 rotation = 1.55717
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
@@ -84,7 +85,7 @@ shape = SubResource( 2 )
 
 [node name="Squango" parent="." instance=ExtResource( 2 )]
 position = Vector2( 276.664, 817.289 )
-scale = Vector2( 3.17783, 3.17783 )
+scale = Vector2( 3.26578, 3.26578 )
 
 [editable path="HUD"]
 [editable path="HUD/Interface/HealthBar"]

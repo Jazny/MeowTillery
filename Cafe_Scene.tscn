@@ -46,6 +46,10 @@ shape = SubResource( 1 )
 position = Vector2( 14, 547 )
 scale = Vector2( 1.90351, 1.90351 )
 
+[node name="cafe_to_dungeon" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1005, 519 )
+scale = Vector2( 3.4986, 3.4986 )
+
 [node name="Cat1" parent="." instance=ExtResource( 4 )]
 position = Vector2( 796, 585 )
 scale = Vector2( 1.9291, 1.81639 )
@@ -67,9 +71,6 @@ scale = Vector2( 1.29397, 0.429861 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( -6.10352e-05, 6.10352e-05 )
 shape = SubResource( 2 )
-
-[node name="cafe_to_dungeon" parent="." instance=ExtResource( 7 )]
-position = Vector2( 976, 547 )
 
 [node name="HUD" parent="." instance=ExtResource( 9 )]
 

@@ -50,6 +50,12 @@ PlayerInventory="*res://PlayerInventory.gd"
 WaveTracker="*res://wave_tracker.gd"
 CatsGlobal="*res://cats_global.gd"
 
+[display]
+
+window/size/width=1080
+window/size/height=720
+window/size/resizable=false
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true

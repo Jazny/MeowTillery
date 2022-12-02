@@ -307,7 +307,6 @@ position = Vector2( 0.51361, -1 )
 scale = Vector2( 0.129909, 0.137574 )
 frames = SubResource( 8 )
 animation = "Idle"
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -356,7 +355,7 @@ shape = SubResource( 80 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2( 1.1739, 1.1739 )
-offset = Vector2( 0, -100 )
+offset = Vector2( 0, -150 )
 current = true
 zoom = Vector2( 0.8, 0.8 )
 

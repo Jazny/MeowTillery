@@ -46,13 +46,6 @@ texture = ExtResource( 1 )
 position = Vector2( 29.1367, 362.206 )
 shape = SubResource( 1 )
 
-[node name="Entrance" parent="." instance=ExtResource( 16 )]
-position = Vector2( 484.045, 66.1863 )
-scale = Vector2( 0.484684, 0.627367 )
-__meta__ = {
-"_edit_group_": true
-}
-
 [node name="Mr Godot" parent="." instance=ExtResource( 15 )]
 visible = false
 position = Vector2( 306.515, 36.6137 )
@@ -86,6 +79,9 @@ scale = Vector2( 1, 2.0295 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall/StaticBody2D"]
 position = Vector2( 233.164, 31.8736 )
 shape = SubResource( 3 )
+
+[node name="Entrance" parent="." instance=ExtResource( 16 )]
+position = Vector2( 462.8, 54 )
 
 [node name="HUD" parent="." instance=ExtResource( 24 )]
 

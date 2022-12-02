@@ -68,7 +68,7 @@ func _process(delta):
 		elif (scenes.animation == \"scene 6\"):
 			$AnimationPlayer.play(\"fade out\")
 			yield(get_tree().create_timer(2.0), \"timeout\")
-			get_tree().change_scene(\"res://background_testing.tscn\")
+			get_tree().change_scene(\"res://cafe_overtake.tscn\")
 
 func _on_intro_scenes_animation_finished():
 	if (scenes.animation == \"scene 1\"):
