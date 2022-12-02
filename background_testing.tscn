@@ -72,10 +72,6 @@ scale = Vector2( 1, 2.0295 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="LeftWall"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall/StaticBody2D"]
-position = Vector2( 233.164, 31.8736 )
-shape = SubResource( 3 )
-
 [node name="Entrance" parent="." instance=ExtResource( 16 )]
 position = Vector2( 462.8, 54 )
 
