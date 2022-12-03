@@ -49,6 +49,8 @@ JsonData="*res://Inventory/Data/JSON_DATA.gd"
 PlayerInventory="*res://PlayerInventory.gd"
 WaveTracker="*res://wave_tracker.gd"
 CatsGlobal="*res://cats_global.gd"
+Music="*res://music.tscn"
+Doors="*res://doors.gd"
 
 [display]
 
@@ -158,6 +160,16 @@ Hotbar_Slot_7={
 Hotbar_Slot_8={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":56,"unicode":0,"echo":false,"script":null)
+ ]
+}
+Feed={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":70,"unicode":0,"echo":false,"script":null)
+ ]
+}
+Weaponize={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":87,"unicode":0,"echo":false,"script":null)
  ]
 }
 
