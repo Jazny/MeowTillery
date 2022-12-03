@@ -19,5 +19,5 @@ func _on_Credits_pressed():
 	get_tree().change_scene("res://Credits.tscn")
 
 
-func _on_Button_pressed():
-	pass
+func _on_Options_pressed():
+	get_tree().change_scene("res://Options.tscn")
