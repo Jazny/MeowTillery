@@ -37,7 +37,6 @@ animations = [ {
 position = Vector2( -20, 17 )
 scale = Vector2( 1.43588, 1.43588 )
 frames = SubResource( 5 )
-frame = 5
 playing = true
 
 [node name="Cage" type="Sprite" parent="."]
