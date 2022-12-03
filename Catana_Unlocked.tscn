@@ -119,12 +119,12 @@ color = Color( 0, 0, 0, 0 )
 
 [node name="Sprite" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 455, 279 )
-scale = Vector2( 0.406386, 0.406386 )
+position = Vector2( 244, 324 )
+scale = Vector2( 0.239252, 0.239252 )
 texture = ExtResource( 1 )
 
 [node name="Sprite2" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 513, 577 )
-scale = Vector2( 0.576187, 0.576187 )
+position = Vector2( 265, 511 )
+scale = Vector2( 0.399556, 0.399556 )
 texture = ExtResource( 2 )

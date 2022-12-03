@@ -1,6 +1,7 @@
 extends TextureProgress
 
 onready var grey_cat_stats = get_node("/root/CatsGlobal")
+var inzone = false
 
 func _ready():
 	value = grey_cat_stats.grey_cat_hunger
@@ -20,15 +21,13 @@ func _process(delta):
 		tint_progress = Color(0.88, 0.65, 0.21, 1)
 	elif (value <= 30):
 		tint_progress = Color(0.88, 0.29, 0.21, 1)
+	
+	if Input.is_action_just_pressed("Feed") && inzone == true:
+		if (value < 90):
+			get_node("Timer").wait_time+=10
+			get_node("Timer").start(get_node("Timer").wait_time)
 
 
 func _on_Timer_timeout():
 	hide()
-	
-	
-func _on_Button_pressed():
-	hide()
 
-
-func _on_Button2_pressed():
-	get_node("Timer").start(100)
