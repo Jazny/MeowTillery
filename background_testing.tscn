@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/city_background.png" type="Texture" id=1]
 [ext_resource path="res://SpawnSystem.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Robert_Scrum_The_Punished.tscn" type="PackedScene" id=3]
 [ext_resource path="res://advanced_pixel-7.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://WaveDisplay.gd" type="Script" id=5]
 [ext_resource path="res://Padthai_Timer.gd" type="Script" id=6]
@@ -52,6 +53,9 @@ position = Vector2( 462.8, 54 )
 visible = false
 position = Vector2( 306.515, 36.6137 )
 
+[node name="AnimatedSprite" parent="Mr Godot" index="1"]
+frame = 1
+
 [node name="SpawnSystem" parent="." instance=ExtResource( 2 )]
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
@@ -89,6 +93,8 @@ script = ExtResource( 6 )
 [node name="Squango" parent="." instance=ExtResource( 9 )]
 position = Vector2( 466, 76 )
 scale = Vector2( 1.14322, 1.14322 )
+
+[node name="Robert_Scrum_The_Punished" parent="." instance=ExtResource( 3 )]
 
 [connection signal="timeout" from="Padthai_Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="Padthai_Timer" to="Padthai_Timer" method="_on_Padthai_Timer_timeout"]
