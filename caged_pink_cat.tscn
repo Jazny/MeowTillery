@@ -1,14 +1,14 @@
 [gd_scene load_steps=20 format=2]
 
-[ext_resource path="res://cat_sprites/black_002 3.png" type="Texture" id=1]
+[ext_resource path="res://cat_sprites/pink_000.png" type="Texture" id=1]
 [ext_resource path="res://cage.png" type="Texture" id=2]
-[ext_resource path="res://Squango_assets/weapons/meowchine_gun.png" type="Texture" id=3]
-[ext_resource path="res://Squango_assets/weapons/MACHINE GUN UNLOCKED.png" type="Texture" id=4]
+[ext_resource path="res://Squango_assets/weapons/ACat-47.png" type="Texture" id=3]
+[ext_resource path="res://assets/weapons/ACat-47 Unlocked.png" type="Texture" id=4]
 [ext_resource path="res://assets/HungerbarForground 2.png" type="Texture" id=5]
 [ext_resource path="res://assets/HungerbarBackgroung 2.png" type="Texture" id=6]
-[ext_resource path="res://caged_black_cat.gd" type="Script" id=7]
-[ext_resource path="res://blackArea2D.gd" type="Script" id=8]
-[ext_resource path="res://blackHungerBar.gd" type="Script" id=9]
+[ext_resource path="res://caged_pink_cat.gd" type="Script" id=7]
+[ext_resource path="res://pinkArea2D.gd" type="Script" id=8]
+[ext_resource path="res://pinkHungerBar.gd" type="Script" id=9]
 [ext_resource path="res://Fonts/Minecraft-Regular.otf" type="DynamicFontData" id=10]
 
 [sub_resource type="AtlasTexture" id=10]
@@ -45,7 +45,7 @@ extents = Vector2( 62.5, 42.5 )
 [sub_resource type="Animation" id=7]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimationPlayer/MeowchinegunUnlocked2:modulate")
+tracks/0/path = NodePath("AnimationPlayer/ACat-47_Unlocked:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -85,7 +85,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("AnimationPlayer/MeowchinegunUnlocked2:modulate")
+tracks/2/path = NodePath("AnimationPlayer/ACat-47_Unlocked:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -106,9 +106,10 @@ scale = Vector2( 0.602914, 0.602914 )
 script = ExtResource( 7 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -21.5619, 13.2689 )
-scale = Vector2( 1.85105, 1.85105 )
+position = Vector2( 0, 11.6103 )
+scale = Vector2( 2.26844, 2.26844 )
 frames = SubResource( 5 )
+frame = 4
 playing = true
 
 [node name="Cage" type="Sprite" parent="."]
@@ -129,21 +130,21 @@ anims/RESET = SubResource( 7 )
 
 [node name="ColorRect" type="ColorRect" parent="AnimationPlayer"]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = -793.0
-margin_top = -549.0
-margin_right = 1599.0
-margin_bottom = 1071.0
+margin_left = -778.0
+margin_top = -548.0
+margin_right = 1614.0
+margin_bottom = 1072.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="Sprite" type="Sprite" parent="AnimationPlayer"]
 modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 401, 453 )
+position = Vector2( 362, 456 )
 scale = Vector2( 0.276986, 0.276986 )
 texture = ExtResource( 3 )
 
-[node name="MeowchinegunUnlocked2" type="Sprite" parent="AnimationPlayer"]
+[node name="ACat-47_Unlocked" type="Sprite" parent="AnimationPlayer"]
 modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 426, 606 )
+position = Vector2( 379, 607 )
 scale = Vector2( 0.530788, 0.530788 )
 texture = ExtResource( 4 )
 
