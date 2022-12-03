@@ -10,8 +10,8 @@ func _ready():
 
 func _process(delta):
 	
-	curHealth = get_parent().get_node("MiniBossHealth").value
+	curHealth = get_parent().get_node("BossHealth").value
 	#if $CurHealth != null:
-	self.text="Robert Scrum: " + str(curHealth) + "/100"
+	self.text="Ingrid: " + str(curHealth) + "/100"
 	
 	

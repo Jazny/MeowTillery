@@ -108,7 +108,7 @@ func _newWave():
 			robert.position = Vector2(-350, 60)
 			minion4.position = Vector2(-390, 60)
 			minion5.position = Vector2(-425, 60)
-			TheMiniBossBar.rect_position = Vector2(400,480)
+			TheMiniBossBar.rect_position = Vector2(-20,-30)
 			
 			minion1.is_moving_right = true
 			minion1.scale.x = -minion1.scale.x
@@ -242,7 +242,7 @@ func _newWave():
 			var TheBossBar = BB.instance()
 			
 			TheIngrid.position = Vector2(-350, 60)
-			TheBossBar.rect_position = Vector2(400,480)
+			TheBossBar.rect_position = Vector2(-20,-30)
 			
 			add_child(TheIngrid)
 			get_parent().get_node("HUD").get_node("Interface").add_child(TheBossBar)
