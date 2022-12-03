@@ -90,7 +90,7 @@ shape = SubResource( 2 )
 [node name="HUD" parent="." instance=ExtResource( 7 )]
 
 [node name="Squango" parent="." instance=ExtResource( 2 )]
-position = Vector2( 276.664, 817.289 )
+position = Vector2( 288.369, 814.006 )
 scale = Vector2( 3.26578, 3.26578 )
 
 [editable path="HUD"]

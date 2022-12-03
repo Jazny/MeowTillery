@@ -50,6 +50,7 @@ PlayerInventory="*res://PlayerInventory.gd"
 WaveTracker="*res://wave_tracker.gd"
 CatsGlobal="*res://cats_global.gd"
 Music="*res://music.tscn"
+Doors="*res://doors.gd"
 
 [display]
 
