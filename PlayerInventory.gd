@@ -11,7 +11,7 @@ var active_item_slot = 0
 
 
 var inventory = {
-	0: ["Catana", 1]
+	0: ["MeowchineGun", 1]
 }
 
 var hotbar = {
