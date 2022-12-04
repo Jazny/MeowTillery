@@ -5,7 +5,7 @@ const ACC = 80
 const JUMP_FORCE = 1000
 const GRAVITY = 50
 const TERMINAL_VELOCITY = 1000
-const RANGE = 100
+const RANGE = 75
 
 onready var sprite = $AnimatedSprite
 var projectile = preload("res://CafeOwnerProjectile.tscn")
@@ -16,15 +16,23 @@ var yVelocity = 0
 var xVelocity = 0
 var inRange = false
 var hasAttacked = 0
-
+var health = 100
+var hurt = 20
+var blink_duration = 2
+var deathBool = 0
+	
 func _physics_process(delta):
 	if(player == null):
 		return
+	if(health <= 0):
+		deathBool = 1
+		_die()
 		
 	if (inRange == true):
 		xVelocity = 0
 		if(hasAttacked == 0):
 			hasAttacked = 1
+			#yield(get_tree().create_timer(0.2), "timeout")
 			_attack()
 		elif(hasAttacked == 1):
 			yield(get_tree().create_timer(0.7), "timeout")
@@ -85,7 +93,9 @@ func _animate():
 		sprite.play("Idle")
 		
 func _die():
-	queue_free()
+	return
+	#queue_free()
+	
 	
 func flip():
 	lookingRight = !lookingRight
@@ -94,3 +104,9 @@ func flip():
 func set_player(p):
 	player = p	
 		
+
+func _on_Area2D_body_entered(body):
+	if (body.name == "Squango"):
+		health = health - hurt
+	sprite.play("Blink")
+	yield(get_tree().create_timer(5.0), "timeout")
