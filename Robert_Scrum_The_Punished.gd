@@ -165,7 +165,7 @@ func _die():
 	queue_free()
 
 func _on_RHurtbox_area_entered(area):
-	if (area.name == "Hurtbox"):
+	if (area.name == "Hurtbox" or area.name == "CatanaHitBox" or area.name == "CatlassHitBox"):
 		if area.damage != 0 and R2stats.health > 0:
 			if !hurtbox.is_invincible:
 				blinker.start_blinking(self, invincibility_duration)
