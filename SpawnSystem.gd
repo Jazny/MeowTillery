@@ -246,7 +246,7 @@ func _newWave():
 
 func _process(delta):
 	if (!wavestarted):
-		block.position = Vector2(475,115)
+		block.position = Vector2(780,115)
 		add_child(block)
 		wavestarted = 1
 		
