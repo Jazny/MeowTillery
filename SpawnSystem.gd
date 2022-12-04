@@ -6,6 +6,7 @@ extends Node2D
 var minion = preload("res://minion.tscn")
 var jenner = preload("res://Kendall_Jenner.tscn")
 var scrum = preload("res://Robert_Scrum.tscn")
+var scrum2 = preload("res://Robert_Scrum_The_Punished.tscn")
 var ingrid = preload("res://Ingrid.tscn")
 var turret = preload("res://Turret.tscn")
 var BB = preload("res://BossBar.tscn")
@@ -221,22 +222,13 @@ func _newWave():
 			WaveTracker.enemiesRemaining = 7
 		6:
 			#this should be robert scrum 2 btw
-			var robert = scrum.instance()
-			var jenner1 = jenner.instance()
-			var jenner2 = jenner.instance()
-			var jenner3 = jenner.instance()
+			var robert2 = scrum2.instance()
 			
-			robert.position = Vector2(-350, 60)
-			jenner1.position = Vector2(-200, 60)
-			jenner2.position = Vector2(-300, 60)
-			jenner3.position = Vector2(-375, 60)
+			robert2.position = Vector2(-350, 60)
+
+			add_child(robert2)
 			
-			add_child(jenner1)
-			add_child(jenner2)
-			add_child(jenner3)
-			add_child(robert)
-			
-			WaveTracker.enemiesRemaining = 4
+			WaveTracker.enemiesRemaining = 1
 		7:
 			var TheIngrid = ingrid.instance()
 			var TheBossBar = BB.instance()
