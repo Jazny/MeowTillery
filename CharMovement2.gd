@@ -179,18 +179,12 @@ func check():
 		stateW = "none"
 		stateW2 = "none"
 	else:
-		if PlayerInventory.equips[3][0] == "MeowchineGun":
+		if PlayerInventory.equips[3][0] == "MeowchineGun" or PlayerInventory.equips[3][0] == "ACat-47":
 			stateW = "gun"
-			stateW2 = "MeowchineGun"
-		elif PlayerInventory.equips[3][0] == "ACat-47":
-			stateW = "gun"
-			stateW2 = "ACat-47"
-		elif PlayerInventory.equips[3][0] == "Catana":
+			stateW2 = PlayerInventory.equips[3][0]
+		elif PlayerInventory.equips[3][0] == "Catana" or PlayerInventory.equips[3][0] == "Catlass":
 			stateW = "sword"
-			stateW2 = "Catana"
-		elif PlayerInventory.equips[3][0] == "Catlass":
-			stateW = "sword"
-			stateW2 = "Catlass"
+			stateW2 = PlayerInventory.equips[3][0]
 
 func wallJump():
 	yVelocity = -JUMP_FORCE / 2
