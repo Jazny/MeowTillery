@@ -1,5 +1,5 @@
 extends Node2D
-const Catana = preload("res://Inventory/ItemDropCatana.tscn")
+const Catlass = preload("res://Inventory/ItemDropCatlass.tscn")
 
 onready var catstats = get_node("/root/CatsGlobal")
 onready var guide = get_node("guide")
@@ -19,8 +19,8 @@ func _process(delta):
 			hunger.hide()
 			catstats.calico_cat_alive = false
 			guide.visible = false
-			var catana = Catana.instance()
-			get_parent().add_child(catana)
+			var catlass = Catlass.instance()
+			get_parent().add_child(catlass)
 			WaveTracker.waveNum = 1
 			yield(get_tree().create_timer(3), "timeout")
 		elif (inzone == true):

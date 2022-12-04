@@ -46,7 +46,7 @@ position = Vector2( 29.1367, 362.206 )
 shape = SubResource( 1 )
 
 [node name="Entrance" parent="." instance=ExtResource( 16 )]
-position = Vector2( 462.8, 54 )
+position = Vector2( 788.8, 56.4 )
 
 [node name="Mr Godot" parent="." instance=ExtResource( 15 )]
 visible = false
@@ -90,7 +90,7 @@ autostart = true
 script = ExtResource( 6 )
 
 [node name="Squango" parent="." instance=ExtResource( 9 )]
-position = Vector2( 466, 76 )
+position = Vector2( 692.4, 70.4 )
 scale = Vector2( 1.14322, 1.14322 )
 
 [connection signal="timeout" from="Padthai_Timer" to="." method="_on_Timer_timeout"]

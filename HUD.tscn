@@ -24,7 +24,9 @@ visible = false
 position = Vector2( 277, 249 )
 
 [node name="Hotbar" parent="." instance=ExtResource( 5 )]
-position = Vector2( -37, 70 )
+
+position = Vector2( -412, 127 )
+
 
 [editable path="Interface/HealthBar"]
 [editable path="Interface/SanityBar"]
