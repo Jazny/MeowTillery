@@ -25,8 +25,8 @@ var spacer = 0
 var stateJ = "idle"
 var stateR = "idle"
 
-var stateW = "sword"
-var stateW2 = "Catlass"
+var stateW = "none"
+var stateW2 = "none"
 ## stateW: either "gun" or "sword" or "none"
 ## stateW2: either "ACat-47" or "MeowchineGun" or "Catana" or "Catlass" or "none"
 
@@ -91,7 +91,7 @@ func _physics_process(delta):
 	if(stateW == "sword"):
 		_stab()
 	
-	#check()
+	check()
 	animate()
 		
 func flip():
@@ -153,7 +153,6 @@ func animate():
 			return
 		if(xVelocity == 0 and yVelocity <= 5):
 			sprite.play("idle+meowchinegun")
-	
 	elif(stateW == "sword" and stateW2 == "Catana"):
 		if(Input.is_action_just_pressed("mv_jump")):
 			sprite.play("jump+catana")
@@ -166,7 +165,6 @@ func animate():
 			return
 		if(xVelocity == 0 and yVelocity <= 5):
 			sprite.play("idle+catana")
-			
 	elif(stateW == "sword" and stateW2 == "Catlass"):
 		if(Input.is_action_just_pressed("mv_jump")):
 			sprite.play("jump+catlass")
@@ -188,7 +186,7 @@ func check():
 		if PlayerInventory.equips[3][0] == "MeowchineGun" or PlayerInventory.equips[3][0] == "ACat-47":
 			stateW = "gun"
 			stateW2 = PlayerInventory.equips[3][0]
-		elif PlayerInventory.equips[3][0] == "Catana" or PlayerInventory.equips[3][0] == "Catlass":
+		elif PlayerInventory.equips[3][0] == "Catana" or PlayerInventory.equips[3][0]:
 			stateW = "sword"
 			stateW2 = PlayerInventory.equips[3][0]
 
