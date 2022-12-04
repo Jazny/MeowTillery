@@ -256,13 +256,6 @@ func _process(delta):
 			add_child(turret1)
 			add_child(turret2)
 			
-		elif (WaveTracker.waveNum == 6):
-			turret1.position = Vector2(250, 0)
-			turret2.position = Vector2(0, 0)
-			turret3.position = Vector2(-250, 0)
-			add_child(turret1)
-			add_child(turret2)
-			add_child(turret3)
 		
 	if (WaveTracker.enemiesRemaining == 0 && !blockFreed):
 		WaveTracker.waveCleared = 1
@@ -270,11 +263,7 @@ func _process(delta):
 		if (WaveTracker.waveNum == 4 || WaveTracker.waveNum == 5):
 			turret1.queue_free()
 			turret2.queue_free()
-		elif(WaveTracker.waveNum == 6):
-			turret1.queue_free()
-			turret2.queue_free()
-			turret3.queue_free()
-		
+
 		if (WaveTracker.waveNum != 0):
 			WaveTracker.waveNum += 1
 		blockFreed = 1
