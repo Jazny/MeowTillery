@@ -100,3 +100,4 @@ scale = Vector2( 1.14322, 1.14322 )
 [editable path="HUD"]
 [editable path="HUD/Interface/HealthBar"]
 [editable path="HUD/Interface/SanityBar"]
+[editable path="HUD/Hotbar"]
