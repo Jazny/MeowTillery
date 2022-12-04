@@ -13,7 +13,7 @@ var burstCooldown = false
 var dashCooldown = false
 var player = null
 var flipRequired = false
-var projectile = preload("res://TurretProjectile.tscn")
+var projectile = preload("res://Mini_Robert.tscn")
 var state = "walking"
 var numShotsFired = 0
 var framecounter = 0
@@ -102,7 +102,7 @@ func _setDashDuration():
 	
 func _setCooldown():
 	attackCooldown = true
-	yield(get_tree().create_timer(0.5), "timeout")
+	yield(get_tree().create_timer(0.25), "timeout")
 	attackCooldown = false
 
 func _setBurstCooldown():
