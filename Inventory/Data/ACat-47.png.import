@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/item_slot_selected_background 2.png-b9af7af686f92e88a0e8cbd6b87e5e9f.stex"
+path="res://.import/ACat-47.png-2bc18c4579a41dbee5a159c893754f2e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Inventory/item_slot_selected_background 2.png"
-dest_files=[ "res://.import/item_slot_selected_background 2.png-b9af7af686f92e88a0e8cbd6b87e5e9f.stex" ]
+source_file="res://Inventory/Data/ACat-47.png"
+dest_files=[ "res://.import/ACat-47.png-2bc18c4579a41dbee5a159c893754f2e.stex" ]
 
 [params]
 
