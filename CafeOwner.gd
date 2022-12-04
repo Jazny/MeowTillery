@@ -102,7 +102,7 @@ func flip():
 	sprite.flip_h = !sprite.flip_h
 	
 func set_player(p):
-	player = p	
+	player = p
 		
 
 func _on_Area2D_body_entered(body):

@@ -1,0 +1,153 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://owner/spr_kanako_jump_32x64_6-frames 2.png" type="Texture" id=1]
+[ext_resource path="res://owner_sensor.gd" type="Script" id=2]
+[ext_resource path="res://owner.gd" type="Script" id=3]
+[ext_resource path="res://attack_detector.gd" type="Script" id=4]
+[ext_resource path="res://health_bar.gd" type="Script" id=5]
+[ext_resource path="res://RHurtbox.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Blink.tscn" type="PackedScene" id=7]
+[ext_resource path="res://HealthBar.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Charger_Stats.tscn" type="PackedScene" id=9]
+[ext_resource path="res://owner/owner_walk 2.png" type="Texture" id=10]
+[ext_resource path="res://charger_stats.gd" type="Script" id=14]
+[ext_resource path="res://r_hurtbox.gd" type="Script" id=15]
+[ext_resource path="res://blink_er.gd" type="Script" id=16]
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 48, 64 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 48, 0, 48, 64 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 96, 0, 48, 64 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 144, 0, 48, 64 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 32, 64 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 32, 0, 32, 64 )
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 64, 0, 32, 64 )
+
+[sub_resource type="AtlasTexture" id=13]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 96, 0, 32, 64 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
+"loop": false,
+"name": "rushing",
+"speed": 3.0
+}, {
+"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
+"loop": true,
+"name": "walking",
+"speed": 4.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 56, 88.9612 )
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 292.582
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 2.14434, 24.353 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 37.9241, 55.5812 )
+
+[node name="owner" type="KinematicBody2D"]
+scale = Vector2( 12.6253, 12.6253 )
+collision_layer = 2
+script = ExtResource( 3 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.152137, 0.152137 )
+frames = SubResource( 5 )
+animation = "rushing"
+frame = 3
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 1.41498 )
+scale = Vector2( 0.0367807, 0.0367807 )
+shape = SubResource( 1 )
+
+[node name="SquangoSeeker" type="Area2D" parent="."]
+scale = Vector2( 0.0720422, 0.0720422 )
+collision_layer = 2
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SquangoSeeker"]
+scale = Vector2( 0.772291, -0.316073 )
+shape = SubResource( 2 )
+
+[node name="AttackDetector" type="Area2D" parent="."]
+scale = Vector2( -0.00345594, 0.408661 )
+collision_layer = 2
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackDetector"]
+position = Vector2( -62.2454, -0.115753 )
+scale = Vector2( 1.75091, 2.2537 )
+shape = SubResource( 3 )
+
+[node name="Charger_Stats" parent="." instance=ExtResource( 9 )]
+script = ExtResource( 14 )
+
+[node name="RHurtbox" parent="." instance=ExtResource( 6 )]
+scale = Vector2( 0.0871467, 0.0871467 )
+collision_layer = 2
+script = ExtResource( 15 )
+
+[node name="CollisionShape2D" parent="RHurtbox" index="0"]
+position = Vector2( 2.06859, 0.41885 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 4 )
+
+[node name="Blinker" parent="." instance=ExtResource( 7 )]
+script = ExtResource( 16 )
+
+[node name="HealthBar" parent="." instance=ExtResource( 8 )]
+margin_left = -4.0
+margin_top = -4.0
+margin_right = 36.0
+margin_bottom = 36.0
+rect_scale = Vector2( 0.0166448, 0.0166448 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true,
+"_editor_description_": ""
+}
+
+[connection signal="body_entered" from="SquangoSeeker" to="." method="_on_SquangoSeeker_body_entered"]
+[connection signal="body_exited" from="SquangoSeeker" to="." method="_on_SquangoSeeker_body_exited"]
+[connection signal="body_entered" from="AttackDetector" to="." method="_on_AttackDetector_body_entered"]
+[connection signal="health_updated" from="Charger_Stats" to="HealthBar" method="_on_Charger_Stats_health_updated"]
+[connection signal="area_entered" from="RHurtbox" to="." method="_on_RHurtbox_area_entered"]
+
+[editable path="RHurtbox"]
+[editable path="HealthBar"]
