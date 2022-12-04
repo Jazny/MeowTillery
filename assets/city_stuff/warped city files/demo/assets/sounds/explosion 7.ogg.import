@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/explosion 7.ogg-faeb6e163f0b173f1e713529e5aec0b6.oggstr"
+
+[deps]
+
+source_file="res://assets/city_stuff/warped city files/demo/assets/sounds/explosion 7.ogg"
+dest_files=[ "res://.import/explosion 7.ogg-faeb6e163f0b173f1e713529e5aec0b6.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

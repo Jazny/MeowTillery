@@ -1,0 +1,35 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/intro18 3.PNG-0255714dd7d810441259832cb445b582.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://intro_quip/intro18 3.PNG"
+dest_files=[ "res://.import/intro18 3.PNG-0255714dd7d810441259832cb445b582.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+process/normal_map_invert_y=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/sci_fi_platformer02 2.ogg-f72bd8a6e91ee931b4b9fe3e1421ac2d.oggstr"
+
+[deps]
+
+source_file="res://assets/city_stuff/warped city files/demo/assets/sounds/sci_fi_platformer02 2.ogg"
+dest_files=[ "res://.import/sci_fi_platformer02 2.ogg-f72bd8a6e91ee931b4b9fe3e1421ac2d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
