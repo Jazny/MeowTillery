@@ -12,7 +12,7 @@ func _ready():
 
 func _process(delta):
 	if Input.is_action_just_pressed("Weaponize"):
-		if (inzone == true) && (catstats.black_cat_num_times_fed > 9):
+		if (inzone == true) && (catstats.black_cat_num_times_fed > 5):
 			get_node("AnimatedSprite").hide()
 			get_node("Cage").hide()
 			get_node("AnimationPlayer").play("Weapon Unlocked")
@@ -24,7 +24,7 @@ func _process(delta):
 			WaveTracker.waveNum = 1
 			yield(get_tree().create_timer(3), "timeout")
 		elif (inzone == true):
-			guide.text = "You must feed this cat at least ten times to weaponize it."
+			guide.text = "You must feed this cat at least five times to weaponize it."
 	
 	elif Input.is_action_just_pressed("Feed"):
 		if (inzone == true) && (get_node("Control/HungerBar").value < 90):
