@@ -8,4 +8,4 @@ func _on_Area2D_body_entered(body):
 		if body.name == "Squango":
 			doors.cafe_to_dungeon = true
 			doors.entrance = false
-			get_tree().change_scene("res://Cat_Dungeon.tscn")
+			get_tree().change_scene("res://cat_dungeon.tscn")
