@@ -2,13 +2,11 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-path="res://.import/[YT2mp3.info] - Super Mario Bros. Theme Song (320kbps) 4.mp3-185cf0909fe617fd634964c36c7df391.mp3str"
+valid=false
 
 [deps]
 
 source_file="res://Audio/[YT2mp3.info] - Super Mario Bros. Theme Song (320kbps) 4.mp3"
-dest_files=[ "res://.import/[YT2mp3.info] - Super Mario Bros. Theme Song (320kbps) 4.mp3-185cf0909fe617fd634964c36c7df391.mp3str" ]
-
 [params]
 
 loop=true
