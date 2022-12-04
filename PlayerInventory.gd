@@ -4,14 +4,14 @@ signal active_item_updated
 
 const SlotClass = preload("Inventory_Panel.gd")
 const ItemClass = preload("Inventory/Test_Item.gd")
-const NUM_INVENTORY_SLOTS = 56
+const NUM_INVENTORY_SLOTS = 25
 const NUM_HOTBAR_SLOTS = 8
 
 var active_item_slot = 0
 
 
 var inventory = {
-	0: ["Tree Branch", 1]
+	0: ["MeowchineGun", 1]
 }
 
 var hotbar = {

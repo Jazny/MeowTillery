@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Inventory/ItemDropACat-47.gd" type="Script" id=1]
-[ext_resource path="res://Inventory/Item_Icons/ACat-47.png" type="Texture" id=2]
+[ext_resource path="res://Inventory/Data/ACat-47.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 17.5, 12 )

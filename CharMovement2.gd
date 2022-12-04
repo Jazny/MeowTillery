@@ -1,4 +1,6 @@
 extends KinematicBody2D
+const SlotClass = preload("Inventory_Panel.gd")
+
 
 const MOVE_SPEED = 500
 const ACC = 80
@@ -26,13 +28,12 @@ var stateR = "idle"
 var stateW = "none"
 var stateW2 = "none"
 ## stateW: either "gun" or "sword" or "none"
-## stateW2: either "ACat" or "MeowchineGun" or "Catana" or "Catlass" or "none"
+## stateW2: either "ACat-47" or "MeowchineGun" or "Catana" or "Catlass" or "none"
 
 func _ready():
 	stats.connect("killed", self, "_die")
 
 func _physics_process(delta):
-	
 	get_tree().call_group("need_player", "set_player", self)
 	var onFloor = is_on_floor()
 	var onWall = is_on_wall()
@@ -89,14 +90,18 @@ func _physics_process(delta):
 		
 	if(stateW == "sword"):
 		_stab()
-		
+	
+	check()
 	animate()
 		
 func flip():
 	lookingRight = !lookingRight
 	sprite.flip_h = !sprite.flip_h
 	
+
 func animate():
+	
+	
 	if(stateR == "dead"):
 		sprite.play("death")
 		return
@@ -117,7 +122,7 @@ func animate():
 		if(xVelocity == 0 and yVelocity <= 5):
 			sprite.play("Idle")
 			
-	elif(stateW == "gun" and stateW2 == "ACat"):
+	elif(stateW == "gun" and stateW2 == "ACat-47"):
 		if(Input.is_action_just_pressed("mv_jump")):
 			sprite.play("jump+ACat-47")
 			return
@@ -169,6 +174,17 @@ func animate():
 		if(xVelocity == 0 and yVelocity <= 5):
 			sprite.play("idle+catlass")
 
+func check():
+	if PlayerInventory.equips.empty() == true:
+		stateW = "none"
+		stateW2 = "none"
+	else:
+		if PlayerInventory.equips[3][0] == "MeowchineGun" or PlayerInventory.equips[3][0] == "ACat-47":
+			stateW = "gun"
+			stateW2 = PlayerInventory.equips[3][0]
+		elif PlayerInventory.equips[3][0] == "Catana" or PlayerInventory.equips[3][0] == "Catlass":
+			stateW = "sword"
+			stateW2 = PlayerInventory.equips[3][0]
 
 func wallJump():
 	yVelocity = -JUMP_FORCE / 2
@@ -184,7 +200,7 @@ func _stab():
 	return
 
 func _shoot():
-	if(stateW2 == "ACat" and Input.is_action_just_pressed("shoot")):
+	if(stateW2 == "ACat-47" and Input.is_action_just_pressed("shoot")):
 		sprite.play("hit+ACat-47")
 		var projectileACat = preload("res://ACatProjectile.tscn")
 		var projInstanceACat = projectileACat.instance()

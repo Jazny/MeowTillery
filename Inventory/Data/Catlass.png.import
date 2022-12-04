@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/item_slot_default_background 2.png-a411f86fc74a656a58a9304019fc13f8.stex"
+path="res://.import/Catlass.png-a19a9eb00033a7d1afb194098309429d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Inventory/item_slot_default_background 2.png"
-dest_files=[ "res://.import/item_slot_default_background 2.png-a411f86fc74a656a58a9304019fc13f8.stex" ]
+source_file="res://Inventory/Data/Catlass.png"
+dest_files=[ "res://.import/Catlass.png-a19a9eb00033a7d1afb194098309429d.stex" ]
 
 [params]
 
