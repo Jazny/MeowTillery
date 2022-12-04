@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/[YT2mp3.info] - Fortnite Death - Sound Effect (HD) (320kbps) 6.mp3-6412da7ed3313b4e0d19778789e2c693.mp3str"
+
+[deps]
+
+source_file="res://Audio/[YT2mp3.info] - Fortnite Death - Sound Effect (HD) (320kbps) 6.mp3"
+dest_files=[ "res://.import/[YT2mp3.info] - Fortnite Death - Sound Effect (HD) (320kbps) 6.mp3-6412da7ed3313b4e0d19778789e2c693.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
