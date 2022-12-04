@@ -2,11 +2,16 @@
 
 importer="texture"
 type="StreamTexture"
-valid=false
+path="res://.import/hotbar_background 2.png-ef5fbdb62a0a5a68c80d7028edc96a09.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://Inventory/hotbar_background 2.png"
+dest_files=[ "res://.import/hotbar_background 2.png-ef5fbdb62a0a5a68c80d7028edc96a09.stex" ]
+
 [params]
 
 compress/mode=0

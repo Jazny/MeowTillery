@@ -2,11 +2,16 @@
 
 importer="texture"
 type="StreamTexture"
-valid=false
+path="res://.import/inventory_background 2.png-f0794f06f324d52409e68d6987127570.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://Inventory/inventory_background 2.png"
+dest_files=[ "res://.import/inventory_background 2.png-f0794f06f324d52409e68d6987127570.stex" ]
+
 [params]
 
 compress/mode=0
