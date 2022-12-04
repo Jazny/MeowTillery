@@ -97,6 +97,12 @@ func _physics_process(delta):
 func flip():
 	lookingRight = !lookingRight
 	sprite.flip_h = !sprite.flip_h
+	if(get_node("CatanaHitBox").position.x < 0):
+		get_node("CatanaHitBox").position.x = 30
+		get_node("CatlassHitBox").position.x = 30
+	elif(get_node("CatanaHitBox").position.x > 0):
+		get_node("CatanaHitBox").position.x = -5.637
+		get_node("CatlassHitBox").position.x = -5.637
 	
 
 func animate():
@@ -147,7 +153,6 @@ func animate():
 			return
 		if(xVelocity == 0 and yVelocity <= 5):
 			sprite.play("idle+meowchinegun")
-	
 	elif(stateW == "sword" and stateW2 == "Catana"):
 		if(Input.is_action_just_pressed("mv_jump")):
 			sprite.play("jump+catana")
@@ -160,7 +165,6 @@ func animate():
 			return
 		if(xVelocity == 0 and yVelocity <= 5):
 			sprite.play("idle+catana")
-			
 	elif(stateW == "sword" and stateW2 == "Catlass"):
 		if(Input.is_action_just_pressed("mv_jump")):
 			sprite.play("jump+catlass")
@@ -182,7 +186,7 @@ func check():
 		if PlayerInventory.equips[3][0] == "MeowchineGun" or PlayerInventory.equips[3][0] == "ACat-47":
 			stateW = "gun"
 			stateW2 = PlayerInventory.equips[3][0]
-		elif PlayerInventory.equips[3][0] == "Catana" or PlayerInventory.equips[3][0] == "Catlass":
+		elif PlayerInventory.equips[3][0] == "Catana" or PlayerInventory.equips[3][0]:
 			stateW = "sword"
 			stateW2 = PlayerInventory.equips[3][0]
 
@@ -197,8 +201,22 @@ func wallJump():
 		stateJ = "jump2"
 		
 func _stab():
+	if(stateW2 == "Catana" and Input.is_action_just_pressed("shoot")):
+		sprite.play("hit+catana")
+		get_node("CatanaHitBox").get_node("CollisionShape2D").disabled = false
+		
+		yield(get_tree().create_timer(0.5), "timeout")
+		
+		get_node("CatanaHitBox").get_node("CollisionShape2D").disabled = true
 	
-	return
+	if(stateW2 == "Catlass" and Input.is_action_pressed("shoot")):
+		sprite.play("hit+catlass")
+		get_node("CatlassHitBox").get_node("CollisionShape2D").disabled = false
+		
+		yield(get_tree().create_timer(0.5), "timeout")
+		
+		get_node("CatlassHitBox").get_node("CollisionShape2D").disabled = true
+	
 
 func _shoot():
 	if(stateW2 == "ACat-47" and Input.is_action_just_pressed("shoot")):
