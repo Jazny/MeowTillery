@@ -186,6 +186,7 @@ func check():
 			stateW = "sword"
 			stateW2 = PlayerInventory.equips[3][0]
 
+
 func wallJump():
 	yVelocity = -JUMP_FORCE / 2
 	if(lookingRight):
