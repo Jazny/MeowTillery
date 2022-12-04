@@ -2,7 +2,7 @@
 
 [ext_resource path="res://MeowchineGunDamage.gd" type="Script" id=1]
 [ext_resource path="res://MeowchineGunProjectile.gd" type="Script" id=2]
-[ext_resource path="res://Joey.jpg" type="Texture" id=3]
+[ext_resource path="res://MeowchineGun Bullet.png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 7.0
@@ -17,7 +17,7 @@ script = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.0444444, 0.0444444 )
+scale = Vector2( 0.104167, 0.104167 )
 texture = ExtResource( 3 )
 
 [node name="Area2D" type="Area2D" parent="."]
