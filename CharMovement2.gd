@@ -25,8 +25,8 @@ var spacer = 0
 var stateJ = "idle"
 var stateR = "idle"
 
-var stateW = "sword"
-var stateW2 = "Catlass"
+var stateW = "none"
+var stateW2 = "none"
 ## stateW: either "gun" or "sword" or "none"
 ## stateW2: either "ACat-47" or "MeowchineGun" or "Catana" or "Catlass" or "none"
 
@@ -97,13 +97,6 @@ func _physics_process(delta):
 func flip():
 	lookingRight = !lookingRight
 	sprite.flip_h = !sprite.flip_h
-	if(get_node("CatanaHitBox").position.x < 0):
-		get_node("CatanaHitBox").position.x = 30
-		get_node("CatlassHitBox").position.x = 30
-	elif(get_node("CatanaHitBox").position.x > 0):
-		get_node("CatanaHitBox").position.x = -5.637
-		get_node("CatlassHitBox").position.x = -5.637
-	
 	
 
 func animate():
@@ -204,22 +197,8 @@ func wallJump():
 		stateJ = "jump2"
 		
 func _stab():
-	if(stateW2 == "Catana" and Input.is_action_just_pressed("shoot")):
-		sprite.play("hit+catana")
-		get_node("CatanaHitBox").get_node("CollisionShape2D").disabled = false
-		
-		yield(get_tree().create_timer(0.5), "timeout")
-		
-		get_node("CatanaHitBox").get_node("CollisionShape2D").disabled = true
 	
-	if(stateW2 == "Catlass" and Input.is_action_pressed("shoot")):
-		sprite.play("hit+catlass")
-		get_node("CatlassHitBox").get_node("CollisionShape2D").disabled = false
-		
-		yield(get_tree().create_timer(0.5), "timeout")
-		
-		get_node("CatlassHitBox").get_node("CollisionShape2D").disabled = true
-	
+	return
 
 func _shoot():
 	if(stateW2 == "ACat-47" and Input.is_action_just_pressed("shoot")):
