@@ -97,7 +97,7 @@ func _on_StompDetector_body_entered(body):
 
 
 func _on_RHurtbox_area_entered(area):
-	if (area.name == "Hurtbox" or area.name == "CatanaHitBox" or area.name == "CatlassHitBox"):
+	if (area.name == "Hurtbox"):
 		if area.damage != 0 and Mstats.health > 0:
 			if !hurtbox.is_invincible:
 				blinker.start_blinking(self, invincibility_duration)

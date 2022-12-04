@@ -4,7 +4,7 @@ const whiten_duration = 0.15
 export (ShaderMaterial) var whiten_material
 onready var collision_shape = $CollisionShape2D
 
-export var damage = 0
+export var damage = 50
 
 var is_invincible = false
 
