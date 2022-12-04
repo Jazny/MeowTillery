@@ -125,7 +125,6 @@ script = ExtResource( 15 )
 
 [node name="CollisionShape2D" parent="RHurtbox" index="0"]
 position = Vector2( 2.06859, 0.41885 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 4 )
 
 [node name="Blinker" parent="." instance=ExtResource( 7 )]
