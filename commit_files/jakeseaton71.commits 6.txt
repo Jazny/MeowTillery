@@ -1,0 +1,331 @@
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  1) extends AnimatedSprite
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  2) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  3) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  4) # Declare member variables here. Examples:
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  5) # var a = 2
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  6) # var b = "text"
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  7) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  8) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  9) # Called when the node enters the scene tree for the first time.
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 10) func _ready():
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 11) 	pass # Replace with function body.
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 12) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 13) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 14) # Called every frame. 'delta' is the elapsed time since the previous frame.
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 15) #func _process(delta):
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 16) #	pass
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400   1) [gd_scene load_steps=59 format=2]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400   2) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400   3) [ext_resource path="res://1 Pink_Monster/Pink_Monster_Idle_4.png" type="Texture" id=1]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400   4) [ext_resource path="res://1 Pink_Monster/Walk_Run_Push_Dust_6.png" type="Texture" id=2]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400   5) [ext_resource path="res://RigidBody2D.gd" type="Script" id=3]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400   6) [ext_resource path="res://New Piskel.png" type="Texture" id=4]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400   7) [ext_resource path="res://1 Pink_Monster/Pink_Monster_Jump_8.png" type="Texture" id=5]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400   8) [ext_resource path="res://1 Pink_Monster/Pink_Monster_Attack1_4.png" type="Texture" id=6]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400   9) [ext_resource path="res://1 Pink_Monster/Pink_Monster_Run_6.png" type="Texture" id=7]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  10) [ext_resource path="res://1 Pink_Monster/Pink_Monster_Death_8.png" type="Texture" id=8]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  11) [ext_resource path="res://1 Pink_Monster/Pink_Monster_Attack2_6.png" type="Texture" id=9]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  12) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  13) [sub_resource type="AtlasTexture" id=24]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  14) flags = 4
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  15) atlas = ExtResource( 6 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  16) region = Rect2( 0, 0, 32, 32 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  17) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  18) [sub_resource type="AtlasTexture" id=25]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  19) flags = 4
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  20) atlas = ExtResource( 6 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  21) region = Rect2( 32, 0, 32, 32 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  22) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  23) [sub_resource type="AtlasTexture" id=26]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  24) flags = 4
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  25) atlas = ExtResource( 6 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  26) region = Rect2( 64, 0, 32, 32 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  27) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  28) [sub_resource type="AtlasTexture" id=27]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  29) flags = 4
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  30) atlas = ExtResource( 6 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  31) region = Rect2( 96, 0, 32, 32 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  32) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  33) [sub_resource type="AtlasTexture" id=28]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  34) flags = 4
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  35) atlas = ExtResource( 8 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  36) region = Rect2( 0, 0, 32, 32 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  37) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  38) [sub_resource type="AtlasTexture" id=29]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  39) flags = 4
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  40) atlas = ExtResource( 8 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  41) region = Rect2( 32, 0, 32, 32 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  42) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  43) [sub_resource type="AtlasTexture" id=30]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  44) flags = 4
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  45) atlas = ExtResource( 8 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  46) region = Rect2( 64, 0, 32, 32 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  47) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  48) [sub_resource type="AtlasTexture" id=31]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  49) flags = 4
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  50) atlas = ExtResource( 8 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  51) region = Rect2( 96, 0, 32, 32 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  52) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  53) [sub_resource type="AtlasTexture" id=32]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  54) flags = 4
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  55) atlas = ExtResource( 8 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  56) region = Rect2( 128, 0, 32, 32 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  57) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  58) [sub_resource type="AtlasTexture" id=33]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  59) flags = 4
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  60) atlas = ExtResource( 8 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  61) region = Rect2( 160, 0, 32, 32 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  62) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  63) [sub_resource type="AtlasTexture" id=34]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  64) flags = 4
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  65) atlas = ExtResource( 8 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  66) region = Rect2( 192, 0, 32, 32 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  67) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  68) [sub_resource type="AtlasTexture" id=35]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  69) flags = 4
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  70) atlas = ExtResource( 8 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  71) region = Rect2( 224, 0, 32, 32 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  72) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  73) [sub_resource type="AtlasTexture" id=4]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  74) flags = 4
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  75) atlas = ExtResource( 1 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  76) region = Rect2( 0, 0, 32, 32 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  77) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  78) [sub_resource type="AtlasTexture" id=5]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  79) flags = 4
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  80) atlas = ExtResource( 1 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  81) region = Rect2( 32, 0, 32, 32 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  82) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  83) [sub_resource type="AtlasTexture" id=6]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  84) flags = 4
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  85) atlas = ExtResource( 1 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  86) region = Rect2( 64, 0, 32, 32 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  87) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  88) [sub_resource type="AtlasTexture" id=7]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  89) flags = 4
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  90) atlas = ExtResource( 1 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  91) region = Rect2( 96, 0, 32, 32 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  92) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  93) [sub_resource type="AtlasTexture" id=42]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  94) flags = 4
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  95) atlas = ExtResource( 4 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  96) region = Rect2( 0, 0, 32, 32 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  97) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  98) [sub_resource type="AtlasTexture" id=16]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400  99) flags = 4
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 100) atlas = ExtResource( 5 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 101) region = Rect2( 0, 0, 32, 32 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 102) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 103) [sub_resource type="AtlasTexture" id=17]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 104) flags = 4
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 105) atlas = ExtResource( 5 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 106) region = Rect2( 32, 0, 32, 32 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 107) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 108) [sub_resource type="AtlasTexture" id=18]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 109) flags = 4
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 110) atlas = ExtResource( 5 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 111) region = Rect2( 64, 0, 32, 32 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 112) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 113) [sub_resource type="AtlasTexture" id=19]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 114) flags = 4
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 115) atlas = ExtResource( 5 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 116) region = Rect2( 96, 0, 32, 32 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 117) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 118) [sub_resource type="AtlasTexture" id=20]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 119) flags = 4
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 120) atlas = ExtResource( 5 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 121) region = Rect2( 128, 0, 32, 32 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 122) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 123) [sub_resource type="AtlasTexture" id=21]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 124) flags = 4
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 125) atlas = ExtResource( 5 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 126) region = Rect2( 160, 0, 32, 32 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 127) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 128) [sub_resource type="AtlasTexture" id=22]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 129) flags = 4
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 130) atlas = ExtResource( 5 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 131) region = Rect2( 192, 0, 32, 32 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 132) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 133) [sub_resource type="AtlasTexture" id=23]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 134) flags = 4
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 135) atlas = ExtResource( 5 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 136) region = Rect2( 224, 0, 32, 32 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 137) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 138) [sub_resource type="AtlasTexture" id=36]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 139) flags = 4
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 140) atlas = ExtResource( 9 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 141) region = Rect2( 0, 0, 32, 32 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 142) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 143) [sub_resource type="AtlasTexture" id=37]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 144) flags = 4
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 145) atlas = ExtResource( 9 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 146) region = Rect2( 32, 0, 32, 32 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 147) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 148) [sub_resource type="AtlasTexture" id=38]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 149) flags = 4
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 150) atlas = ExtResource( 9 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 151) region = Rect2( 64, 0, 32, 32 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 152) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 153) [sub_resource type="AtlasTexture" id=39]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 154) flags = 4
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 155) atlas = ExtResource( 9 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 156) region = Rect2( 96, 0, 32, 32 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 157) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 158) [sub_resource type="AtlasTexture" id=40]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 159) flags = 4
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 160) atlas = ExtResource( 9 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 161) region = Rect2( 128, 0, 32, 32 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 162) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 163) [sub_resource type="AtlasTexture" id=41]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 164) flags = 4
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 165) atlas = ExtResource( 9 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 166) region = Rect2( 160, 0, 32, 32 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 167) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 168) [sub_resource type="AtlasTexture" id=9]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 169) flags = 4
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 170) atlas = ExtResource( 7 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 171) region = Rect2( 0, 0, 32, 32 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 172) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 173) [sub_resource type="AtlasTexture" id=10]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 174) flags = 4
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 175) atlas = ExtResource( 7 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 176) region = Rect2( 32, 0, 32, 32 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 177) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 178) [sub_resource type="AtlasTexture" id=11]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 179) flags = 4
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 180) atlas = ExtResource( 7 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 181) region = Rect2( 64, 0, 32, 32 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 182) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 183) [sub_resource type="AtlasTexture" id=12]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 184) flags = 4
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 185) atlas = ExtResource( 7 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 186) region = Rect2( 96, 0, 32, 32 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 187) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 188) [sub_resource type="AtlasTexture" id=13]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 189) flags = 4
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 190) atlas = ExtResource( 7 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 191) region = Rect2( 128, 0, 32, 32 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 192) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 193) [sub_resource type="AtlasTexture" id=14]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 194) flags = 4
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 195) atlas = ExtResource( 7 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 196) region = Rect2( 160, 0, 32, 32 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 197) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 198) [sub_resource type="AtlasTexture" id=43]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 199) flags = 4
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 200) atlas = ExtResource( 4 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 201) region = Rect2( 0, 0, 32, 32 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 202) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 203) [sub_resource type="AtlasTexture" id=44]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 204) flags = 4
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 205) atlas = ExtResource( 4 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 206) region = Rect2( 32, 0, 32, 32 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 207) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 208) [sub_resource type="AtlasTexture" id=45]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 209) flags = 4
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 210) atlas = ExtResource( 4 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 211) region = Rect2( 64, 0, 32, 32 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 212) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 213) [sub_resource type="AtlasTexture" id=46]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 214) flags = 4
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 215) atlas = ExtResource( 4 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 216) region = Rect2( 96, 0, 32, 32 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 217) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 218) [sub_resource type="AtlasTexture" id=72]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 219) flags = 4
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 220) atlas = ExtResource( 2 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 221) region = Rect2( 0, 0, 32, 32 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 222) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 223) [sub_resource type="AtlasTexture" id=73]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 224) flags = 4
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 225) atlas = ExtResource( 2 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 226) region = Rect2( 32, 0, 32, 32 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 227) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 228) [sub_resource type="AtlasTexture" id=74]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 229) flags = 4
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 230) atlas = ExtResource( 2 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 231) region = Rect2( 64, 0, 32, 32 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 232) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 233) [sub_resource type="AtlasTexture" id=75]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 234) flags = 4
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 235) atlas = ExtResource( 2 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 236) region = Rect2( 96, 0, 32, 32 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 237) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 238) [sub_resource type="AtlasTexture" id=76]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 239) flags = 4
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 240) atlas = ExtResource( 2 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 241) region = Rect2( 128, 0, 32, 32 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 242) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 243) [sub_resource type="AtlasTexture" id=77]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 244) flags = 4
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 245) atlas = ExtResource( 2 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 246) region = Rect2( 160, 0, 32, 32 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 247) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 248) [sub_resource type="SpriteFrames" id=8]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 249) animations = [ {
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 250) "frames": [ SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 251) "loop": true,
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 252) "name": "Attack",
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 253) "speed": 16.0
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 254) }, {
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 255) "frames": [ SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), null ],
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 256) "loop": false,
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 257) "name": "Death",
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 258) "speed": 8.0
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 259) }, {
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 260) "frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 261) "loop": true,
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 262) "name": "Idle",
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 263) "speed": 8.0
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 264) }, {
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 265) "frames": [ SubResource( 42 ) ],
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 266) "loop": true,
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 267) "name": "Idle2",
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 268) "speed": 5.0
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 269) }, {
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 270) "frames": [ SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 271) "loop": true,
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 272) "name": "Jump",
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 273) "speed": 10.0
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 274) }, {
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 275) "frames": [ SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ) ],
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 276) "loop": true,
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 277) "name": "New Anim",
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 278) "speed": 5.0
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 279) }, {
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 280) "frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 281) "loop": true,
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 282) "name": "Run",
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 283) "speed": 10.0
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 284) }, {
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 285) "frames": [ SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ) ],
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 286) "loop": true,
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 287) "name": "Run2",
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 288) "speed": 4.0
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 289) }, {
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 290) "frames": [ SubResource( 72 ), SubResource( 73 ), SubResource( 74 ), SubResource( 75 ), SubResource( 76 ), SubResource( 77 ) ],
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 291) "loop": true,
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 292) "name": "Rundust",
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 293) "speed": 5.0
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 294) } ]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 295) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 296) [sub_resource type="RectangleShape2D" id=3]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 297) extents = Vector2( 4.5, 9 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 298) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 299) [node name="Squango" type="KinematicBody2D"]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 300) position = Vector2( 539, 34 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 301) script = ExtResource( 3 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 302) __meta__ = {
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 303) "_edit_group_": true
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 304) }
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 305) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 306) [node name="Sprite" type="AnimatedSprite" parent="."]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 307) position = Vector2( -3.05176e-05, -1 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 308) scale = Vector2( 0.5625, 0.625 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 309) frames = SubResource( 8 )
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 310) animation = "Idle"
+e7fd8f9d (Jazny       2022-10-13 04:34:22 -0400 311) frame = 1
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 312) playing = true
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 313) 
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 314) [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+38e072ab (Jake Seaton 2022-10-04 12:49:46 -0400 315) shape = SubResource( 3 )
