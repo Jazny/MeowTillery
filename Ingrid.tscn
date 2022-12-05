@@ -38,8 +38,8 @@ collision_layer = 2
 script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 7, 2 )
-scale = Vector2( 0.353026, 0.353026 )
+position = Vector2( 6, 52 )
+scale = Vector2( 0.243061, 0.243061 )
 frames = SubResource( 3 )
 frame = 2
 playing = true

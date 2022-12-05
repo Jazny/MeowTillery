@@ -22,6 +22,7 @@ func _process(delta):
 		enter = enter + 1
 	
 	elif (enter == 12):
+		yield(get_tree().create_timer(2), "timeout")
 		get_tree().change_scene("res://cafe_overtake_dual.tscn")
 
 
