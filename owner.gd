@@ -124,7 +124,7 @@ func _on_RHurtbox_body_entered(body):
 		if !hurtbox.is_invincible:
 			blinker.start_blinking(self, invincibility_duration)
 			hurtbox.start_invincibility(invincibility_duration)
-			Cstats.health-=3
+			Cstats.health-=15
 
 
 func _on_RHurtbox_body_exited(body):
