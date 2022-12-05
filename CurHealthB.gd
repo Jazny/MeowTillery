@@ -1,6 +1,6 @@
 extends RichTextLabel
 
-var curHealth = 100
+var curHealth = 1200
 
 export (Color,RGB) var text_color
 
@@ -12,6 +12,6 @@ func _process(delta):
 	
 	curHealth = get_parent().get_node("BossHealth").value
 	#if $CurHealth != null:
-	self.text="Ingrid: " + str(curHealth) + "/100"
+	self.text="Ingrid: " + str(curHealth) + "/1200"
 	
 	
