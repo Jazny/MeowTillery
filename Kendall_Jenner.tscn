@@ -94,6 +94,9 @@ __meta__ = {
 "_editor_description_": ""
 }
 
+[node name="Health" parent="HealthBar" index="0"]
+max_value = 250.0
+
 [connection signal="body_entered" from="SquangoSeeker" to="." method="_on_SquangoSeeker_body_entered"]
 [connection signal="body_exited" from="SquangoSeeker" to="." method="_on_SquangoSeeker_body_exited"]
 [connection signal="body_entered" from="AttackDetector" to="." method="_on_AttackDetector_body_entered"]

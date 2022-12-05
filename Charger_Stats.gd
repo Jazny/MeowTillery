@@ -3,7 +3,7 @@ extends Node
 signal health_updated(health)
 signal killed()
 
-export (float) var max_health = 100
+export (float) var max_health = 250
 onready var health = max_health setget _set_health
 
 func _set_health(value):
