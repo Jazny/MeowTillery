@@ -11,11 +11,11 @@ func _sanity_update(sanity):
 	sanity_bar.value = sanity
 
 func _on_Timer_timeout():
-	if(get_tree().get_current_scene().get_name() == "background_testing"):
+	if(get_tree().get_current_scene().get_name() == "World"):
 		PlayerStat._set_sanity(PlayerStat.sanity-1)
 	if(get_tree().get_current_scene().get_name() == "Cafe_Scene"):
 		PlayerStat._set_sanity(PlayerStat.sanity+1)
-	if(get_tree().get_current_scene().get_name() == "cat_dungeon"):
+	if(get_tree().get_current_scene().get_name() == "World_cat_dungeon"):
 		PlayerStat._set_sanity(PlayerStat.sanity+1)
 	if(get_tree().get_current_scene().get_name() == "bedroom_scene"):
 		PlayerStat._set_sanity(PlayerStat.sanity+1)
