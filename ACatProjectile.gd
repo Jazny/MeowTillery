@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 var movement = Vector2()
 const SPEED = 1500
-export var damage = 34
+export var damage = 25
 func _physics_process(delta):
 	var collision = move_and_collide(movement * SPEED * delta)
 	if collision:
