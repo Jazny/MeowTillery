@@ -1,4 +1,4 @@
 extends Area2D
 
 
-export var damage = 50
+export var damage = 40
