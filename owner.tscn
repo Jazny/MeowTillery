@@ -88,7 +88,6 @@ script = ExtResource( 3 )
 scale = Vector2( 0.152137, 0.152137 )
 frames = SubResource( 5 )
 animation = "rushing"
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -137,6 +136,10 @@ margin_right = 36.0
 margin_bottom = 36.0
 rect_scale = Vector2( 0.0166448, 0.0166448 )
 script = ExtResource( 5 )
+
+[node name="Health" parent="HealthBar" index="0"]
+max_value = 250.0
+value = 250.0
 
 [connection signal="body_entered" from="SquangoSeeker" to="." method="_on_SquangoSeeker_body_entered"]
 [connection signal="body_exited" from="SquangoSeeker" to="." method="_on_SquangoSeeker_body_exited"]
