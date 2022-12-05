@@ -85,7 +85,7 @@ func move_character():
 
 func _die():
 	is_dead = true
-
+	WaveTracker.enemiesRemaining -= 1
 
 func _on_AttackDetector_body_entered(body):
 	if (body.name == "Squango"):

@@ -95,6 +95,7 @@ func _animate():
 func _die():
 	return
 	#queue_free()
+	get_tree().change_scene("res://background_testing.tscn")
 	
 	
 func flip():

@@ -11,8 +11,6 @@ var isInRange = false
 var attackCooldown = false
 var squango = null
 var flipRequired = false
-var can_hit = false
-var is_dead = false
 
 ## consts
 const invincibility_duration = 0.5
@@ -34,10 +32,6 @@ func _process(_delta):
 	else:
 		animation.play("walking")
 		move_character()
-	
-	if Input.is_action_just_pressed("shoot"):
-		if can_hit == true:
-			Cstats.health-=3
 
 func _attack():
 	
@@ -84,8 +78,9 @@ func move_character():
 	velocity = move_and_slide(velocity, Vector2.UP)
 
 func _die():
-	is_dead = true
-
+	WaveTracker.enemiesRemaining -= 1
+	queue_free()
+	get_tree().change_scene("res://background_testing.tscn")
 
 func _on_AttackDetector_body_entered(body):
 	if (body.name == "Squango"):
@@ -104,11 +99,12 @@ func _on_SquangoSeeker_body_entered(body):
 	if (body.name == "Squango"):
 		squango = body
 		isInRange = true
-		animation.play("rushing")
+
 
 func _on_SquangoSeeker_body_exited(body):
 	if (body.name == "Squango"):
 		isInRange = false
+
 
 func _on_RHurtbox_area_entered(area):
 	if (area.name == "Hurtbox"):
@@ -117,15 +113,3 @@ func _on_RHurtbox_area_entered(area):
 				blinker.start_blinking(self, invincibility_duration)
 				hurtbox.start_invincibility(invincibility_duration)
 				Cstats.health-=area.damage
-
-func _on_RHurtbox_body_entered(body):
-	if body.name == "Squango":
-		can_hit = true
-		if !hurtbox.is_invincible:
-			blinker.start_blinking(self, invincibility_duration)
-			hurtbox.start_invincibility(invincibility_duration)
-			Cstats.health-=3
-
-
-func _on_RHurtbox_body_exited(body):
-	can_hit = false

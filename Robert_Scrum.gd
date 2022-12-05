@@ -5,7 +5,7 @@ const GRAVITY = 20
 const SPEED = 100
 var velocity = Vector2(0,0)
 var smartDirection = Vector2(0,0)
-var is_moving_right = false
+var is_moving_right = true
 var attacking = false
 var isInRange = false
 var attackCooldown = false
@@ -18,6 +18,7 @@ onready var hurtbox = $RHurtbox
 onready var blinker = $Blinker
 
 func _ready():
+	scale.x = -scale.x
 	isInRange = false
 	Rstats.connect("killed", self, "_die")
 	
