@@ -24,7 +24,7 @@ func _process(delta):
 	
 	if Input.is_action_just_pressed("Feed") && inzone == true:
 		if (value < 90):
-			get_node("Timer").start(get_node("Timer").wait_time)
+			get_node("Timer").start(100)
 
 
 func _on_Timer_timeout():
