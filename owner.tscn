@@ -57,7 +57,7 @@ region = Rect2( 96, 0, 32, 64 )
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
 "frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
-"loop": false,
+"loop": true,
 "name": "rushing",
 "speed": 3.0
 }, {
@@ -74,7 +74,7 @@ extents = Vector2( 56, 88.9612 )
 radius = 292.582
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 2.14434, 24.353 )
+extents = Vector2( 246.876, 7.33703 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 37.9241, 55.5812 )
@@ -88,7 +88,6 @@ script = ExtResource( 3 )
 scale = Vector2( 0.152137, 0.152137 )
 frames = SubResource( 5 )
 animation = "rushing"
-frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -106,12 +105,12 @@ scale = Vector2( 0.772291, -0.316073 )
 shape = SubResource( 2 )
 
 [node name="AttackDetector" type="Area2D" parent="."]
-scale = Vector2( -0.00345594, 0.408661 )
+scale = Vector2( -0.00247101, 0.292194 )
 collision_layer = 2
 script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackDetector"]
-position = Vector2( -62.2454, -0.115753 )
+position = Vector2( -1971.8, 0.271073 )
 scale = Vector2( 1.75091, 2.2537 )
 shape = SubResource( 3 )
 
@@ -124,7 +123,7 @@ collision_layer = 2
 script = ExtResource( 15 )
 
 [node name="CollisionShape2D" parent="RHurtbox" index="0"]
-position = Vector2( 2.06859, 0.41885 )
+position = Vector2( 2.72665, 0 )
 shape = SubResource( 4 )
 
 [node name="Blinker" parent="." instance=ExtResource( 7 )]
@@ -147,6 +146,8 @@ __meta__ = {
 [connection signal="body_entered" from="AttackDetector" to="." method="_on_AttackDetector_body_entered"]
 [connection signal="health_updated" from="Charger_Stats" to="HealthBar" method="_on_Charger_Stats_health_updated"]
 [connection signal="area_entered" from="RHurtbox" to="." method="_on_RHurtbox_area_entered"]
+[connection signal="body_entered" from="RHurtbox" to="." method="_on_RHurtbox_body_entered"]
+[connection signal="body_exited" from="RHurtbox" to="." method="_on_RHurtbox_body_exited"]
 
 [editable path="RHurtbox"]
 [editable path="HealthBar"]

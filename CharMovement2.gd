@@ -88,8 +88,11 @@ func _physics_process(delta):
 	if(stateW == "gun"):
 		_shoot()
 		
-	if(stateW == "sword"):
+	elif(stateW == "sword"):
 		_stab()
+		
+	else:
+		_punch()
 	
 	check()
 	animate()
@@ -209,7 +212,7 @@ func _stab():
 		
 		get_node("CatanaHitBox").get_node("CollisionShape2D").disabled = true
 	
-	if(stateW2 == "Catlass" and Input.is_action_pressed("shoot")):
+	elif(stateW2 == "Catlass" and Input.is_action_pressed("shoot")):
 		sprite.play("hit+catlass")
 		get_node("CatlassHitBox").get_node("CollisionShape2D").disabled = false
 		
@@ -236,7 +239,7 @@ func _shoot():
 		yield(get_tree().create_timer(0.5), "timeout")
 			
 			
-	if(stateW2 == "MeowchineGun" and Input.is_action_pressed("shoot")):
+	elif(stateW2 == "MeowchineGun" and Input.is_action_pressed("shoot")):
 		sprite.play("hit+meowchinegun")
 		var projectileACat = preload("res://MeowchineGunProjectile.tscn")
 		var projInstanceACat = projectileACat.instance()
@@ -254,7 +257,12 @@ func _shoot():
 			spacer = 0
 		spacer = spacer + 1
 		
-		
+
+func _punch():
+	if Input.is_action_just_pressed("shoot"):
+		sprite.play("Attack")
+		yield(get_tree().create_timer(1), "timeout")
+
 func _die():
 	stateJ = "dead"
 	stateR = "dead"

@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Controls_menu.gd" type="Script" id=2]
+
+[node name="Controls_menu" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -1157.0
+margin_top = -623.0
+margin_right = 1805.0
+margin_bottom = 1115.0
+color = Color( 0, 0, 0, 0.772549 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 17.0
+margin_top = 206.0
+margin_right = 389.0
+margin_bottom = 599.0
+custom_fonts/font = ExtResource( 1 )
+text = "Move L: A or Left Arrow
+Move R: D or Right Arrow
+Jump: SPACE
+Attack: Left Click
+Interact: Enter
+Inventory: I
+Control Menu: esc"
