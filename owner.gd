@@ -80,6 +80,7 @@ func move_character():
 func _die():
 	WaveTracker.enemiesRemaining -= 1
 	queue_free()
+	get_tree().change_scene("res://background_testing.tscn")
 
 func _on_AttackDetector_body_entered(body):
 	if (body.name == "Squango"):
