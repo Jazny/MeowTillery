@@ -53,10 +53,10 @@ func _fire():
 	get_tree().get_root().add_child(projInstance)
 	var dirToPlayer = (player.global_position - global_position).normalized()
 	if(dirToPlayer.x > 0):
-		projInstance.global_position.x = global_position.x + 100
+		projInstance.global_position.x = global_position.x + 200
 		projInstance.global_position.y = global_position.y + 50
 	if(dirToPlayer.x < 0):
-		projInstance.global_position.x = global_position.x - 100
+		projInstance.global_position.x = global_position.x - 200
 		projInstance.global_position.y = global_position.y + 50
 	projInstance.movement = dirToPlayer
 	
@@ -104,8 +104,9 @@ func set_player(p):
 
 
 func _on_RHurtbox_area_entered(area):
-	if area.damage != 0 and Istats.health > 0:
-		if !hurtbox.is_invincible:
-			blinker.start_blinking(self, invincibility_duration)
-			hurtbox.start_invincibility(invincibility_duration)
-			Istats.health-=area.damage
+	if(area.name != "IngridDmg"):
+		if area.damage != 0 and Istats.health > 0:
+			if !hurtbox.is_invincible:
+				blinker.start_blinking(self, invincibility_duration)
+				hurtbox.start_invincibility(invincibility_duration)
+				Istats.health-=area.damage

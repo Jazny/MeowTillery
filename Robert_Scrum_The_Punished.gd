@@ -165,8 +165,9 @@ func _die():
 	queue_free()
 
 func _on_RHurtbox_area_entered(area):
-	if area.damage != 0 and R2stats.health > 0:
-		if !hurtbox.is_invincible:
-			blinker.start_blinking(self, invincibility_duration)
-			hurtbox.start_invincibility(invincibility_duration)
-			R2stats.health-=area.damage
+	if(area.name != "Mini_Robert_Damage"):
+		if area.damage != 0 and R2stats.health > 0:
+			if !hurtbox.is_invincible:
+				blinker.start_blinking(self, invincibility_duration)
+				hurtbox.start_invincibility(invincibility_duration)
+				R2stats.health-=area.damage

@@ -11,6 +11,7 @@ var ingrid = preload("res://Ingrid.tscn")
 var turret = preload("res://Turret.tscn")
 var BB = preload("res://BossBar.tscn")
 var MBB = preload("res://MiniBossBar.tscn")
+var MB2 = preload("res://Rob2Bar.tscn")
 var doorBlock = preload("res://DoorBlocker.tscn")
 var wavestarted = 0
 var blockFreed = 0
@@ -223,10 +224,15 @@ func _newWave():
 		6:
 			#this should be robert scrum 2 btw
 			var robert2 = scrum2.instance()
+			var RobBar = MB2.instance()
 			
 			robert2.position = Vector2(-350, 60)
+			RobBar.rect_position = Vector2(-20,-30)
 
 			add_child(robert2)
+			get_parent().get_node("HUD").get_node("Interface").add_child(RobBar)
+			robert2.get_node("Robert_Scrum_The_Punished_Stats").connect("health_updated",RobBar, "_on_Robert_Scrum_The_Punished_Stats_health_updated")
+			robert2.get_node("Robert_Scrum_The_Punished_Stats").connect("killed", RobBar, "queue_free")
 			
 			WaveTracker.enemiesRemaining = 1
 		7:
