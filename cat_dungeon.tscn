@@ -48,6 +48,9 @@ position = Vector2( -552.265, 765.866 )
 [node name="caged_black_cat" parent="." instance=ExtResource( 10 )]
 position = Vector2( -444.791, 766.96 )
 
+[node name="caged_black_cat2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 47.8842, 770.242 )
+
 [node name="dungeon_to_cafe" parent="." instance=ExtResource( 4 )]
 position = Vector2( -943.851, 778.995 )
 scale = Vector2( 3.56383, 3.52038 )
@@ -93,9 +96,6 @@ shape = SubResource( 2 )
 [node name="Squango" parent="." instance=ExtResource( 2 )]
 position = Vector2( 288.369, 814.006 )
 scale = Vector2( 3.26578, 3.26578 )
-
-[node name="caged_black_cat2" parent="." instance=ExtResource( 11 )]
-position = Vector2( 47.8842, 770.242 )
 
 [editable path="HUD"]
 [editable path="HUD/Interface/HealthBar"]
