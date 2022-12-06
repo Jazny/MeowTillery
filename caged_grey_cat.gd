@@ -20,7 +20,7 @@ func _process(delta):
 			catstats.grey_cat_alive = false
 			guide.visible = false
 			var catana = Catana.instance()
-			get_parent().add_child(catana)
+			add_child(catana)
 			WaveTracker.waveNum = 1
 			yield(get_tree().create_timer(3), "timeout")
 		elif (inzone == true):

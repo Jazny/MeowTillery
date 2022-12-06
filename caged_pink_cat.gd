@@ -20,7 +20,7 @@ func _process(delta):
 			catstats.pink_cat_alive = false
 			guide.visible = false
 			var acat = ACat.instance()
-			get_parent().add_child(acat)
+			add_child(acat)
 			WaveTracker.waveNum = 1
 			yield(get_tree().create_timer(3), "timeout")
 		elif (inzone == true):

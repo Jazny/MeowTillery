@@ -20,7 +20,7 @@ func _process(delta):
 			catstats.black_cat_alive = false
 			guide.visible = false
 			var meowchinegun = MeowchineGun.instance()
-			get_parent().add_child(meowchinegun)
+			add_child(meowchinegun)
 			WaveTracker.waveNum = 1
 			yield(get_tree().create_timer(3), "timeout")
 		elif (inzone == true):

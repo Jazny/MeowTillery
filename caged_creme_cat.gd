@@ -10,7 +10,7 @@ func _on_Button_pressed():
 	get_node("Cage").hide()
 	get_node("AnimationPlayer").play("Weapon Unlocked")
 	var catlass = Catlass.instance()
-	get_parent().add_child(catlass)
+	add_child(catlass)
 	WaveTracker.waveNum = 1
 	yield(get_tree().create_timer(3), "timeout")
 	queue_free()
