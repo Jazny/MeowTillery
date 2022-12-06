@@ -21,7 +21,8 @@ func _process(delta):
 			guide.visible = false
 			var catlass = Catlass.instance()
 			add_child(catlass)
-			WaveTracker.waveNum = 1
+			if (WaveTracker.waveNum == 0):
+				WaveTracker.waveNum = 1
 			yield(get_tree().create_timer(3), "timeout")
 		elif (inzone == true):
 			guide.text = "You must feed this cat at least three times to weaponize it."
