@@ -20,7 +20,7 @@ func _process(delta):
 			catstats.calico_cat_alive = false
 			guide.visible = false
 			var catlass = Catlass.instance()
-			get_parent().add_child(catlass)
+			add_child(catlass)
 			WaveTracker.waveNum = 1
 			yield(get_tree().create_timer(3), "timeout")
 		elif (inzone == true):
