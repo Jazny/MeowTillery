@@ -109,7 +109,7 @@ script = ExtResource( 7 )
 position = Vector2( -21.5619, 13.2689 )
 scale = Vector2( 1.85105, 1.85105 )
 frames = SubResource( 5 )
-frame = 3
+frame = 4
 playing = true
 
 [node name="Cage" type="Sprite" parent="."]
