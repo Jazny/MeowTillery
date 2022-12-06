@@ -48,7 +48,7 @@ position = Vector2( -552.265, 765.866 )
 [node name="caged_black_cat" parent="." instance=ExtResource( 10 )]
 position = Vector2( -444.791, 766.96 )
 
-[node name="caged_black_cat2" parent="." instance=ExtResource( 11 )]
+[node name="caged_pink_cat" parent="." instance=ExtResource( 11 )]
 position = Vector2( 47.8842, 770.242 )
 
 [node name="dungeon_to_cafe" parent="." instance=ExtResource( 4 )]

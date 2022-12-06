@@ -11,6 +11,8 @@ func _ready():
 		get_node("caged_calico_cat").queue_free()
 	if (catstats.black_cat_alive == false):
 		get_node("caged_black_cat").queue_free()
+	if (catstats.pink_cat_alive == false):
+		get_node("caged_pink_cat").queue_free()
 	
 	if (doors.cafe_to_dungeon == true):
 		squango.position = Vector2(-867.236, 812.912)
