@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Inventory.gd" type="Script" id=1]
 [ext_resource path="res://Inventory_Panel.gd" type="Script" id=2]
-[ext_resource path="res://Inventory/inventory_background.png" type="Texture" id=3]
+[ext_resource path="res://Inventory/Inventory.png" type="Texture" id=3]
 [ext_resource path="res://Inventory/item_slot_default_background.png" type="Texture" id=4]
 [ext_resource path="res://Inventory/Item_Icons/ShirtOverlay.png" type="Texture" id=5]
 [ext_resource path="res://Inventory/Item_Icons/PantsOverlay.png" type="Texture" id=6]
@@ -17,19 +17,25 @@ texture = ExtResource( 4 )
 region_rect = Rect2( 0, 0, 18, 18 )
 
 [node name="Inventory" type="Node2D"]
+position = Vector2( -1, 0 )
+scale = Vector2( 1.48362, 1.48362 )
 script = ExtResource( 1 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_right = 405.0
-margin_bottom = 198.0
+margin_left = -12.8065
+margin_top = -25.613
+margin_right = 887.193
+margin_bottom = 694.387
+rect_scale = Vector2( 0.398716, 0.398716 )
 texture = ExtResource( 3 )
 stretch_mode = 1
 
 [node name="GridContainer" type="GridContainer" parent="."]
-margin_left = 252.0
-margin_top = 51.0
-margin_right = 431.0
-margin_bottom = 207.0
+margin_left = 89.6456
+margin_top = 31.0053
+margin_right = 206.646
+margin_bottom = 143.005
+rect_scale = Vector2( 1.93391, 1.93391 )
 columns = 5
 
 [node name="Panel1" type="Panel" parent="GridContainer"]
@@ -248,10 +254,11 @@ custom_styles/panel = SubResource( 78 )
 script = ExtResource( 2 )
 
 [node name="EquipSlots" type="GridContainer" parent="."]
-margin_left = 69.0
-margin_top = 59.0
-margin_right = 109.0
-margin_bottom = 99.0
+margin_left = 18.1987
+margin_top = 33.0273
+margin_right = 58.1987
+margin_bottom = 117.027
+rect_scale = Vector2( 2.05455, 2.05455 )
 
 [node name="ShirtSlot" type="Panel" parent="EquipSlots"]
 margin_right = 18.0
