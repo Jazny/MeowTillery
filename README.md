@@ -3,10 +3,15 @@
 # MeowTillery
 
 Jack Arndt (jackarndt)
+
 Sonaz Jazny (Jazny)
+
 Sean Kerzel (skerzel)
+
 Conor O'Malley (comalle)
+
 Jake Seaton (jakeseaton71)
+
 
 ![alt text](https://github.com/Jazny/MeowTillery/blob/main/Meowtillary%20(14).png)
 
