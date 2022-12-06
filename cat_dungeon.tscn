@@ -18,7 +18,7 @@ extents = Vector2( 653.513, 38.8787 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 133.755, 240.777 )
 
-[node name="World_cat_dungeon" type="Node2D"]
+[node name="World" type="Node2D"]
 position = Vector2( 890, -194 )
 scale = Vector2( 0.939767, 0.913998 )
 script = ExtResource( 6 )
