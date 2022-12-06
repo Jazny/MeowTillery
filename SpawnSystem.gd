@@ -48,6 +48,10 @@ func _newWave():
 			minion2.scale.x = -minion2.scale.x
 			minion3.is_moving_right = true
 			minion3.scale.x = -minion3.scale.x
+			minion4.is_moving_right = true
+			minion4.scale.x = -minion1.scale.x
+			minion5.is_moving_right = true
+			minion5.scale.x = -minion2.scale.x
 			
 			add_child(minion1)
 			add_child(minion2)
@@ -259,8 +263,10 @@ func _process(delta):
 		if (WaveTracker.waveNum == 4 || WaveTracker.waveNum == 5):
 			turret1.position = Vector2(250, 0)
 			turret2.position = Vector2(0, 0)
+			turret3.position = Vector2(400, 0)
 			add_child(turret1)
 			add_child(turret2)
+			add_child(turret3)
 			
 		
 	if (WaveTracker.enemiesRemaining == 0 && !blockFreed):
@@ -269,6 +275,7 @@ func _process(delta):
 		if (WaveTracker.waveNum == 4 || WaveTracker.waveNum == 5):
 			turret1.queue_free()
 			turret2.queue_free()
+			turret3.queue_free()
 
 		if (WaveTracker.waveNum != 0):
 			WaveTracker.waveNum += 1
