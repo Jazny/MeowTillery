@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Inventory/ACat-47.gd" type="Script" id=1]
-[ext_resource path="res://Inventory/Data/ACat-47.png" type="Texture" id=2]
+[ext_resource path="res://Squango_assets/weapons/ACat-47 copy.png" type="Texture" id=2]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )

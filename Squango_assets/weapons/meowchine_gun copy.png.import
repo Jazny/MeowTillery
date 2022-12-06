@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sleep3 2.png-ca0329fe36ed272fba6f613b30180c86.stex"
+path="res://.import/meowchine_gun copy.png-b44cc7f27aebe5a64d5a3f3b501dae24.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Squango_assets/sleep/sleep3 2.png"
-dest_files=[ "res://.import/sleep3 2.png-ca0329fe36ed272fba6f613b30180c86.stex" ]
+source_file="res://Squango_assets/weapons/meowchine_gun copy.png"
+dest_files=[ "res://.import/meowchine_gun copy.png-b44cc7f27aebe5a64d5a3f3b501dae24.stex" ]
 
 [params]
 

@@ -109,7 +109,7 @@ script = ExtResource( 7 )
 position = Vector2( 0, 11.6103 )
 scale = Vector2( 2.26844, 2.26844 )
 frames = SubResource( 5 )
-frame = 4
+frame = 2
 playing = true
 
 [node name="Cage" type="Sprite" parent="."]
@@ -130,21 +130,21 @@ anims/RESET = SubResource( 7 )
 
 [node name="ColorRect" type="ColorRect" parent="AnimationPlayer"]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = -778.0
-margin_top = -548.0
-margin_right = 1614.0
-margin_bottom = 1072.0
+margin_left = -800.0
+margin_top = -580.0
+margin_right = 1592.0
+margin_bottom = 1040.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="Sprite" type="Sprite" parent="AnimationPlayer"]
 modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 362, 456 )
+position = Vector2( 776, 438 )
 scale = Vector2( 0.276986, 0.276986 )
 texture = ExtResource( 3 )
 
 [node name="ACat-47_Unlocked" type="Sprite" parent="AnimationPlayer"]
 modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 379, 607 )
+position = Vector2( 773, 587 )
 scale = Vector2( 0.530788, 0.530788 )
 texture = ExtResource( 4 )
 

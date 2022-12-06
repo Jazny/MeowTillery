@@ -109,7 +109,6 @@ script = ExtResource( 7 )
 position = Vector2( -21.5619, 13.2689 )
 scale = Vector2( 1.85105, 1.85105 )
 frames = SubResource( 5 )
-frame = 4
 playing = true
 
 [node name="Cage" type="Sprite" parent="."]
@@ -138,13 +137,13 @@ color = Color( 0, 0, 0, 1 )
 
 [node name="Sprite" type="Sprite" parent="AnimationPlayer"]
 modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 401, 453 )
+position = Vector2( 445, 454 )
 scale = Vector2( 0.276986, 0.276986 )
 texture = ExtResource( 3 )
 
 [node name="MeowchinegunUnlocked2" type="Sprite" parent="AnimationPlayer"]
 modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 426, 606 )
+position = Vector2( 485, 602 )
 scale = Vector2( 0.530788, 0.530788 )
 texture = ExtResource( 4 )
 

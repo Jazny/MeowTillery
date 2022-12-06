@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sleep3 2.png-ca0329fe36ed272fba6f613b30180c86.stex"
+path="res://.import/catlass copy.png-7bdda2fa5503d248e64eb1aa17174c71.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Squango_assets/sleep/sleep3 2.png"
-dest_files=[ "res://.import/sleep3 2.png-ca0329fe36ed272fba6f613b30180c86.stex" ]
+source_file="res://Squango_assets/weapons/catlass copy.png"
+dest_files=[ "res://.import/catlass copy.png-7bdda2fa5503d248e64eb1aa17174c71.stex" ]
 
 [params]
 

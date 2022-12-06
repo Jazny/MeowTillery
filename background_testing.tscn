@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/city_background.png" type="Texture" id=1]
 [ext_resource path="res://SpawnSystem.tscn" type="PackedScene" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://WaveDisplay.gd" type="Script" id=5]
 [ext_resource path="res://Padthai_Timer.gd" type="Script" id=6]
 [ext_resource path="res://Squango.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Dialogue/Mr Godot.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Entrance.tscn" type="PackedScene" id=16]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=24]
 
@@ -47,10 +46,6 @@ shape = SubResource( 1 )
 
 [node name="Entrance" parent="." instance=ExtResource( 16 )]
 position = Vector2( 788.8, 56.4 )
-
-[node name="Mr Godot" parent="." instance=ExtResource( 15 )]
-visible = false
-position = Vector2( 306.515, 36.6137 )
 
 [node name="SpawnSystem" parent="." instance=ExtResource( 2 )]
 
@@ -93,7 +88,6 @@ scale = Vector2( 1.14322, 1.14322 )
 [connection signal="timeout" from="Padthai_Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="Padthai_Timer" to="Padthai_Timer" method="_on_Padthai_Timer_timeout"]
 
-[editable path="Mr Godot"]
 [editable path="HUD"]
 [editable path="HUD/Interface/HealthBar"]
 [editable path="HUD/Interface/SanityBar"]

@@ -10,12 +10,10 @@
 [ext_resource path="res://Cafe_Scene.gd" type="Script" id=8]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Floor.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Dialogue/CAFE_NPC1.tscn" type="PackedScene" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 830.646, 38.4474 )
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 73.5949, 2.6214 )
 
 [node name="Cafe_Scene" type="Node2D"]
 position = Vector2( 47, -9 )
@@ -66,19 +64,14 @@ position = Vector2( 1053, -2 )
 position = Vector2( 563, 589 )
 scale = Vector2( 1.38124, 1.46624 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2( 512, 439 )
-scale = Vector2( 1.29397, 0.429861 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( -6.10352e-05, 6.10352e-05 )
-shape = SubResource( 2 )
-
 [node name="HUD" parent="." instance=ExtResource( 9 )]
 
 [node name="Squango" parent="." instance=ExtResource( 2 )]
 position = Vector2( 944, 551 )
 scale = Vector2( 3.11996, 3.11996 )
+
+[node name="CAFE_NPC1" parent="." instance=ExtResource( 11 )]
+position = Vector2( 644, 542 )
 
 [editable path="HUD"]
 [editable path="HUD/Interface/HealthBar"]

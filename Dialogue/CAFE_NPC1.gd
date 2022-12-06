@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 
-var velocity = 40
+var velocity = 30
 var motion = Vector2()
 var gravity = 50
 var moving_left = true
@@ -13,7 +13,7 @@ func _ready():
 	$Timer.start()
 	$Timer.paused = false
 
-func _physics_process(delta):	
+func _physics_process(delta):
 	if ($left_ray.is_colliding()):
 		moving_left = false
 		$AnimatedSprite.flip_h = true

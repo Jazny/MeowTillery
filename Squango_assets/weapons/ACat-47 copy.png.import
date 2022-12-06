@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sleep4.png-df1c1748b35f34ee963de6b6344e60c0.stex"
+path="res://.import/ACat-47 copy.png-40199996a9860ae50541d78299f75d28.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Squango_assets/sleep/sleep4.png"
-dest_files=[ "res://.import/sleep4.png-df1c1748b35f34ee963de6b6344e60c0.stex" ]
+source_file="res://Squango_assets/weapons/ACat-47 copy.png"
+dest_files=[ "res://.import/ACat-47 copy.png-40199996a9860ae50541d78299f75d28.stex" ]
 
 [params]
 
