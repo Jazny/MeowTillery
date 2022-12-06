@@ -42,7 +42,8 @@ func add_item(item_name, item_quantity):
 			return
 
 func update_slot_visual(slot_index, item_name, neoquantity):
-	var slot = get_tree().root.get_node("/root/World/HUD/Inventory/GridContainer/Panel" + str(slot_index+1))
+	var name = get_tree().get_current_scene().get_name()
+	var slot = get_tree().root.get_node("/root/" + str(name) + "/HUD/Inventory/GridContainer/Panel" + str(slot_index+1))
 	if slot.Item == null:
 		slot.intialize_item(item_name, neoquantity)
 	else:
