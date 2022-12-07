@@ -34,4 +34,4 @@ Directly running through Godot:
 
 ## License
 
-![License](https://github.com/Jazny/MeowTillery/blob/main/LICENSE)
+[License](https://github.com/Jazny/MeowTillery/blob/main/LICENSE)
