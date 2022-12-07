@@ -23,8 +23,8 @@ As the player, your main objective is to keep your bio-engineering of the cats i
 
 ## Install and run
 
-There are currently two ways to run the project. (1) The sure-fire way to launch it would be to first download Godot 3.5.1 at [this link](https://godotengine.org/download)
-The secondary was is to download and run the application via the Google Drive link at this [link](https://drive.google.com/drive/folders/1pNEW9XHdiEsD6AcxguoFKY_lWuIvV7vV?usp=sharing)
+There are currently two ways to run the project. (1) The sure-fire way to launch it would be to first download Godot 3.5.1 at [this link](https://godotengine.org/download) .
+The secondary way is to download and run the application via the Google Drive link at this [link](https://drive.google.com/drive/folders/1pNEW9XHdiEsD6AcxguoFKY_lWuIvV7vV?usp=sharing) .
 
 Directly running through Godot:
 1. Clone the repo onto your local directory.
